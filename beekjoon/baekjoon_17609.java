@@ -17,7 +17,7 @@ public class baekjoon_17609 {
                 rt--;
             }
             else{
-                str.charAt(lt)
+                str.charAt(lt);
             }
         }
     }
