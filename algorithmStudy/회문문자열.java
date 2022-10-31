@@ -3,6 +3,7 @@ package algorithmStudy;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+// str.equalsIgnoreCase : 대소문자 구분 하지않고 문자열 비교
 
 public class 회문문자열 {
     public static void main(String[] args) throws IOException {
