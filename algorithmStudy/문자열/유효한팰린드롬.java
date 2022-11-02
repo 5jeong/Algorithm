@@ -1,4 +1,4 @@
-package algorithmStudy;
+package algorithmStudy.문자열;
 
 import java.io.BufferedReader;
 import java.io.IOException;
