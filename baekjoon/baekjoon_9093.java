@@ -21,6 +21,8 @@ public class baekjoon_9093 {
                 String a = sb.reverse().toString();
                 ans.append(a);
                 ans.append(" ");
+
+                System.out.println("   asdasdsa");
             }
             System.out.println(ans);
         }
