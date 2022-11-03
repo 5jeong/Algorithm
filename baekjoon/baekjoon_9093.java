@@ -22,7 +22,7 @@ public class baekjoon_9093 {
                 ans.append(a);
                 ans.append(" ");
 
-                System.out.println("   asdasdsa");
+                System.out.println("   asdasdsa"q);
             }
             System.out.println(ans);
         }
