@@ -1,4 +1,4 @@
-# baekjoon_JAVA
+# HI Algorithm
 
 # hi
 
