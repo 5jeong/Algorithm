@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change beforePath="$PROJECT_DIR$/algorithmStudy/투포인터and슬라이딩윈도우/두배열합치기.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/투포인터and슬라이딩윈도우/두배열합치기.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmStudy/투포인터and슬라이딩윈도우/최대매출.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/투포인터and슬라이딩윈도우/최대매출.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +87,9 @@
       <workItem from="1668700417747" duration="1963000" />
       <workItem from="1668772824380" duration="199000" />
       <workItem from="1668855605885" duration="4088000" />
-      <workItem from="1668927043497" duration="459000" />
+      <workItem from="1668927043497" duration="6727000" />
+      <workItem from="1669007932955" duration="411000" />
+      <workItem from="1669011880851" duration="331000" />
     </task>
     <servers />
   </component>
