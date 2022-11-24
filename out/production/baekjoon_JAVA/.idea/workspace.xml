@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/투포인터and슬라이딩윈도우/연속부분수열.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/투포인터and슬라이딩윈도우/최대매출.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/투포인터and슬라이딩윈도우/최대매출.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baekjoon/baekjoon_2869.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +91,8 @@
       <workItem from="1669007932955" duration="411000" />
       <workItem from="1669011880851" duration="6841000" />
       <workItem from="1669138169737" duration="2965000" />
-      <workItem from="1669201049818" duration="1956000" />
+      <workItem from="1669201049818" duration="4092000" />
+      <workItem from="1669267468084" duration="662000" />
     </task>
     <servers />
   </component>
