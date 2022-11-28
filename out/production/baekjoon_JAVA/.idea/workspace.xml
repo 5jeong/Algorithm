@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/투포인터and슬라이딩윈도우/연속된자연수합.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmStudy/투포인터and슬라이딩윈도우/연속된자연수합.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/투포인터and슬라이딩윈도우/연속된자연수합.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +93,9 @@
       <workItem from="1669138169737" duration="2965000" />
       <workItem from="1669201049818" duration="4092000" />
       <workItem from="1669267468084" duration="4281000" />
-      <workItem from="1669544478511" duration="4027000" />
+      <workItem from="1669544478511" duration="5266000" />
+      <workItem from="1669606645349" duration="8000" />
+      <workItem from="1669615328055" duration="627000" />
     </task>
     <servers />
   </component>
