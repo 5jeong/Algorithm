@@ -15,7 +15,7 @@ public class baekjoon_17609 {
             if(str.charAt(lt) == str.charAt(rt)){
                 lt++;
                 rt--;
-            }
+            } 
             else{
                 str.charAt(lt);
             }
