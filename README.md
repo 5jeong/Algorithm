@@ -1,5 +1,3 @@
 # Hi Algorithm
 
 # hi
-
- 
