@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change beforePath="$PROJECT_DIR$/algorithmStudy/해쉬and정렬지원set/매출액의종류.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/해쉬and정렬지원set/매출액의종류.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmStudy/해쉬and정렬지원set/모든아나그램찾기.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +102,9 @@
       <workItem from="1669877851217" duration="5341000" />
       <workItem from="1669887516937" duration="321000" />
       <workItem from="1669904163156" duration="662000" />
-      <workItem from="1670083946794" duration="431000" />
+      <workItem from="1670083946794" duration="3225000" />
+      <workItem from="1670390838345" duration="608000" />
+      <workItem from="1673000794959" duration="383000" />
     </task>
     <servers />
   </component>
