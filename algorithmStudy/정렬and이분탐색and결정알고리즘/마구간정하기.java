@@ -5,50 +5,43 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
-//결정알고리즘 + 이분탐색
-public class 뮤직비디오 {
-    public static int count(int[] arr, int capacity){
-        int cnt=1;
-        int sum=0;
-        for(int x : arr){
-            if(sum+x > capacity){
-                sum = x;
+///결정알고리즘 + 이분탐색
+public class 마구간정하기 {
+    public static int check(int[] arr,int n){
+        int cnt =1;
+        int idx=arr[0];
+        for(int i=1;i<arr.length;i++){
+            if(arr[i] - idx >=n){
                 cnt++;
+                idx = arr[i];
             }
-            else{
-                sum+=x;
-
-            }
-
         }
         return cnt;
     }
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st =new StringTokenizer(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        int c = Integer.parseInt(st.nextToken());
+        int ans=0;
         int[] arr = new int[n];
-        int ans =0;
         st = new StringTokenizer(br.readLine());
         for(int i=0;i<n;i++){
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        int lt = Arrays.stream(arr).max().getAsInt();
-        int rt = Arrays.stream(arr).sum();
-        while(lt <=rt){
+        Arrays.sort(arr);
+        int lt = arr[1] - arr[0];
+        int rt = arr[n-1];
+        while(lt <= rt){
             int mid = (lt+rt)/2;
-            if(count(arr,mid)<=m){
-                ans = mid;
+            if(check(arr,mid) < c ){
                 rt = mid-1;
             }
             else{
+                ans = mid;
                 lt = mid+1;
             }
         }
         System.out.println(ans);
-
     }
-
 }
