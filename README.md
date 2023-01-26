@@ -1,4 +1,2 @@
 # Hi Algorithm
 
-# hi
-
