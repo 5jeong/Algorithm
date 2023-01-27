@@ -1,4 +1,4 @@
-package algorithmStudy.Recursive_Tree_DFS_BFE기초;
+package algorithmStudy.Recursive_Tree_DFS_BFS기초;
 
 import java.io.BufferedReader;
 import java.io.IOException;

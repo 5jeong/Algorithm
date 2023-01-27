@@ -1,4 +1,4 @@
-package algorithmStudy.Recursive_Tree_DFS_BFE기초;
+package algorithmStudy.Recursive_Tree_DFS_BFS기초;
 //이진트리 순회(전위순회, 중위순회, 후위순회)
 class Node{
     int data;
