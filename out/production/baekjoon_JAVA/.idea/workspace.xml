@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/정렬and이분탐색and결정알고리즘/마구간정하기.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmStudy/정렬and이분탐색and결정알고리즘/뮤직비디오.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/정렬and이분탐색and결정알고리즘/뮤직비디오.java" afterDir="false" />
-    </list>
+    <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +120,8 @@
       <workItem from="1674387730579" duration="335000" />
       <workItem from="1674577574236" duration="4112000" />
       <workItem from="1674631365925" duration="269000" />
-      <workItem from="1674748843491" duration="2630000" />
+      <workItem from="1674748843491" duration="4589000" />
+      <workItem from="1674808306636" duration="623000" />
     </task>
     <servers />
   </component>
