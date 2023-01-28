@@ -13,7 +13,8 @@ public class 이진트리순회_DFS {
     public static void DFS(Node root){
         if(root == null) return;
         else{
-            // 전위 순회 System.out.print(root.data+" ");
+            // 전위 순회
+            System.out.print(root.data+" ");
             DFS(root.lt);
             // 중위 순회 System.out.print(root.data+" ");
             DFS(root.rt);
