@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.StringTokenizer;
 
-public class 동전교환 {
+public class 동전교환_DFS {
     static int n,m,ans=Integer.MAX_VALUE;
     static Integer[] coin, arr;
     static void DFS(int L,int sum){
