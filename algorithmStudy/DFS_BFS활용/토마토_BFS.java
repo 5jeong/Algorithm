@@ -10,6 +10,13 @@ import java.util.StringTokenizer;
 
 
 public class 토마토_BFS {
+    static class Point{
+        public int x,y;
+        Point(int x,int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
     static int m,n,ans= Integer.MIN_VALUE;
     static int[] dx ={1,0,-1,0};
     static int[] dy = {0,1,0,-1};

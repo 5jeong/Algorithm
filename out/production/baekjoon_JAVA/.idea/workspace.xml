@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/DFS_BFS활용/미로탐색_BFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/DFS_BFS활용/미로탐색_DFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/DFS_BFS활용/토마토_BFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmStudy/DFS_BFS활용/섬나라아일랜드_DFS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +148,9 @@
       <workItem from="1674983965507" duration="12033000" />
       <workItem from="1675169392232" duration="15142000" />
       <workItem from="1675253350839" duration="14229000" />
-      <workItem from="1675328269607" duration="7054000" />
+      <workItem from="1675328269607" duration="8731000" />
+      <workItem from="1675399527256" duration="731000" />
+      <workItem from="1675589418500" duration="379000" />
     </task>
     <servers />
   </component>
