@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/DFS_BFS활용/섬나라아일랜드_DFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/씨름선수.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +150,9 @@
       <workItem from="1675253350839" duration="14229000" />
       <workItem from="1675328269607" duration="8731000" />
       <workItem from="1675399527256" duration="731000" />
-      <workItem from="1675589418500" duration="379000" />
+      <workItem from="1675589418500" duration="14328000" />
+      <workItem from="1675672209355" duration="13000" />
+      <workItem from="1675673284729" duration="2717000" />
     </task>
     <servers />
   </component>
