@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/회의실배정.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/결혼식.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/결혼식.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +153,8 @@
       <workItem from="1675589418500" duration="14328000" />
       <workItem from="1675672209355" duration="13000" />
       <workItem from="1675673284729" duration="3832000" />
-      <workItem from="1675677720412" duration="1171000" />
+      <workItem from="1675677720412" duration="2478000" />
+      <workItem from="1675779766206" duration="1136000" />
     </task>
     <servers />
   </component>
