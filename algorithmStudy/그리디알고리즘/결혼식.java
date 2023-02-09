@@ -47,9 +47,7 @@ public class 결혼식 {
             if(x.s == 'e'){
                 cnt--;
             }
-            if(ans < cnt){
-                ans = cnt;
-            }
+            ans = Math.max(ans,cnt);
         }
         System.out.println(ans);
     }
