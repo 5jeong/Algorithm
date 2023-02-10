@@ -36,6 +36,8 @@ public class 최대수입스케쥴 {
         Collections.sort(arr);
         int max = arr.get(0).day;
         int j=0;
+
+
         for(int i = max ;i>=1;i--){
             for(;j<n;j++){
                 if(arr.get(j).day < i){
@@ -47,6 +49,7 @@ public class 최대수입스케쥴 {
                 ans+=q.poll();
             }
         }
+
         System.out.println(ans);
     }
 }
