@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/다익스트라알고리즘.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/최대수입스케쥴.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/최대수입스케쥴.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/그리디알고리즘/최대수입스케쥴.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/그리디알고리즘/최대수입스케쥴.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/친구인가.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +157,8 @@
       <workItem from="1675779766206" duration="7192000" />
       <workItem from="1675925338284" duration="5333000" />
       <workItem from="1675956738459" duration="4541000" />
-      <workItem from="1676017998554" duration="1328000" />
+      <workItem from="1676017998554" duration="2286000" />
+      <workItem from="1676187312790" duration="999000" />
     </task>
     <servers />
   </component>
