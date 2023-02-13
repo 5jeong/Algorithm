@@ -48,9 +48,5 @@ public class 친구인가 {
         else{
             System.out.println("NO");
         }
-        for(int x : friend){
-            System.out.print(x+" ");
-        }
-
     }
 }
