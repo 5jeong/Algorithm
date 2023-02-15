@@ -43,7 +43,7 @@ public class 원더랜드_크루스칼 {
         int v = Integer.parseInt(st.nextToken());
         int e = Integer.parseInt(st.nextToken());
         ArrayList<Edge> arr = new ArrayList<>();
-        unf = new int[v];
+        unf = new int[v+1];
         for(int i=1;i<=v;i++){
             unf[i] = i;
         }
@@ -57,11 +57,14 @@ public class 원더랜드_크루스칼 {
         Collections.sort(arr);
         int ans = 0;
         for(Edge edge : arr){
-            int v1 = edge.v1;
-            int v2 = edge.v2;
-            if()
-            Union(v1,v2);
+            int v1 = Find(edge.v1);
+            int v2 = Find(edge.v2);
+            if(v1 != v2){
+                ans+= edge.cost;
+                Union(edge.v1,edge.v2);
+            }
         }
+        System.out.println(ans);
 
     }
 }

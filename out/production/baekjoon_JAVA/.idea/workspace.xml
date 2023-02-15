@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/친구인가.java" afterDir="false" />
-    </list>
+    <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,7 +156,9 @@
       <workItem from="1675925338284" duration="5333000" />
       <workItem from="1675956738459" duration="4541000" />
       <workItem from="1676017998554" duration="2286000" />
-      <workItem from="1676187312790" duration="999000" />
+      <workItem from="1676187312790" duration="3020000" />
+      <workItem from="1676276358271" duration="238000" />
+      <workItem from="1676468483782" duration="1693000" />
     </task>
     <servers />
   </component>
