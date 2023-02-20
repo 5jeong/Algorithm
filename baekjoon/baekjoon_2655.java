@@ -59,7 +59,6 @@ public class baekjoon_2655 {
         for(int x : dp){
             max = Math.max(max,x);
         }
-        int idx=n;
         ArrayList<Integer> result = new ArrayList<>();
 
         for(int i=n-1;i>=0;i--){
