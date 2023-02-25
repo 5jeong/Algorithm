@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/다이나믹프로그래밍/동전교환_냅색알고리즘.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/baekjoon/baekjoon_2655.java" beforeDir="false" afterPath="$PROJECT_DIR$/baekjoon/baekjoon_2655.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baekjoon/baekjoon_2583.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +166,9 @@
       <workItem from="1676806475165" duration="8857000" />
       <workItem from="1676877688989" duration="4681000" />
       <workItem from="1676882793774" duration="51000" />
-      <workItem from="1676906797742" duration="1888000" />
+      <workItem from="1676906797742" duration="4777000" />
+      <workItem from="1676969587227" duration="65000" />
+      <workItem from="1677330461676" duration="1997000" />
     </task>
     <servers />
   </component>
