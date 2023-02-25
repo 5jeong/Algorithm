@@ -1,14 +1,17 @@
 package algorithmStudy.Recursive_Tree_DFS_BFS기초;
 //이진트리 순회(전위순회, 중위순회, 후위순회)
-class Node{
-    int data;
-    Node lt,rt;
-    public Node(int val){
-        data = val;
-        lt = rt =null;
-    }
-}
+
+import org.w3c.dom.Node;
+
 public class 이진트리순회_DFS {
+    static class Node{
+        int data;
+        Node lt,rt;
+        public Node(int val){
+            data = val;
+            lt = rt =null;
+        }
+    }
     Node root;
     public static void DFS(Node root){
         if(root == null) return;

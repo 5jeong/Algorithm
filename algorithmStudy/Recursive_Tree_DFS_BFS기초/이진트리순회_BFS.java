@@ -4,6 +4,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class 이진트리순회_BFS {
+    static class Node{
+        int data;
+        Node lt,rt;
+        public Node(int val){
+            data = val;
+            lt = rt =null;
+        }
+    }
     Node root;
     public static void BFS(Node root){
         Queue<Node> q = new LinkedList<>();
@@ -23,7 +31,7 @@ public class 이진트리순회_BFS {
         }
     }
     public static void main(String[] args){
-        이진트리순회_DFS tree = new 이진트리순회_DFS();
+        이진트리순회_BFS tree = new 이진트리순회_BFS();
         tree.root = new Node(1);
         tree.root.lt = new Node(2);
         tree.root.rt = new Node(3);

@@ -7,14 +7,15 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-class Point{
-    public int x,y;
-    Point(int x,int y) {
-        this.x = x;
-        this.y = y;
-    }
-}
+
 public class 미로탐색_BFS {
+    static class Point{
+        public int x,y;
+        Point(int x,int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
     static int[] dx = {1,0,-1,0};
     static int[] dy = {0,1,0,-1};
     static int[][] dis = new int[8][8];

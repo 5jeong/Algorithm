@@ -4,7 +4,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class 말단노드최소거리_BFS {
-
+    static class Node{
+        int data;
+        Node lt,rt;
+        public Node(int val){
+            data = val;
+            lt = rt =null;
+        }
+    }
     Node root;
     public static int BFS( Node root){
         Queue<Node> q = new LinkedList<>();
@@ -29,7 +36,7 @@ public class 말단노드최소거리_BFS {
         return 0;
     }
     public static void main(String args[]) {
-        이진트리순회_DFS tree = new 이진트리순회_DFS();
+        말단노드최소거리_BFS tree = new 말단노드최소거리_BFS();
         tree.root=new Node(1);
         tree.root.lt=new Node(2);
         tree.root.rt=new Node(3);
