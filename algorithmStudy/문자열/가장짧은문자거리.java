@@ -6,23 +6,20 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class 가장짧은문자거리 {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        String str = st.nextToken();
-        String t = st.nextToken();
-
-        for(int i=0;i<str.length();i++){
-            int ans=str.length();
-            for(int j=0;j<str.length();j++){
-                if (str.charAt(j) == t.charAt(0)) {
-                    ans = Math.min(ans,Math.abs((i-j)));
-                }
-            }
-            System.out.print(ans);
-            System.out.print(" ");
-        }
-    }
+   public static void main(String[] args) throws IOException {
+       BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
+       String str = br.readLine();
+       String c = br.readLine();
+       c = c.toUpperCase();
+       str = str.toUpperCase();
+       int ans=0;
+       for(char x : str.toCharArray()){
+           if(x == c.charAt(0)){
+               ans++;
+           }
+       }
+       System.out.println(ans);
+   }
 }
  
 

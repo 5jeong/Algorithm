@@ -13,7 +13,7 @@ public class 단어뒤집기 {
         for(int i =0;i<n;i++){
             str[i] = br.readLine();
         }
-        ArrayList <String> arr = new ArrayList<>();
+        ArrayList<String> arr = new ArrayList<>();
         for(String x : str){
             char[] s = x.toCharArray();
             int lt=0,rt=x.length()-1;
@@ -29,11 +29,5 @@ public class 단어뒤집기 {
         for(int i=0;i<n;i++){
             System.out.println(arr.get(i));
         }
-
-//        for(int i=0;i<n;i++){
-//            String str = br.readLine();
-//            String ans = new StringBuilder(str).reverse().toString();
-//            System.out.println(ans);
-//        }
     }
 }
