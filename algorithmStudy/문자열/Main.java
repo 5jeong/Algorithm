@@ -9,26 +9,13 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        String str = st.nextToken();
-        String t = st.nextToken();
-        ArrayList<Integer> temp = new ArrayList<>();
-        int[] ans = new int[str.length()];
-        char c = t.charAt(0);
-        for(int i=0;i<str.length();i++){
-            if(str.charAt(i)==c){
-                temp.add(i);
-            }
-        }
-        for(int i=0;i<str.length();i++){
-            int k = Integer.MAX_VALUE;
-            for(int x : temp){
-                k = Math.min(k,Math.abs(x-i));
-            }
-            ans[i]=k;
-        }
-        for(int x : ans){
-            System.out.print(x+" ");
+        int n = Integer.parseInt(br.readLine());
+        String str = br.readLine();
+        for(int i=0;i<n;i++){
+            String temp = str.substring(0,7).replace('#','1').replace('*','0');
+            str = str.substring(7);
+            int num = Integer.parseInt(temp,2);
+            System.out.print((char)num);
         }
     }
 }
