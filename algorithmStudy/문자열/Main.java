@@ -4,34 +4,31 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String str = br.readLine();
-        char[] ans = new char[str.length()];
-
-        int lt = 0;
-        int rt = str.length() - 1;
-        while (lt <= rt) {
-            if(!Character.isAlphabetic(str.charAt(lt))){
-                ans[lt] = str.charAt(lt);
-                lt++;
-            }
-            else if(!Character.isAlphabetic(str.charAt(rt))){
-                ans[rt] = str.charAt(rt);
-                rt--;
-            }
-            else{
-                ans[lt] = str.charAt(rt);
-                ans[rt] = str.charAt(lt);
-                lt++;
-                rt--;
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        String str = st.nextToken();
+        String t = st.nextToken();
+        ArrayList<Integer> temp = new ArrayList<>();
+        int[] ans = new int[str.length()];
+        char c = t.charAt(0);
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)==c){
+                temp.add(i);
             }
         }
-        for(char x : ans){
-            System.out.print(x);
+        for(int i=0;i<str.length();i++){
+            int k = Integer.MAX_VALUE;
+            for(int x : temp){
+                k = Math.min(k,Math.abs(x-i));
+            }
+            ans[i]=k;
+        }
+        for(int x : ans){
+            System.out.print(x+" ");
         }
     }
 }

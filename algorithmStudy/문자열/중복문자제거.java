@@ -9,7 +9,7 @@ public class 중복문자제거 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
         String ans = "";
-        System.out.println(str.indexOf('k',2));
+//        System.out.println(str.indexOf('k',2));
         for(int i=0;i<str.length();i++){
             if( i == str.indexOf(str.charAt(i))){
                 ans +=str.charAt(i);
