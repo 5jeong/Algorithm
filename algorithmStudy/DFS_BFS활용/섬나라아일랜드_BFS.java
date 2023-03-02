@@ -51,7 +51,6 @@ public class 섬나라아일랜드_BFS {
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
                 if(board[i][j] == 1){
-
                     ans++;
                     board[i][j] = 0;
                     BFS(i,j);
