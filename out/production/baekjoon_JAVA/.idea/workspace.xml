@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change beforePath="$PROJECT_DIR$/algorithmStudy/문자열/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/문자열/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmStudy/문자열/중복문자제거.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/문자열/중복문자제거.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmStudy/문자열/회문문자열.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/문자열/회문문자열.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/문자열/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/문자열/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/문자열/중복문자제거.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/문자열/중복문자제거.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/문자열/특정문자뒤집기.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/문자열/특정문자뒤집기.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/문자열/회문문자열.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/문자열/회문문자열.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmStudy/배열/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +169,8 @@
       <workItem from="1676906797742" duration="4777000" />
       <workItem from="1676969587227" duration="65000" />
       <workItem from="1677330461676" duration="12128000" />
-      <workItem from="1677499689894" duration="325000" />
+      <workItem from="1677499689894" duration="6203000" />
+      <workItem from="1677729913081" duration="1929000" />
     </task>
     <servers />
   </component>

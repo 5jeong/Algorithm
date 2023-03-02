@@ -10,18 +10,16 @@ public class 보이는학생 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
+        int[] arr = new int[n+1];
         int cnt=1;
-        int max=0;
-        int[] height = new int[n];
         st = new StringTokenizer(br.readLine());
-
         for(int i=0;i<n;i++){
-            height[i] = Integer.parseInt(st.nextToken());
+            arr[i] = Integer.parseInt(st.nextToken());
         }
-        max = height[0];
-        for(int i=1;i<n;i++){
-            if(max<height[i]){
-                max = height[i];
+        int max = Integer.MIN_VALUE;
+        for(int i=0;i<n;i++){
+            max = Math.max(max,arr[i]);
+            if(max < arr[i+1]){
                 cnt++;
             }
         }

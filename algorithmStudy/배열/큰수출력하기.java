@@ -11,21 +11,16 @@ public class 큰수출력하기 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        int[] arr = new int[n];
+        int[] arr = new int[n+1];
         st = new StringTokenizer(br.readLine());
         for(int i=0;i<n;i++){
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        ArrayList<Integer> ans = new ArrayList<>();
-        ans.add(arr[0]);
-
-        for(int i=0;i<n-1;i++) {
-            if (arr[i] < arr[i + 1]) {
-                ans.add(arr[i+1]);
+        System.out.print(arr[0]+" ");
+        for(int i =1;i<n;i++){
+            if(arr[i-1] < arr[i]){
+                System.out.print(arr[i]+" ");
             }
-        }
-        for(int x : ans){
-            System.out.print(x+" ");
         }
     }
 }
