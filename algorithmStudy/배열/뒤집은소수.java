@@ -8,10 +8,9 @@ import java.util.StringTokenizer;
 
 
 public class 뒤집은소수 {
-    public static boolean isPirme(int num){
-        if(num==1) return false;
-        for(int i=2;i<num;i++){
-            if(num%i==0){
+    static boolean isPirme(int n){
+        for(int i =2 ; i<n;i++){
+            if(n % i == 0){
                 return false;
             }
         }
@@ -24,18 +23,18 @@ public class 뒤집은소수 {
         int[] arr = new int[n];
         ArrayList<Integer> ans = new ArrayList<>();
         st = new StringTokenizer(br.readLine());
-        for(int i=0;i<n;i++){
+        for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        for(int i=0;i<n;i++){
-            int tmp = arr[i];
-            int res =0;
-            while(tmp>0){
-                int t = tmp%10;
-                res = res*10 +t;
-                tmp /=10;
+        for (int i = 0; i < n; i++) {
+            int temp = arr[i];
+            int res = 0 ;
+            while(temp>0){
+                int t = temp % 10;
+                res = res *10 +t;
+                temp = temp/10;
             }
-            if(isPirme(res)==true){
+            if(isPirme(res)==true && res !=1){
                 ans.add(res);
             }
         }
