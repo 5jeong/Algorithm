@@ -26,6 +26,7 @@ public class baekjoon_2506 {
                 cnt=0;
             }
         }
+
         System.out.println(ans);
     }
 }
