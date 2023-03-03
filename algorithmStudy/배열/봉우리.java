@@ -10,40 +10,31 @@ public class 봉우리 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        int ans=0;
-        int[][] arr = new int[n+2][n+2];
+        int[][] arr = new int[n + 2][n + 2];
         int[] dx = {1,0,-1,0};
         int[] dy = {0,1,0,-1};
-        for(int i=1;i<n+1;i++){
+        int ans=0;
+        for (int i = 1; i <= n; i++) {
             st = new StringTokenizer(br.readLine());
-            for(int j=1;j<n+1;j++){
-                arr[i][j]=Integer.parseInt(st.nextToken());
+            for (int j = 1; j <= n; j++) {
+                arr[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        int nx,ny;
-
-        for(int i=1;i<n+1;i++){
-            for(int j=1;j<n+1;j++){
-                boolean flag = true;
-                for(int k=0;k<4;k++){
-                  nx = i+dx[k];
-                  ny = j+dy[k];
-                  if(arr[i][j] <= arr[nx][ny]){
-                      flag = false;
-                      break;
-                  }
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                int cnt = 0;
+                for (int dir = 0; dir < 4; dir++) {
+                    int temp = arr[i + dx[dir]][j + dy[dir]];
+                    if (arr[i][j] > temp) {
+                        cnt++;
+                    }
                 }
-                if(flag){
+                if (cnt == 4) {
                     ans++;
                 }
-//                if(arr[i][j] > arr[i-1][j] && arr[i][j] > arr[i][j-1] && arr[i][j] > arr[i+1][j] && arr[i][j] > arr[i][j+1]){
-//                    ans++;
-//
-//                }
             }
         }
         System.out.println(ans);
-
     }
 }
 

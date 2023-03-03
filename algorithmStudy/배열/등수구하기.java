@@ -22,15 +22,14 @@ public class 등수구하기 {
                 if(i==j){
                     continue;
                 }
-                else if(arr[i] <arr[j]){
+                if(arr[i] < arr[j]){
                     cnt++;
                 }
             }
             ans[i] = cnt;
         }
-        for(int i=0;i<n;i++){
-            System.out.print(ans[i]+ " ");
+        for(int x : ans){
+            System.out.print(x+" ");
         }
-
     }
 }

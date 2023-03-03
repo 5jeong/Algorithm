@@ -11,39 +11,36 @@ public class 격자판최대합 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        int ans = 0;
-        int[][] arr = new int[n][n];
+        int[][] arr = new int[n+1][n+1];
         ArrayList<Integer> temp = new ArrayList<>();
-
-        for (int i = 0; i < n; i++) {
+        int ans=Integer.MIN_VALUE;
+        for(int i=0;i<n;i++){
             st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < n; j++) {
+            for(int j=0;j<n;j++){
                 arr[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        int c=0;
-        int d=0;
-        for (int i = 0; i < n; i++) {
-            int a = 0;
-            int b = 0;
-            for (int j = 0; j < n; j++) {
+        int t =0;
+        int k=0;
+        for(int i=0;i<n;i++){
+            int length=0;
+            int width = 0;
+            for(int j=0;j<n;j++){
                 if(i==j){
-                    c+=arr[i][j];
+                    t+=arr[i][j];
                 }
                 if(i+j==n-1){
-                    d+=arr[i][j];
+                    k+=arr[i][j];
                 }
-                a += arr[i][j];
-                b += arr[j][i];
-
+                length+=arr[i][j];
+                width+=arr[j][i];
             }
-            temp.add(a);
-            temp.add(b);
+            temp.add(length);
+            temp.add(width);
         }
-        temp.add(c);
-        temp.add(d);
-
-        for (int x : temp) {
+        temp.add(t);
+        temp.add(k);
+        for(int x:temp){
             ans = Math.max(ans,x);
         }
         System.out.println(ans);
