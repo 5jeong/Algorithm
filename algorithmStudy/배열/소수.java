@@ -8,20 +8,18 @@ import java.io.InputStreamReader;
 public class 소수 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s = br.readLine();
-        int n = Integer.parseInt(s);
+        int n = Integer.parseInt(br.readLine());
         int[] arr = new int[n+1];
-
-        int cnt=0;
+        int ans =0;
         for(int i=2;i<=n;i++){
             if(arr[i]==0){
-                arr[i]=1;
-                cnt++;
-                for(int j=i;j<=n;j+=i){
-                    arr[j]=1;
-                }
+                ans++;
+            }
+            for(int j=i;j<=n;j+=i){
+                arr[j] = 1;
             }
         }
-        System.out.println(cnt);
+        System.out.println(ans);
+
     }
 }
