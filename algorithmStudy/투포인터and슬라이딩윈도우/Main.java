@@ -3,29 +3,30 @@ package algorithmStudy.투포인터and슬라이딩윈도우;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
 
-public class 두배열합치기 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-        int n = Integer.parseInt(br.readLine());
-        int p1=0,p2=0;
-        int arr[] = new int[n];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int[] arr = new int[n];
         st = new StringTokenizer(br.readLine());
         for(int i=0;i<n;i++){
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        int m = Integer.parseInt(br.readLine());
-        int arr2[] = new int[m];
+        st = new StringTokenizer(br.readLine());
+        int m = Integer.parseInt(st.nextToken());
+        int[] arr2 = new int[m];
         st = new StringTokenizer(br.readLine());
         for(int i=0;i<m;i++){
             arr2[i] = Integer.parseInt(st.nextToken());
         }
         ArrayList<Integer> ans = new ArrayList<>();
-        //투포인터 알고리즘
-        while(p1 <n && p2<m){
-            if(arr[p1]<arr2[p2]){
+        int p1=0,p2=0;
+        while(p1 < n && p2 < m){
+            if(arr[p1] < arr2[p2]){
                 ans.add(arr[p1]);
                 p1++;
             }
