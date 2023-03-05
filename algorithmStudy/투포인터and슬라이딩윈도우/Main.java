@@ -12,37 +12,42 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
         int[] arr = new int[n];
+        int ans = 0;
         st = new StringTokenizer(br.readLine());
-        for(int i=0;i<n;i++){
+        for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        st = new StringTokenizer(br.readLine());
-        int m = Integer.parseInt(st.nextToken());
-        int[] arr2 = new int[m];
-        st = new StringTokenizer(br.readLine());
-        for(int i=0;i<m;i++){
-            arr2[i] = Integer.parseInt(st.nextToken());
-        }
-        Arrays.sort(arr);
-        Arrays.sort(arr2);
-        int lt=0,rt=0;
-        ArrayList<Integer> ans = new ArrayList<>();
-        while (lt < n && rt < m) {
-            if (arr[lt] == arr2[rt]) {
-                ans.add(arr[lt]);
-                lt++;
+        int lt=0;
+        int rt=0;
+        int sum=0;
+        while(rt<n){
+            if(sum<m){
+                sum += arr[rt];
                 rt++;
             }
-            else if(arr[lt] < arr2[rt]){
+            if(sum>m){
+                sum -= arr[lt];
                 lt++;
             }
-            else{
-                rt++;
+            if(sum==m){
+                ans++;
+                sum-=arr[lt];
+                lt++;
             }
         }
-        for(int x : ans){
-            System.out.print(x+" ");
-        }
+//        for(int rt=lt;rt<n;rt++){
+//            sum +=arr[rt];
+//            while(sum > m){
+//                sum-=arr[lt];
+//                lt++;
+//            }
+//            if(sum == m){
+//                ans++;
+//            }
+//
+//        }
+        System.out.println(ans);
     }
 }

@@ -10,25 +10,42 @@ public class 연속부분수열 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        long m = Integer.parseInt(st.nextToken());
-        int sum=0;
-        int ans =0;
-        int[] arr =new int[n];
+        int m = Integer.parseInt(st.nextToken());
+        int[] arr = new int[n];
+        int ans = 0;
         st = new StringTokenizer(br.readLine());
-        for(int i=0;i<n;i++){
+        for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        int lp=0;
-        for(int rp=0;rp<n;rp++){
-            sum+=arr[rp];
-            while(sum>m){
-                sum-=arr[lp];
-                lp++;
+        int lt=0;
+        int rt=0;
+        int sum=0;
+        while(rt<n){
+            if(sum<m){
+                sum += arr[rt];
+                rt++;
+            }
+            if(sum>m){
+                sum -= arr[lt];
+                lt++;
             }
             if(sum==m){
                 ans++;
+                sum-=arr[lt];
+                lt++;
             }
         }
+//        for(int rt=lt;rt<n;rt++){
+//            sum +=arr[rt];
+//            while(sum > m){
+//                sum-=arr[lt];
+//                lt++;
+//            }
+//            if(sum == m){
+//                ans++;
+//            }
+//
+//        }
         System.out.println(ans);
     }
 }

@@ -7,23 +7,23 @@ import java.util.StringTokenizer;
 
 public class 최대매출 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int k = Integer.parseInt(st.nextToken());
-
-        int arr[] = new int[n];
-        int ans=Integer.MIN_VALUE;
-        st = new StringTokenizer(br.readLine());
+        int[] arr = new int[n];
+        st= new StringTokenizer(br.readLine());
         for(int i=0;i<n;i++){
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        for(int i=0;i<n-k+1;i++){
-            int temp=0;
-            for(int j=0;j<k;j++){
-                temp += arr[j+i];
-            }
-            ans = Math.max(ans,temp);
+        int sum=0;
+        for(int i=0;i<k;i++){
+            sum += arr[i];
+        }
+        int ans=sum;
+        for(int i=k;i<n;i++) {
+            sum += arr[i] - arr[i-k];
+            ans = Math.max(ans,sum);
         }
         System.out.println(ans);
     }
