@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -23,25 +24,22 @@ public class Main {
         for(int i=0;i<m;i++){
             arr2[i] = Integer.parseInt(st.nextToken());
         }
+        Arrays.sort(arr);
+        Arrays.sort(arr2);
+        int lt=0,rt=0;
         ArrayList<Integer> ans = new ArrayList<>();
-        int p1=0,p2=0;
-        while(p1 < n && p2 < m){
-            if(arr[p1] < arr2[p2]){
-                ans.add(arr[p1]);
-                p1++;
+        while (lt < n && rt < m) {
+            if (arr[lt] == arr2[rt]) {
+                ans.add(arr[lt]);
+                lt++;
+                rt++;
+            }
+            else if(arr[lt] < arr2[rt]){
+                lt++;
             }
             else{
-                ans.add(arr2[p2]);
-                p2++;
+                rt++;
             }
-        }
-        while(p1<n){
-            ans.add(arr[p1]);
-            p1++;
-        }
-        while(p2<m){
-            ans.add(arr2[p2]);
-            p2++;
         }
         for(int x : ans){
             System.out.print(x+" ");
