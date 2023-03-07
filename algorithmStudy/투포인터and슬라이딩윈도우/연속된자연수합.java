@@ -25,6 +25,7 @@ public class 연속된자연수합 {
 //                ans++;
 //            }
 //        }
+
         //수학적 풀이
         int cnt=1;
         n--;

@@ -10,44 +10,27 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
-        int[] arr = new int[n];
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n + 1];
         int ans = 0;
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+        for (int i = 1; i <= n; i++) {
+            arr[i] = i;
         }
-        int lt=0;
-        int rt=0;
-        int sum=0;
-        while(rt<n){
-            if(sum<m){
-                sum += arr[rt];
-                rt++;
+        int lt = 1;
+        int sum = 0;
+        for (int rt = 1; rt < n; rt++) {
+            sum += arr[rt];
+            if (sum == n) {
+                ans++;
             }
-            if(sum>m){
+            while (sum >= n) {
                 sum -= arr[lt];
                 lt++;
-            }
-            if(sum==m){
-                ans++;
-                sum-=arr[lt];
-                lt++;
+                if (sum == n) {
+                    ans++;
+                }
             }
         }
-//        for(int rt=lt;rt<n;rt++){
-//            sum +=arr[rt];
-//            while(sum > m){
-//                sum-=arr[lt];
-//                lt++;
-//            }
-//            if(sum == m){
-//                ans++;
-//            }
-//
-//        }
         System.out.println(ans);
     }
 }
