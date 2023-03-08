@@ -33,6 +33,7 @@ public class 최대길이연속부분수열 {
             ans = Math.max(ans,len);
         }
         System.out.println(ans);
+
     }
 }
 

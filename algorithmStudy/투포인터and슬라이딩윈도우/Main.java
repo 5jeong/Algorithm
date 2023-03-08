@@ -10,27 +10,32 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(br.readLine());
-        int[] arr = new int[n + 1];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
+        int[] arr = new int[n];
         int ans = 0;
-        for (int i = 1; i <= n; i++) {
-            arr[i] = i;
+        st = new StringTokenizer(br.readLine());
+        for(int i=0;i<n;i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
         }
-        int lt = 1;
-        int sum = 0;
-        for (int rt = 1; rt < n; rt++) {
-            sum += arr[rt];
-            if (sum == n) {
-                ans++;
+
+        int lt=0,len=0;
+        int cnt=0;
+        for(int rt=0;rt<n;rt++){
+            if(arr[rt]==0){
+                cnt++;
             }
-            while (sum >= n) {
-                sum -= arr[lt];
-                lt++;
-                if (sum == n) {
-                    ans++;
+            while(cnt > k){
+                if(arr[lt]==0){
+                    cnt--;
                 }
+                lt++;
             }
+            len = rt - lt + 1;
+            ans = Math.max(ans,len);
         }
         System.out.println(ans);
+
     }
 }
