@@ -3,27 +3,41 @@ package algorithmStudy.해쉬and정렬지원set;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
-        int n= Integer.parseInt(br.readLine());
-        String str = br.readLine();
-        char ans = ' ';
-        HashMap<Character,Integer> hashMap = new HashMap<>();
-        for(char x : str.toCharArray()){
-            hashMap.put(x, hashMap.getOrDefault(x,0)+1);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
+        int[] arr =new int[n];
+        ArrayList<Integer> ans = new ArrayList<>();
+        st = new StringTokenizer(br.readLine());
+        HashMap<Integer,Integer> hashMap = new HashMap<>();
+        for(int i=0;i<n;i++){
+            arr[i] = Integer.parseInt(st.nextToken());
         }
-        int temp = Integer.MIN_VALUE;
-        for(char x : hashMap.keySet()){
-            if(temp < hashMap.get(x)){
-                temp = hashMap.get(x);
-                ans = x;
+        int cnt=0;
+        for(int i=0;i<k;i++){
+            hashMap.put(arr[i], hashMap.getOrDefault(arr[i], 0) + 1);
+        }
+        ans.add(hashMap.size());
+        for(int i=k;i<n;i++){
+            hashMap.put(arr[i], hashMap.getOrDefault(arr[i], 0) + 1);
+            if (hashMap.containsKey(arr[cnt])) {
+                hashMap.put(arr[cnt], hashMap.get(arr[cnt]) - 1);
+                if(hashMap.get(arr[cnt])==0){
+                    hashMap.remove(arr[cnt]);
+                }
             }
-//            System.out.println("key : "+ x + " value : "+ hashMap.get(x));
+            cnt++;
+            ans.add(hashMap.size());
         }
-        System.out.println(ans);
+        for(int x : ans){
+            System.out.print(x+" ");
+        }
     }
 }
