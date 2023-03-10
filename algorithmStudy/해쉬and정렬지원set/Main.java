@@ -10,34 +10,32 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        int k = Integer.parseInt(st.nextToken());
-        int[] arr =new int[n];
-        ArrayList<Integer> ans = new ArrayList<>();
-        st = new StringTokenizer(br.readLine());
-        HashMap<Integer,Integer> hashMap = new HashMap<>();
-        for(int i=0;i<n;i++){
-            arr[i] = Integer.parseInt(st.nextToken());
+        String s = br.readLine();
+        String t = br.readLine();
+        HashMap<Character,Integer> s_Map = new HashMap<>();
+        HashMap<Character,Integer> t_Map = new HashMap<>();
+        for(char x : t.toCharArray()){
+            t_Map.put(x,t_Map.getOrDefault(x,0)+1);
         }
-        int cnt=0;
-        for(int i=0;i<k;i++){
-            hashMap.put(arr[i], hashMap.getOrDefault(arr[i], 0) + 1);
+        for(int i=0;i<t.length();i++){
+            s_Map.put(s.charAt(i),s_Map.getOrDefault(s.charAt(i),0)+1);
         }
-        ans.add(hashMap.size());
-        for(int i=k;i<n;i++){
-            hashMap.put(arr[i], hashMap.getOrDefault(arr[i], 0) + 1);
-            if (hashMap.containsKey(arr[cnt])) {
-                hashMap.put(arr[cnt], hashMap.get(arr[cnt]) - 1);
-                if(hashMap.get(arr[cnt])==0){
-                    hashMap.remove(arr[cnt]);
-                }
+        int ans=0;
+        if(s_Map.equals(t_Map)){
+            ans++;
+        }
+        int lt =0;
+        for(int rt=t.length();rt<s.length();rt++){
+            s_Map.put(s.charAt(rt),s_Map.getOrDefault(s.charAt(rt),0)+1);
+            s_Map.put(s.charAt(lt),s_Map.get(s.charAt(lt))-1);
+            if(s_Map.get(s.charAt(lt))==0){
+                s_Map.remove(s.charAt(lt));
             }
-            cnt++;
-            ans.add(hashMap.size());
+            lt++;
+            if(s_Map.equals(t_Map)){
+                ans++;
+            }
         }
-        for(int x : ans){
-            System.out.print(x+" ");
-        }
+        System.out.println(ans);
     }
 }
