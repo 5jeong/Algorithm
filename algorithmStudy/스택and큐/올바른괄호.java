@@ -7,26 +7,25 @@ import java.util.Stack;
 
 public class 올바른괄호 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
-        String ans = "YES";
-        Stack<Character> st = new Stack<>();
+        Stack<Character> stack = new Stack<>();
         for(char x : str.toCharArray()){
-            if(x=='('){
-                st.push(x);
+            if(stack.isEmpty()){
+                stack.push(x);
             }
-            else{
-                if(st.isEmpty()){
-                    ans = "NO";
-                }
-                else{
-                    st.pop();
-                }
+            else if(x =='('){
+                stack.push(x);
+            }
+            if(stack.peek() == '(' && x == ')'){
+                stack.pop();
             }
         }
-        if(!st.isEmpty()){
-            ans="NO";
+        if(stack.isEmpty()){
+            System.out.println("YES");
         }
-        System.out.println(ans);
+        else{
+            System.out.println("NO");
+        }
     }
 }
