@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/해쉬and정렬지원set/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmStudy/투포인터and슬라이딩윈도우/최대길이연속부분수열.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/투포인터and슬라이딩윈도우/최대길이연속부분수열.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmStudy/해쉬and정렬지원set/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/해쉬and정렬지원set/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +177,8 @@
       <workItem from="1678186945360" duration="6463000" />
       <workItem from="1678251225966" duration="4265000" />
       <workItem from="1678348606725" duration="308000" />
-      <workItem from="1678424811139" duration="1736000" />
+      <workItem from="1678424811139" duration="8084000" />
+      <workItem from="1678536718683" duration="1092000" />
     </task>
     <servers />
   </component>

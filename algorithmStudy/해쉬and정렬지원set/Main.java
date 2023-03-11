@@ -3,39 +3,37 @@ package algorithmStudy.해쉬and정렬지원set;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s = br.readLine();
-        String t = br.readLine();
-        HashMap<Character,Integer> s_Map = new HashMap<>();
-        HashMap<Character,Integer> t_Map = new HashMap<>();
-        for(char x : t.toCharArray()){
-            t_Map.put(x,t_Map.getOrDefault(x,0)+1);
+        StringTokenizer st =new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
+        st = new StringTokenizer(br.readLine());
+        int[] arr = new int[n];
+        ArrayList<Integer> ans = new ArrayList<>();
+        TreeSet<Integer> treeSet = new TreeSet<>(Comparator.reverseOrder());
+        for(int i=0;i<n;i++){
+            arr[i] = Integer.parseInt(st.nextToken());
         }
-        for(int i=0;i<t.length();i++){
-            s_Map.put(s.charAt(i),s_Map.getOrDefault(s.charAt(i),0)+1);
-        }
-        int ans=0;
-        if(s_Map.equals(t_Map)){
-            ans++;
-        }
-        int lt =0;
-        for(int rt=t.length();rt<s.length();rt++){
-            s_Map.put(s.charAt(rt),s_Map.getOrDefault(s.charAt(rt),0)+1);
-            s_Map.put(s.charAt(lt),s_Map.get(s.charAt(lt))-1);
-            if(s_Map.get(s.charAt(lt))==0){
-                s_Map.remove(s.charAt(lt));
-            }
-            lt++;
-            if(s_Map.equals(t_Map)){
-                ans++;
+        for(int i=0;i<n-2;i++){
+            for(int j=i+1;j<n-1;j++){
+                for(int s=j+1;s<n;s++){
+                    int temp=arr[i]+arr[j]+arr[s];
+                    treeSet.add(temp);
+                }
             }
         }
-        System.out.println(ans);
+        int cnt=1;
+        for(int x : treeSet){
+            if(cnt==k){
+                System.out.println(x);
+                return;
+            }
+            cnt++;
+        }
+        System.out.println("-1");
     }
 }
