@@ -11,27 +11,26 @@ public class 후위식연산 {
         String str = br.readLine();
         Stack<Integer> stack = new Stack<>();
         for(char x : str.toCharArray()){
-            char temp=' ';
             if(Character.isDigit(x)){
                 stack.push(Character.getNumericValue(x));
             }
             else{
                 int rt = stack.pop();
                 int lt = stack.pop();
-                if (x == '+') {
-                    stack.push(lt + rt);
+                if(x =='+'){
+                    stack.push(lt+rt);
                 }
-                else if (x == '-') {
-                    stack.push(lt - rt);
+                else if(x=='-'){
+                    stack.push(lt-rt);
                 }
-                else if (x == '*') {
-                    stack.push(lt * rt);
+                else if(x=='*'){
+                    stack.push(lt*rt);
                 }
-                else if (x == '/') {
-                    stack.push(lt / rt);
+                else if(x=='/'){
+                    stack.push(lt/rt);
                 }
             }
         }
-        System.out.println(stack.peek());
+        System.out.println(stack.pop());
     }
 }
