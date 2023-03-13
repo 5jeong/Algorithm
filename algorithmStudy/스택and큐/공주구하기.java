@@ -11,21 +11,23 @@ public class 공주구하기 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        Queue<Integer> queue = new LinkedList<>();
         int n = Integer.parseInt(st.nextToken());
         int k = Integer.parseInt(st.nextToken());
+        Queue<Integer> q = new LinkedList<>();
+        int cnt=0;
         for(int i=1;i<=n;i++){
-            queue.offer(i);
+            q.offer(i);
         }
-        while(!queue.isEmpty()){
-            for(int i=1;i<k;i++){
-                queue.offer(queue.poll());
+        while(q.size()!=1){
+            cnt++;
+            if(cnt==k){
+                q.poll();
+                cnt=0;
             }
-            queue.poll();
-            if(queue.size()==1){
-                break;
+            else{
+                q.offer(q.poll());
             }
         }
-        System.out.println(queue.peek());
+        System.out.println(q.peek());
     }
 }
