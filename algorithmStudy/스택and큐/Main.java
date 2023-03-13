@@ -10,28 +10,22 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String str = br.readLine();
-        Stack<Integer> stack = new Stack<>();
-        for(char x : str.toCharArray()){
-            if(Character.isDigit(x)){
-                stack.push(Character.getNumericValue(x));
+        int ans=0;
+        Stack<Character> stack = new Stack<>();
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)=='('){
+                stack.push(str.charAt(i));
             }
-            else{
-                int rt = stack.pop();
-                int lt = stack.pop();
-                if(x =='+'){
-                    stack.push(lt+rt);
-                }
-                else if(x=='-'){
-                    stack.push(lt-rt);
-                }
-                else if(x=='*'){
-                    stack.push(lt*rt);
-                }
-                else if(x=='/'){
-                    stack.push(lt/rt);
-                }
+            else if(str.charAt(i-1)=='('){
+                stack.pop();
+                ans+=stack.size();
             }
+            else if(str.charAt(i-1)==')'){
+                stack.pop();
+                ans ++;
+            }
+
         }
-        System.out.println(stack.pop());
+        System.out.println(ans);
     }
 }
