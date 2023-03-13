@@ -10,11 +10,10 @@ public class 크레인인형뽑기 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
+        int n  = Integer.parseInt(st.nextToken());
         int[][] board = new int[n][n];
         int ans=0;
-        Stack<Integer> stack = new Stack<>();
-        for(int i =0;i<n;i++){
+        for(int i=0;i<n;i++){
             st = new StringTokenizer(br.readLine());
             for(int j=0;j<n;j++){
                 board[i][j] = Integer.parseInt(st.nextToken());
@@ -23,30 +22,26 @@ public class 크레인인형뽑기 {
         st = new StringTokenizer(br.readLine());
         int m = Integer.parseInt(st.nextToken());
         int[] moves = new int[m];
-
         st = new StringTokenizer(br.readLine());
         for(int i=0;i<m;i++){
-            moves[i] = Integer.parseInt(st.nextToken());
-            moves[i]--;
+            moves[i] = Integer.parseInt(st.nextToken())-1;
         }
-
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
-                int temp =board[j][moves[i]];
-                if(!stack.isEmpty() && stack.peek()==temp){
-                    stack.pop();
-                    board[j][moves[i]]=0;
-                    ans++;
+        Stack<Integer> stack = new Stack<>();
+        for(int x : moves){
+            for(int i=0;i<n;i++){
+                if(board[i][x] !=0){
+                    if(!stack.isEmpty() && stack.peek() == board[i][x]){
+                        stack.pop();
+                        ans+=2;
+                    }
+                    else{
+                        stack.push(board[i][x]);
+                    }
+                    board[i][x] = 0;
                     break;
                 }
-                if(temp!=0){
-                    stack.push(temp);
-                    board[j][moves[i]]=0;
-                    break;
-                }
-
             }
         }
-        System.out.println(ans*2);
+        System.out.println(ans);
     }
 }
