@@ -5,46 +5,47 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class Person{
-        int id;
-        int priority;
-        Person(int id,int priority){
-            this.id = id;
-            this.priority = priority;
-        }
-
-}
-
 public class 응급실 {
 
+    static class Patient {
+        int dangerous, order;
+
+        Patient(int dangerous, int order) {
+            this.dangerous = dangerous;
+            this.order = order;
+        }
+    }
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
-        int ans =0;
-        Queue<Person> q = new LinkedList<>();
+        Queue<Main.Patient> queue = new LinkedList<>();
         st = new StringTokenizer(br.readLine());
-        int[] arr = new int[n];
-        for(int i=0;i<n;i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
-            q.offer(new Person(i,arr[i]));
+        for (int i = 0; i < n; i++) {
+            int dangerous = Integer.parseInt(st.nextToken());
+            queue.add(new Main.Patient(dangerous, i));
         }
 
-        while(!q.isEmpty()){
-            Person tmp = q.poll();
-            for(Person x : q){
-                if(tmp.priority <x.priority){
-                    q.offer(tmp);
-                    tmp = null;
-                    break;
-                }
+        int ans = 0;
+        int cnt=0;
+        int max = Integer.MIN_VALUE;
+        while (!queue.isEmpty()) {
+            for (Main.Patient x : queue) {
+                max = Math.max(max, x.dangerous);
             }
-            if(tmp!=null){
+            if (queue.peek().dangerous == max) {
                 ans++;
-                if(tmp.id==m){
+                if(queue.peek().order == m) {
                     System.out.println(ans);
+                    return;
                 }
+                queue.poll();
+                max = 0;
+            }
+            else{
+                Main.Patient temp = queue.poll();
+                queue.add(temp);
             }
         }
     }
