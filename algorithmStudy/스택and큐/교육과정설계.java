@@ -9,25 +9,26 @@ import java.util.Queue;
 public class 교육과정설계 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String order = br.readLine();
         String str = br.readLine();
-        String plan = br.readLine();
-        String ans ="YES";
-        Queue<Character> q = new LinkedList<>();
-
-        for (char x : str.toCharArray()) {
-            q.offer(x);
+        Queue<Character> queue = new LinkedList<>();
+        for(char x : order.toCharArray()){
+            queue.offer(x);
         }
-
-        for (char x : plan.toCharArray()) {
-            if (q.contains(x)) {
-                if(q.poll()!=x){
-                    ans="NO";
-                }
+        for(char x : str.toCharArray()){
+            if(x == queue.peek()){
+                queue.poll();
+                queue.add(x);
+            }
+            else{
+                queue.add(x);
             }
         }
-        if (!q.isEmpty()) {
-            ans = "NO";
+        if(queue.size() == str.length()){
+            System.out.println("YES");
         }
-        System.out.println(ans);
+        else{
+            System.out.println("NO");
+        }
     }
 }

@@ -11,24 +11,26 @@ import java.util.StringTokenizer;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
-        int k = Integer.parseInt(st.nextToken());
-        Queue<Integer> q = new LinkedList<>();
-        int cnt=0;
-        for(int i=1;i<=n;i++){
-            q.offer(i);
+        String order = br.readLine();
+        String str = br.readLine();
+        Queue<Character> queue = new LinkedList<>();
+        for(char x : order.toCharArray()){
+            queue.offer(x);
         }
-        while(q.size()!=1){
-            cnt++;
-            if(cnt==k){
-                q.poll();
-                cnt=0;
+        for(char x : str.toCharArray()){
+            if(x == queue.peek()){
+                queue.poll();
+                queue.add(x);
             }
             else{
-                q.offer(q.poll());
+                queue.add(x);
             }
         }
-        System.out.println(q.peek());
+        if(queue.size() == str.length()){
+            System.out.println("YES");
+        }
+        else{
+            System.out.println("NO");
+        }
     }
 }
