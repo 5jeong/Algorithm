@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change beforePath="$PROJECT_DIR$/algorithmStudy/스택and큐/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/스택and큐/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmStudy/정렬and이분탐색and결정알고리즘/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +181,8 @@
       <workItem from="1678536718683" duration="6652000" />
       <workItem from="1678695630751" duration="7583000" />
       <workItem from="1678723389547" duration="561000" />
-      <workItem from="1678774629147" duration="490000" />
+      <workItem from="1678774629147" duration="5672000" />
+      <workItem from="1678844734895" duration="4850000" />
     </task>
     <servers />
   </component>
