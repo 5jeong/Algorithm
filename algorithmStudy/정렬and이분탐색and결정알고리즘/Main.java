@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -14,18 +15,21 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int[] arr = new int[n];
+        int[] temp = new int[n];
         st=new StringTokenizer(br.readLine());
         for(int i =0;i<n;i++){
             arr[i] = Integer.parseInt(st.nextToken());
+            temp[i] = arr[i];
         }
-        Arrays.sort(arr);
-        String ans = "U";
-        for(int i=0;i<n-1;i++){
-            if(arr[i]==arr[i+1]){
-                ans="D";
-                break;
+        Arrays.sort(temp);
+        ArrayList<Integer> ans = new ArrayList<>();
+        for(int i=0;i<n;i++){
+            if(arr[i] !=temp[i]){
+                ans.add(i+1);
             }
         }
-        System.out.println(ans);
+        for(int x :ans){
+            System.out.print(x+" ");
+        }
     }
 }

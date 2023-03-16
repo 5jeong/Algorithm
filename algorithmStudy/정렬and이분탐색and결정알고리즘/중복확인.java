@@ -12,24 +12,23 @@ import java.util.StringTokenizer;
 
 public class 중복확인 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        HashMap<Integer,Integer> hashMap = new HashMap<>();
-        int[] arr= new int[n];
-        st= new StringTokenizer(br.readLine());
-        for(int i=0;i<n;i++){
-            arr[i]=Integer.parseInt(st.nextToken());
+        int[] arr = new int[n];
+        st=new StringTokenizer(br.readLine());
+        for(int i =0;i<n;i++){
+            arr[i] = Integer.parseInt(st.nextToken());
         }
-        //정렬 알고리즘
         Arrays.sort(arr);
+        String ans = "U";
         for(int i=0;i<n-1;i++){
-            if(arr[i] == arr[i+1]){
-                System.out.println("D");
-                return;
+            if(arr[i]==arr[i+1]){
+                ans="D";
+                break;
             }
         }
-        System.out.println("U");
+        System.out.println(ans);
         /*
         해쉬맵 알고리즘
         for(int i : arr){
