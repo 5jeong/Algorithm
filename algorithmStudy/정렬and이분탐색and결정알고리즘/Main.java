@@ -4,32 +4,40 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class Main {
+    static class Point implements Comparable<Point>{
+        int x,y;
+        Point(int x,int y){
+            this.x =x;
+            this.y=y;
+        }
+        @Override
+        public int compareTo(Point o) {
+            if(o.x==x){
+                return this.y-o.y;
+            }
+            else{
+                return this.x - o.x;
+            }
+        }
+    }
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        int[] arr = new int[n];
-        int[] temp = new int[n];
-        st=new StringTokenizer(br.readLine());
-        for(int i =0;i<n;i++){
-            arr[i] = Integer.parseInt(st.nextToken());
-            temp[i] = arr[i];
-        }
-        Arrays.sort(temp);
-        ArrayList<Integer> ans = new ArrayList<>();
+        ArrayList<Point> ans = new ArrayList<>();
         for(int i=0;i<n;i++){
-            if(arr[i] !=temp[i]){
-                ans.add(i+1);
-            }
+            st = new StringTokenizer(br.readLine());
+            int x = Integer.parseInt(st.nextToken());
+            int y = Integer.parseInt(st.nextToken());
+            ans.add(new Point(x,y));
         }
-        for(int x :ans){
-            System.out.print(x+" ");
+        Collections.sort(ans);
+        for(Point point : ans){
+            System.out.print(point.x + " " + point.y);
+            System.out.println();
         }
     }
 }
