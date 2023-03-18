@@ -7,48 +7,46 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 //결정알고리즘 + 이분탐색
 public class 뮤직비디오 {
-    public static int count(int[] arr, int capacity){
-        int cnt=1;
-        int sum=0;
-        for(int x : arr){
-            if(sum+x > capacity){
+    static int[] arr;
+
+    static int count(int num) {
+        int cnt = 1;
+        int sum = 0;
+        for (int x : arr) {
+            sum += x;
+            if (sum > num) {
                 sum = x;
                 cnt++;
             }
-            else{
-                sum+=x;
-
-            }
-
         }
         return cnt;
     }
-    public static void main(String[] args) throws IOException {
 
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st =new StringTokenizer(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
-        int[] arr = new int[n];
-        int ans =0;
+        arr = new int[n];
         st = new StringTokenizer(br.readLine());
-        for(int i=0;i<n;i++){
+        int rt = 0;
+        for (int i = 0; i < n; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
+            rt += arr[i];
         }
-        int lt = Arrays.stream(arr).max().getAsInt();
-        int rt = Arrays.stream(arr).sum();
-        while(lt <=rt){
-            int mid = (lt+rt)/2;
-            if(count(arr,mid)<=m){
-                ans = mid;
-                rt = mid-1;
+        int lt = arr[arr.length - 1];
+        int mid = 0, temp = 0;
+        while (lt <= rt) {
+            mid = (lt + rt) / 2;
+            if (count(mid) <= m) {
+                temp = mid;
+                rt = mid - 1;
+            } else {
+                lt = mid + 1;
             }
-            else{
-                lt = mid+1;
-            }
-        }
-        System.out.println(ans);
 
+        }
+        System.out.println(temp);
     }
 
 }
