@@ -8,14 +8,14 @@ import java.util.Collections;
 import java.util.StringTokenizer;
 public class 좌표정렬 {
 
-    static class Point implements Comparable<Main.Point>{
+    static class Point implements Comparable<Point>{
         int x,y;
         Point(int x,int y){
             this.x =x;
             this.y=y;
         }
         @Override
-        public int compareTo(Main.Point o) {
+        public int compareTo(Point o) {
             if(o.x==x){
                 return this.y-o.y;
             }
@@ -28,15 +28,15 @@ public class 좌표정렬 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        ArrayList<Main.Point> ans = new ArrayList<>();
+        ArrayList<Point> ans = new ArrayList<>();
         for(int i=0;i<n;i++){
             st = new StringTokenizer(br.readLine());
             int x = Integer.parseInt(st.nextToken());
             int y = Integer.parseInt(st.nextToken());
-            ans.add(new Main.Point(x,y));
+            ans.add(new Point(x,y));
         }
         Collections.sort(ans);
-        for(Main.Point point : ans){
+        for(Point point : ans){
             System.out.print(point.x + " " + point.y);
             System.out.println();
         }

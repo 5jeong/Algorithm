@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/baekjoon/baekjoon_6064.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithmStudy/배열/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/배열/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/배열/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/배열/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmStudy/정렬and이분탐색and결정알고리즘/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/정렬and이분탐색and결정알고리즘/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,6 +186,8 @@
       <workItem from="1678872490489" duration="14000" />
       <workItem from="1678875725463" duration="4048000" />
       <workItem from="1678948571755" duration="7553000" />
+      <workItem from="1678972231553" duration="6175000" />
+      <workItem from="1679132683476" duration="1021000" />
     </task>
     <servers />
   </component>

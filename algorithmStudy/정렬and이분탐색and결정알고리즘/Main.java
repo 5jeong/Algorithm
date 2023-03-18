@@ -7,37 +7,29 @@ import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
-    static class Point implements Comparable<Point>{
-        int x,y;
-        Point(int x,int y){
-            this.x =x;
-            this.y=y;
-        }
-        @Override
-        public int compareTo(Point o) {
-            if(o.x==x){
-                return this.y-o.y;
-            }
-            else{
-                return this.x - o.x;
-            }
-        }
-    }
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        ArrayList<Point> ans = new ArrayList<>();
+        int m = Integer.parseInt(st.nextToken());
+        int[] arr = new int[n];
+        st= new StringTokenizer(br.readLine());
         for(int i=0;i<n;i++){
-            st = new StringTokenizer(br.readLine());
-            int x = Integer.parseInt(st.nextToken());
-            int y = Integer.parseInt(st.nextToken());
-            ans.add(new Point(x,y));
+            arr[i] = Integer.parseInt(st.nextToken());
         }
-        Collections.sort(ans);
-        for(Point point : ans){
-            System.out.print(point.x + " " + point.y);
-            System.out.println();
+        Arrays.sort(arr);
+        int lt=0,rt=n-1;
+        int mid=0;
+        while(arr[mid] !=m){
+            mid = (lt+rt)/2;
+            if(arr[mid] > m){
+                rt = mid-1;
+            }
+            else if(arr[mid] < m){
+                lt = mid+1;
+            }
         }
+        System.out.println(mid+1);
     }
 }
