@@ -8,44 +8,49 @@ import java.util.*;
 
 public class Main {
     static int[] arr;
-    static int count(int num){
+    static int c;
+    static boolean check(int n){
         int cnt=1;
-        int sum=0;
-        for(int x : arr){
-            sum+=x;
-            if(sum > num) {
-                sum = x;
+        int temp = arr[0];
+        for(int i=1;i<arr.length;i++){
+            if(arr[i]-temp >= n){
                 cnt++;
+                temp = arr[i];
             }
         }
-        return cnt;
+        if(cnt >= c){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
+        c = Integer.parseInt(st.nextToken());
         arr = new int[n];
         st= new StringTokenizer(br.readLine());
-        int rt=0;
         for(int i=0;i<n;i++){
             arr[i] = Integer.parseInt(st.nextToken());
-            rt +=arr[i];
         }
-        int lt = arr[arr.length-1];
-        int mid=0,temp=0;
+        Arrays.sort(arr);
+        int lt =1;
+        int rt =arr[n-1] - arr[0];
+        int mid=0,ans=0;
+
         while(lt <= rt){
             mid = (lt+rt)/2;
-            if(count(mid) <= m ){
-                temp = mid;
-                rt=mid-1;
+            if(check(mid) == false){
+                rt = mid-1;
             }
             else{
-                lt=mid+1;
+                ans = mid;
+                lt = mid+1;
             }
-
         }
-        System.out.println(temp);
+        System.out.println(ans);
     }
 }
