@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class 송아지찾기_BFS {
+public class Main {
     static int[] dx = {-1,1,5};
     static int[] arr = new int[10001];
     static int s,e;
