@@ -7,30 +7,27 @@ import java.io.InputStreamReader;
 public class 부분집합구하기_DFS {
     static int[] check;
     static int n;
-    public static void DFS(int L){
+    static void DFS(int L){
         if(L>n){
-            String temp ="";
+            String temp="";
             for(int i=1;i<=n;i++){
-                if(check[i] == 1){
-                    temp += (i +" ");
+                if(check[i]==1){
+                    temp += (i+" ");
                 }
             }
-            if(temp.length()>0){
-                System.out.println(temp);
-            }
+            System.out.println(temp);
         }
         else{
-            check[L] = 1;
+            check[L]=1;
             DFS(L+1);
-            check[L] = 0;
-            DFS(L+1);
+            check[L]=0;
+            DFS((L+1));
         }
-
     }
     public static void main(String[] args) throws IOException {
-        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         n = Integer.parseInt(br.readLine());
-        check = new int[n+1];
+        check=new int[n+1];
         DFS(1);
     }
 }

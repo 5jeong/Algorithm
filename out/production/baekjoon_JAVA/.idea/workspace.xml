@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/algorithmStudy/Recursive_Tree_DFS_BFS기초/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmStudy/DFS_BFS활용/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmStudy/Recursive_Tree_DFS_BFS기초/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/Recursive_Tree_DFS_BFS기초/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +190,8 @@
       <workItem from="1678972231553" duration="6175000" />
       <workItem from="1679132683476" duration="8971000" />
       <workItem from="1679219549267" duration="4780000" />
-      <workItem from="1679326540464" duration="647000" />
+      <workItem from="1679326540464" duration="1652000" />
+      <workItem from="1679470015300" duration="1019000" />
     </task>
     <servers />
   </component>

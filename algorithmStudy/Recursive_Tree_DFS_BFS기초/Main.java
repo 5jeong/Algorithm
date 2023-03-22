@@ -8,33 +8,29 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main {
-    static int[] dx = {-1,1,5};
-    static int[] arr = new int[10001];
-    static int s,e;
-    static void BFS(int s){
-        Queue<Integer> queue = new LinkedList<>();
-        queue.add(s);
-        while(!queue.isEmpty()){
-            int temp = queue.poll();
-            for(int x : dx){
-                int nx = temp + x;
-                if(nx >=1 && nx <= 10000 && arr[nx]==0){
-                    queue.add(nx);
-                    arr[nx] = arr[temp] +1;
-                }
-                if(nx==e){
-                    return;
-                }
-            }
-        }
+    static int[] check;
+    static int n;
+    static void DFS(int L){
+       if(L>n){
+           String temp="";
+           for(int i=1;i<=n;i++){
+               if(check[i]==1){
+                   temp += (i+" ");
+               }
+           }
+           System.out.println(temp);
+       }
+       else{
+           check[L]=1;
+           DFS(L+1);
+           check[L]=0;
+           DFS((L+1));
+       }
     }
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        s = Integer.parseInt(st.nextToken());
-        e = Integer.parseInt(st.nextToken());
-        BFS(s);
-
-        System.out.println(arr[e]);
+        n = Integer.parseInt(br.readLine());
+        check=new int[n+1];
+        DFS(1);
     }
 }
