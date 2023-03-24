@@ -9,8 +9,8 @@ public class 바둑이승차_DFS {
     static int c,n;
     static int ans = Integer.MIN_VALUE;
     static int[] arr;
-    public static void DFS(int L,int sum){
-        if(sum > c){
+    static void DFS(int L,int sum){
+        if(sum>c){
             return;
         }
         if(L==n){
@@ -24,8 +24,8 @@ public class 바둑이승차_DFS {
         }
     }
     public static void main(String[] args) throws IOException {
-        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st =new StringTokenizer(br.readLine());
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st=  new StringTokenizer(br.readLine());
         c = Integer.parseInt(st.nextToken());
         n = Integer.parseInt(st.nextToken());
         arr = new int[n];
@@ -33,7 +33,6 @@ public class 바둑이승차_DFS {
             st = new StringTokenizer(br.readLine());
             arr[i] = Integer.parseInt(st.nextToken());
         }
-
         DFS(0,0);
         System.out.println(ans);
     }

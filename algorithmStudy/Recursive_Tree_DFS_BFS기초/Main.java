@@ -18,7 +18,9 @@ public class Main {
                    temp += (i+" ");
                }
            }
-           System.out.println(temp);
+           if(temp.length()>0){
+               System.out.println(temp);
+           }
        }
        else{
            check[L]=1;

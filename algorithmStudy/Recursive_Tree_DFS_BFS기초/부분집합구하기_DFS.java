@@ -15,7 +15,9 @@ public class 부분집합구하기_DFS {
                     temp += (i+" ");
                 }
             }
-            System.out.println(temp);
+            if(temp.length()>0){
+                System.out.println(temp);
+            }
         }
         else{
             check[L]=1;
