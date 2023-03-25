@@ -36,5 +36,4 @@ public class 바둑이승차_DFS {
         DFS(0,0);
         System.out.println(ans);
     }
-
 }
