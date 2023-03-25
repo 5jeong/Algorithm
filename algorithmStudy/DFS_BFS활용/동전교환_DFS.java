@@ -9,37 +9,41 @@ import java.util.StringTokenizer;
 
 public class 동전교환_DFS {
     static int n,m,ans=Integer.MAX_VALUE;
-    static Integer[] coin, arr;
-    static void DFS(int L,int sum){
-        if(ans < L){
-            return ;
+    static Integer[] coin;
+
+    static void DFS(int L,int sum) {
+        if (L > ans) {
+            return;
         }
-        if(sum>m){
-            return ;
+        if (sum > m) {
+            return;
         }
-        if(sum==m){
-            ans = Math.min(ans,L);
+        if (sum == m) {
+            if (ans > L) {
+                ans = L;
+            }
         }
-        else{
-            for(int i=0;i<n;i++){
-                DFS(L+1,sum + coin[i]);
+        else {
+            for (int i = 0; i < n; i++) {
+                DFS(L + 1, sum + coin[i]);
             }
         }
     }
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
         coin = new Integer[n];
-        arr = new Integer[n];
         st = new StringTokenizer(br.readLine());
-        for(int i=0;i<n;i++){
+        for (int i = 0; i < n; i++) {
             coin[i] = Integer.parseInt(st.nextToken());
         }
         Arrays.sort(coin, Collections.reverseOrder());
+
         st = new StringTokenizer(br.readLine());
         m = Integer.parseInt(st.nextToken());
-        DFS(0,0);
+        DFS(0, 0);
         System.out.println(ans);
     }
 }
