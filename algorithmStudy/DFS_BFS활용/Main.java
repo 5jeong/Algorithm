@@ -8,25 +8,18 @@ import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class Main {
-    static int n,m,ans=Integer.MAX_VALUE;
-    static Integer[] coin;
-
-    static void DFS(int L,int sum) {
-        if (L > ans) {
-            return;
+    static int n,r;
+    static int[][] arr = new int[34][34];
+    static int DFS(int n,int r) {
+        if(arr[n][r] !=0){
+            return arr[n][r];
         }
-        if (sum > m) {
-            return;
+        if(r==0 || n==r){
+            return 1;
         }
-        if (sum == m) {
-            if (ans > L) {
-                ans = L;
-            }
-        }
-        else {
-            for (int i = 0; i < n; i++) {
-                DFS(L + 1, sum + coin[i]);
-            }
+        else{
+            arr[n][r] = DFS(n-1,r-1)+DFS(n-1,r);
+            return arr[n][r];
         }
     }
 
@@ -34,16 +27,8 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
-        coin = new Integer[n];
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < n; i++) {
-            coin[i] = Integer.parseInt(st.nextToken());
-        }
-        Arrays.sort(coin, Collections.reverseOrder());
-
-        st = new StringTokenizer(br.readLine());
-        m = Integer.parseInt(st.nextToken());
-        DFS(0, 0);
+        r = Integer.parseInt(st.nextToken());
+        int ans = DFS(n,r);
         System.out.println(ans);
     }
 }
