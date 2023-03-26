@@ -12,17 +12,17 @@ public class 순열구하기_DFS {
 
         if(L==m){
             for(int x : pm){
-                System.out.print(x+" ");
+                System.out.print(x + " ");
             }
             System.out.println();
         }
         else{
             for(int i=0;i<n;i++){
-                if(check[i] == 0){
-                    check[i] = 1;
+                if(check[i]==0){
+                    check[i]=1;
                     pm[L] = arr[i];
                     DFS(L+1);
-                    check[i] =0;
+                    check[i]=0;
                 }
             }
         }
