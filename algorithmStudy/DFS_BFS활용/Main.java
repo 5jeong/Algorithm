@@ -8,29 +8,41 @@ import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class Main {
-    static int n,m;
-    static int[] combi;
-    static void DFS(int L,int s) {
-        if(L==m){
-            for(int x : combi){
-                System.out.print(x+" ");
-            }
-            System.out.println();
+
+    static int[][] board = new int[8][8];
+    static int[] dx = {1,0,-1,0};
+    static int[] dy = {0,1,0,-1};
+    static int ans=0;
+
+    static void DFS(int x,int y) {
+        if(x==7 && y==7){
+            ans++;
+            return;
         }
         else{
-            for(int i=s;i<=n;i++){
-                combi[L] = i;
-                DFS(L+1,i+1);
+            for(int i=0;i<4;i++){
+                int nx = x + dx[i];
+                int ny = y + dy[i];
+                if(nx>=1 && nx <=7 && ny>=1 && ny <=7 && board[nx][ny] == 0){
+                    board[nx][ny] =1;
+                    DFS(nx,ny);
+                    board[nx][ny]=0;
+                }
             }
         }
-    }
 
+    }
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
-        combi = new int[m];
-        DFS(0,1);
+        StringTokenizer st;
+        for (int i = 1; i <= 7; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j = 1; j <= 7; j++) {
+                board[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+        board[1][1]=1;
+        DFS(1,1);
+        System.out.println(ans);
     }
 }
