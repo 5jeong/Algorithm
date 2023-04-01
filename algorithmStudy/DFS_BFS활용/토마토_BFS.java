@@ -11,56 +11,57 @@ import java.util.StringTokenizer;
 
 public class 토마토_BFS {
     static class Point{
-        public int x,y;
-        Point(int x,int y) {
-            this.x = x;
-            this.y = y;
+        int x,y;
+        Point(int x,int y){
+            this.x=x;
+            this.y=y;
         }
     }
-    static int m,n,ans= Integer.MIN_VALUE;
-    static int[] dx ={1,0,-1,0};
+
+    static int[][] board = new int[1001][1001];
+    static int[][] dis = new int[1001][1001];
+    static int[] dx = {1,0,-1,0};
     static int[] dy = {0,1,0,-1};
-    static int[][] board;
-    static int[][] dis;
-    static Queue<Point> q = new LinkedList<>();
-    static void BFS(){
-        while(!q.isEmpty()){
-            Point p = q.poll();
-            for(int dir=0;dir<4;dir++){
-                int nx = p.x + dx[dir];
-                int ny = p.y + dy[dir];
-                if(nx>= 0 && ny >= 0 && nx <= n && ny <= m  && board[nx][ny] == 0){
+    static int m,n;
+    static Queue<Main.Point> queue = new LinkedList<>();
+
+    static void BFS() {
+        while(!queue.isEmpty()){
+            Main.Point temp = queue.poll();
+            for(int i=0;i<4;i++){
+                int nx = temp.x + dx[i];
+                int ny = temp.y + dy[i];
+                if(nx>=0 && nx < n && ny >=0 && ny < m && board[nx][ny]==0){
                     board[nx][ny] =1;
-                    dis[nx][ny] = dis[p.x][p.y] +1;
-                    q.offer(new Point(nx,ny));
+                    dis[nx][ny] = dis[temp.x][temp.y] +1;
+                    queue.offer(new Main.Point(nx,ny));
                 }
             }
         }
     }
     public static void main(String[] args) throws IOException {
-        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         m = Integer.parseInt(st.nextToken());
         n = Integer.parseInt(st.nextToken());
-        board = new int[1001][1001];
-        dis = new int[1001][1001];
-        for(int i=0;i<n;i++){
+        for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
-            for(int j=0;j<m;j++){
+            for (int j = 0; j <m; j++) {
                 board[i][j] = Integer.parseInt(st.nextToken());
                 if(board[i][j]==1){
-                    q.offer(new Point(i,j));
+                    queue.offer(new Main.Point(i,j));
                 }
             }
         }
         BFS();
+        int ans= Integer.MIN_VALUE;
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
+                if(board[i][j]==0){
+                    System.out.println(-1);
+                    return;
+                }
                 ans = Math.max(ans,dis[i][j]);
-               if(board[i][j]==0){
-                   System.out.println(-1);
-                   return;
-               }
             }
         }
         System.out.println(ans);
