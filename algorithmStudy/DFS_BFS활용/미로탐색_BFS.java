@@ -22,26 +22,26 @@ public class 미로탐색_BFS {
     static int[] dx = {1,0,-1,0};
     static int[] dy = {0,1,0,-1};
     static int ans=0;
-    static Queue<Main.Point> queue = new LinkedList<>();
+    static Queue<Point> queue = new LinkedList<>();
 
     static void BFS() {
         while(!queue.isEmpty()){
             int nx,ny;
-            Main.Point temp = queue.poll();
+            Point temp = queue.poll();
             for (int i = 0; i < 4; i++) {
                 nx = temp.x + dx[i];
                 ny = temp.y + dy[i];
                 if (nx >= 1 && nx <= 7 && ny >= 1 && ny <= 7 && board[nx][ny] ==0) {
                     board[nx][ny]=1;
                     dis[nx][ny] = dis[temp.x][temp.y]+1;
-                    queue.add(new Main.Point(nx,ny));
+                    queue.add(new Point(nx,ny));
                 }
             }
         }
 
 
     }
-    public static void main(String[] args) throws IOException {
+    public static void main (String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         for (int i = 1; i <= 7; i++) {
@@ -50,7 +50,7 @@ public class 미로탐색_BFS {
                 board[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        queue.add(new Main.Point(1,1));
+        queue.add(new Point(1,1));
         BFS();
 
         if(dis[7][7]==0){

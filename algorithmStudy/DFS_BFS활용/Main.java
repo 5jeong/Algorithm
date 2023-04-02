@@ -6,58 +6,41 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class Main {
-    static class Point{
-        int x,y;
-        Point(int x,int y){
-            this.x=x;
-            this.y=y;
-        }
-    }
 
-    static int[][] board = new int[1001][1001];
-    static int[][] dis = new int[1001][1001];
-    static int[] dx = {1,0,-1,0};
-    static int[] dy = {0,1,0,-1};
-    static int m,n;
-    static Queue<Point> queue = new LinkedList<>();
+    static int n;
+    static int[][] board = new int[21][21];
+    static int[] dx = {1,0,-1,0,1,1,-1,-1};
+    static int[] dy = {0,1,0,-1,1,-1,1,-1};
 
-    static void BFS() {
-        while(!queue.isEmpty()){
-            Point temp = queue.poll();
-            for(int i=0;i<4;i++){
-                int nx = temp.x + dx[i];
-                int ny = temp.y + dy[i];
-                if(nx>=0 && nx < n && ny >=0 && ny < m && board[nx][ny]==0){
-                    board[nx][ny] =1;
-                    dis[nx][ny] = dis[temp.x][temp.y] +1;
-                    queue.offer(new Point(nx,ny));
-                }
+    static void DFS(int x,int y) {
+        board[x][y] = 0;
+        for (int i = 0; i < 8; i++) {
+            int nx = x + dx[i];
+            int ny = y + dy[i];
+            if (nx >= 0 && nx < n && ny >= 0 && ny < n && board[nx][ny] == 1) {
+                board[nx][ny] = 0;
+                DFS(nx, ny);
             }
         }
+
     }
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        m = Integer.parseInt(st.nextToken());
         n = Integer.parseInt(st.nextToken());
-        for (int i = 0; i < n; i++) {
+        for(int i=0;i<n;i++){
             st = new StringTokenizer(br.readLine());
-            for (int j = 0; j <m; j++) {
+            for(int j=0;j<n;j++){
                 board[i][j] = Integer.parseInt(st.nextToken());
-                if(board[i][j]==1){
-                    queue.offer(new Point(i,j));
-                }
             }
         }
-        BFS();
-        int ans= Integer.MIN_VALUE;
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                if(board[i][j]==0){
-                    System.out.println(-1);
-                    return;
+        int ans=0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == 1) {
+                    DFS(i, j);
+                    ans++;
                 }
-                ans = Math.max(ans,dis[i][j]);
             }
         }
         System.out.println(ans);

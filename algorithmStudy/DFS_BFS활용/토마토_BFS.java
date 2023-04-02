@@ -23,18 +23,18 @@ public class 토마토_BFS {
     static int[] dx = {1,0,-1,0};
     static int[] dy = {0,1,0,-1};
     static int m,n;
-    static Queue<Main.Point> queue = new LinkedList<>();
+    static Queue<Point> queue = new LinkedList<>();
 
     static void BFS() {
         while(!queue.isEmpty()){
-            Main.Point temp = queue.poll();
+            Point temp = queue.poll();
             for(int i=0;i<4;i++){
                 int nx = temp.x + dx[i];
                 int ny = temp.y + dy[i];
                 if(nx>=0 && nx < n && ny >=0 && ny < m && board[nx][ny]==0){
                     board[nx][ny] =1;
                     dis[nx][ny] = dis[temp.x][temp.y] +1;
-                    queue.offer(new Main.Point(nx,ny));
+                    queue.offer(new Point(nx,ny));
                 }
             }
         }
@@ -49,7 +49,7 @@ public class 토마토_BFS {
             for (int j = 0; j <m; j++) {
                 board[i][j] = Integer.parseInt(st.nextToken());
                 if(board[i][j]==1){
-                    queue.offer(new Main.Point(i,j));
+                    queue.offer(new Point(i,j));
                 }
             }
         }
