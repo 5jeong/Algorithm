@@ -18,17 +18,18 @@ public class Main {
     static ArrayList<Point> pizza = new ArrayList<>();
     static int[][] city;
     static int[] combi;
-    static int len,ans=0;
+    static int len,ans=Integer.MAX_VALUE;
     static void DFS(int L,int s) {
         if (L == m) {
-            int dis = Integer.MAX_VALUE;
+            int sum =0;
             for (Point house : house) {
+                int dis = Integer.MAX_VALUE;
                 for (int x : combi) {
                     dis = Math.min(dis, Math.abs(house.x - pizza.get(x).x) + Math.abs(house.y - pizza.get(x).y));
-                    System.out.print(dis + " ");
                 }
+                sum+=dis;
             }
-            System.out.println();
+            ans = Math.min(ans,sum);
         }
         else{
             for(int i=s;i<len;i++){
@@ -58,5 +59,6 @@ public class Main {
             }
         }
         DFS(0,0);
+        System.out.println(ans);
     }
 }
