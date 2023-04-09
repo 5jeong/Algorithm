@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change beforePath="$PROJECT_DIR$/algorithmStudy/DFS_BFS활용/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/DFS_BFS활용/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,20 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.algorithmStudy.그리디알고리즘.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithmStudy.DFS_BFS활용.Main" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithmStudy.DFS_BFS활용.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="이진트리순회_BFS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="algorithmStudy.Recursive_Tree_DFS_BFS기초.이진트리순회_BFS" />
       <module name="baekjoon_JAVA" />
@@ -65,8 +78,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="피자배달거리_DFS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithmStudy.DFS_BFS활용.피자배달거리_DFS" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithmStudy.DFS_BFS활용.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="algorithmStudy.그리디알고리즘.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithmStudy.그리디알고리즘.Main" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithmStudy.그리디알고리즘.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.algorithmStudy.그리디알고리즘.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.피자배달거리_DFS" />
         <item itemvalue="Application.이진트리순회_BFS" />
       </list>
     </recent_temporary>
@@ -201,7 +243,9 @@
       <workItem from="1680430867868" duration="766000" />
       <workItem from="1680431701084" duration="3762000" />
       <workItem from="1680613938252" duration="561000" />
-      <workItem from="1680615245243" duration="2077000" />
+      <workItem from="1680615245243" duration="5170000" />
+      <workItem from="1680662336765" duration="597000" />
+      <workItem from="1681031592506" duration="1846000" />
     </task>
     <servers />
   </component>

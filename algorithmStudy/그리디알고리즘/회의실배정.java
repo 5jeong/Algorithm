@@ -8,40 +8,42 @@ import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class 회의실배정 {
-    static class Point implements Comparable<Point>{
-        int x,y;
-        Point(int x,int y){
-            this.x = x;
-            this.y = y;
+    static class meeting implements Comparable<meeting> {
+        int s,e;
+        meeting(int s,int e){
+            this.s = s;
+            this.e = e;
         }
+
         @Override
-        public int compareTo(Point o) {
-            if(this.y == o.y){
-                return this.x - o.x;
+        public int compareTo(meeting o) {
+            if(this.e == o.e){
+                return this.s - o.s;
             }
             else{
-                return this.y - o.y;
+                return this.e - o.e;
             }
         }
     }
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        ArrayList<Point> arr = new ArrayList<>();
-        int n= Integer.parseInt(st.nextToken());
-        int ans =0;
+        int n = Integer.parseInt(st.nextToken());
+        ArrayList<meeting> meetings = new ArrayList<>();
         for(int i=0;i<n;i++){
-            st = new StringTokenizer(br.readLine());
-            int x = Integer.parseInt(st.nextToken());
-            int y = Integer.parseInt(st.nextToken());
-            arr.add(new Point(x,y));
+            st=new StringTokenizer(br.readLine());
+            int s = Integer.parseInt(st.nextToken());
+            int e = Integer.parseInt(st.nextToken());
+            meetings.add(new meeting(s,e));
         }
-        Collections.sort(arr);
+        Collections.sort(meetings);
+        int ans=0;
         int max = Integer.MIN_VALUE;
-        for(Point p : arr ){
-            if(max <= p.x){
+        for(meeting meeting : meetings){
+            if(meeting.s >= max ){
+                max = meeting.e;
                 ans++;
-                max = p.y;
             }
         }
         System.out.println(ans);

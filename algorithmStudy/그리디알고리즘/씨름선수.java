@@ -9,37 +9,40 @@ import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class 씨름선수 {
-    static class Point implements Comparable<Point>{
-        int x,y;
-        Point(int x,int y){
-            this.x = x;
-            this.y = y;
+    static class Person implements Comparable<Person> {
+        int h,w;
+        Person(int h,int w){
+            this.h = h;
+            this.w = w;
         }
+
         @Override
-        public int compareTo(Point o) {
-            return o.x - this.x;
+        public int compareTo(Person o) {
+            return o.h -this.h;
         }
     }
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        int ans =0;
-        int max= Integer.MIN_VALUE;
-        ArrayList<Point> p =  new ArrayList<>();
-        for(int i=0;i<n;i++){
-            st= new StringTokenizer(br.readLine());
-            int x = Integer.parseInt(st.nextToken());
-            int y = Integer.parseInt(st.nextToken());
-            p.add(new Point(x,y));
+        ArrayList<Person> people = new ArrayList<>();
+        for(int i =0;i<n;i++){
+            st = new StringTokenizer(br.readLine());
+            int h = Integer.parseInt(st.nextToken());
+            int w = Integer.parseInt(st.nextToken());
+            people.add(new Person(h,w));
         }
-        Collections.sort(p);
-        for(int i=0;i<n;i++){
-            if(max < p.get(i).y){
-                max = p.get(i).y;
+        Collections.sort(people);
+        int ans = 0;
+        int max = Integer.MIN_VALUE;
+        for(Person x  : people){
+            if(x.w > max){
+                max = x.w;
                 ans++;
             }
         }
         System.out.println(ans);
+
     }
 }
