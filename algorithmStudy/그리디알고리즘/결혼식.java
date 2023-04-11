@@ -9,42 +9,44 @@ import java.util.StringTokenizer;
 
 public class 결혼식 {
     static class marry implements Comparable<marry>{
-        int t;
-        char s;
-        marry(int t,char s){
-            this.t = t;
-            this.s = s;
+        int time;
+        char state;
+        marry(int time,char state){
+            this.time = time;
+            this.state = state;
         }
+
         @Override
         public int compareTo(marry o) {
-            if(this.t == o.t){
-                return this.s - o.s;
+            if(this.time == o.time){
+                return this.state - o.state;
             }
             else{
-                return this.t - o.t;
+                return this.time - o.time;
             }
         }
     }
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
-        int ans=Integer.MIN_VALUE;
-        ArrayList<marry> arr = new ArrayList<>();
+        ArrayList<marry> marries = new ArrayList<marry>();
         for(int i=0;i<n;i++){
-            st = new StringTokenizer(br.readLine());
+            st=new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
-            arr.add(new marry(a,'s'));
+            marries.add(new marry(a,'s'));
             int b = Integer.parseInt(st.nextToken());
-            arr.add(new marry(b,'e'));
+            marries.add(new marry(b,'e'));
         }
-        Collections.sort(arr);
-        int cnt = 0;
-        for(marry x : arr){
-            if(x.s == 's'){
+        Collections.sort(marries);
+        int cnt=0;
+        int ans=0;
+        for(marry x : marries){
+            if(x.state=='s'){
                 cnt++;
             }
-            if(x.s == 'e'){
+            else{
                 cnt--;
             }
             ans = Math.max(ans,cnt);
