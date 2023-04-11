@@ -8,8 +8,12 @@ import java.util.Collections;
 import java.util.StringTokenizer;
 
 public class Main {
-    static class meeting {
-
+    static class marry{
+        int s,n;
+        marry(int s,int n){
+            this.s = s;
+            this.n = n;
+        }
     }
 
     public static void main(String[] args) throws IOException {
