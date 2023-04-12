@@ -51,6 +51,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;
   }
 }</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="q" />
+    </option>
+  </component>
   <component name="RunManager" selected="Application.algorithmStudy.그리디알고리즘.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="algorithmStudy.DFS_BFS활용.Main" />
@@ -246,7 +251,8 @@
       <workItem from="1680615245243" duration="5170000" />
       <workItem from="1680662336765" duration="597000" />
       <workItem from="1681031592506" duration="5494000" />
-      <workItem from="1681208230740" duration="1818000" />
+      <workItem from="1681208230740" duration="3391000" />
+      <workItem from="1681298288799" duration="1096000" />
     </task>
     <servers />
   </component>
