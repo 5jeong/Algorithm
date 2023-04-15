@@ -39,34 +39,23 @@ public class Main {
             lectures.add(new lecture(m,t));
         }
         Collections.sort(lectures);
-        for(lecture x : lectures){
-            System.out.print(x.money +" " + x.time);
-            System.out.println();
-        }
+
         int ans = 0;
-        System.out.println("-----------");
-
+        int j=0;
         for(int i=max;i>=1;i--){
-            if()
-        }
-        for(lecture x : lectures){
-            if(x.time >= max){
-                pq.add(x.money);
+            for(;j<n;j++){
+                if(lectures.get(j).time < i){
+                    break;
+                }
+                else{
+                    pq.add(lectures.get(j).money);
+                }
             }
-            else{
+            if(!pq.isEmpty()){
                 ans+=pq.poll();
-                pq.add(x.money);
-                max--;
             }
-
         }
-//        for(int i=max;i>=1;i--){
-//            if(lectures.get(i).time >= max){
-//                pq.add(lectures.get(i).m)
-//            }
-//        }
-//        System.out.println(pq.poll());
-        ans+=pq.poll();
+
         System.out.println(ans);
     }
 }
