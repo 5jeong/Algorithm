@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
       <change beforePath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/그리디알고리즘/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/algorithmStudy/그리디알고리즘/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +253,8 @@
       <workItem from="1681031592506" duration="5494000" />
       <workItem from="1681208230740" duration="3391000" />
       <workItem from="1681298288799" duration="4664000" />
-      <workItem from="1681554294138" duration="857000" />
+      <workItem from="1681554294138" duration="2705000" />
+      <workItem from="1681636316430" duration="1383000" />
     </task>
     <servers />
   </component>

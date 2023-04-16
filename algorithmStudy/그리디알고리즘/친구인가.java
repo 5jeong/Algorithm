@@ -6,32 +6,33 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class 친구인가 {
-    static int[] friend;
-    static int Find(int f){
-        if(friend[f] == f){
-            return f;
+    static int[] unf;
+    static int Find(int v){
+        if(unf[v]==v){
+            return v;
         }
         else{
-            return friend[f] = Find(friend[f]);
+            return unf[v] = Find(unf[v]);
         }
     }
     static void Union(int a,int b){
         int fa = Find(a);
         int fb = Find(b);
-        if(fa != fb){
-            friend[fa] = fb;
+        if(fa!=fb){
+            unf[fa] = fb;
         }
     }
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
-        friend = new int[n+1];
-        for(int i = 0; i<=n;i++){
-            friend[i] = i;
+        unf = new int[n+1];
+        for(int i=1;i<=n;i++){
+            unf[i]=i;
         }
-        for(int i = 0;i<m;i++){
+        for(int i=1;i<=m;i++){
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
@@ -40,9 +41,9 @@ public class 친구인가 {
         st = new StringTokenizer(br.readLine());
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
-        a = Find(a);
-        b = Find(b);
-        if(a==b){
+        int fa = Find(a);
+        int fb = Find(b);
+        if(fa==fb){
             System.out.println("YES");
         }
         else{
