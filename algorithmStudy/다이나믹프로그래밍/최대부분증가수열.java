@@ -8,26 +8,28 @@ import java.util.StringTokenizer;
 public class 최대부분증가수열 {
     public static void main(String[] args) throws IOException {
         BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        StringTokenizer st =new StringTokenizer(br.readLine() );
         int n = Integer.parseInt(st.nextToken());
-        int[] arr = new int[n];
-        int[] dy = new int[n];
-        int ans = Integer.MIN_VALUE;
-        st = new StringTokenizer(br.readLine());
+        int[] arr =  new int[n];
+        int[] dp = new int[n];
+        st=new StringTokenizer(br.readLine());
         for(int i=0;i<n;i++){
-            arr[i] = Integer.parseInt(st.nextToken());
+            arr[i]=Integer.parseInt(st.nextToken());
         }
-        dy[0] = 1;
-        for(int i=0;i<n;i++){
-            int temp=0;
+        dp[0]=1;
+        int ans=Integer.MIN_VALUE;
+
+        for(int i=1;i<n;i++){
+            int temp=1;
             for(int j=0;j<i;j++){
-                if(arr[i] >arr[j]){
-                    temp = Math.max(temp,dy[j]);
+                if(arr[i] > arr[j]){
+                    temp = Math.max(temp,dp[j]+1);
                 }
             }
-            dy[i] = temp+1;
+            dp[i] = temp;
+
         }
-        for(int x : dy){
+        for(int x : dp){
             ans = Math.max(ans,x);
         }
         System.out.println(ans);
