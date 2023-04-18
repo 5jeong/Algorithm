@@ -107,6 +107,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="algorithmStudy.다이나믹프로그래밍.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithmStudy.다이나믹프로그래밍.Main" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithmStudy.다이나믹프로그래밍.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.algorithmStudy.그리디알고리즘.Main" />
@@ -253,6 +266,7 @@
       <workItem from="1681298288799" duration="4664000" />
       <workItem from="1681554294138" duration="2705000" />
       <workItem from="1681636316430" duration="3579000" />
+      <workItem from="1681662503071" duration="1080000" />
     </task>
     <servers />
   </component>
