@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
+      <change beforePath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/원더랜드_크루스칼.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/그리디알고리즘/원더랜드_크루스칼.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/algorithmStudy/다이나믹프로그래밍/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/다이나믹프로그래밍/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,6 +104,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="algorithmStudy.그리디알고리즘.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="algorithmStudy.다이나믹프로그래밍.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithmStudy.다이나믹프로그래밍.Main" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithmStudy.다이나믹프로그래밍.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -283,7 +298,9 @@
       <workItem from="1681636316430" duration="3579000" />
       <workItem from="1681662503071" duration="1080000" />
       <workItem from="1681812186191" duration="4063000" />
-      <workItem from="1681911434524" duration="1349000" />
+      <workItem from="1681911434524" duration="2361000" />
+      <workItem from="1681986773095" duration="2000" />
+      <workItem from="1682157748670" duration="2249000" />
     </task>
     <servers />
   </component>
@@ -304,6 +321,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="study" />
     <option name="LAST_COMMIT_MESSAGE" value="study" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/algorithmStudy/그리디알고리즘/원더랜드_프림.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
