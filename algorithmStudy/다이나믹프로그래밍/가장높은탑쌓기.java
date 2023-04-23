@@ -46,7 +46,6 @@ public class 가장높은탑쌓기 {
                 }
             }
             dy[i] = temp+bricks.get(i).height;
-
         }
 
         for(int x : dy){

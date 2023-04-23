@@ -39,7 +39,7 @@ public class Main {
         for(int i=1;i<n;i++){
             int temp=0;
             for(int j=0;j<i;j++){
-                if(bricks.get(i).w < bricks.get(i-1).w){
+                if(bricks.get(i).w < bricks.get(j).w){
                     temp=Math.max(temp,dp[j]);
                 }
 
