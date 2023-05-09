@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change beforePath="$PROJECT_DIR$/algorithmStudy/다이나믹프로그래밍/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithmStudy/다이나믹프로그래밍/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +56,26 @@
       <command value="q" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.algorithmStudy.다이나믹프로그래밍.Main">
+  <component name="RunManager" selected="Application.Solution">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="algorithmStudy.DFS_BFS활용.Main" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="algorithmStudy.DFS_BFS활용.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.시뮬레이션and구현.Solution" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.시뮬레이션and구현.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -176,7 +189,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.algorithmStudy.다이나믹프로그래밍.Main" />
+        <item itemvalue="Application.Solution" />
         <item itemvalue="Application.algorithmStudy.그리디알고리즘.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.피자배달거리_DFS" />
@@ -329,7 +342,8 @@
       <workItem from="1682237909840" duration="1314000" />
       <workItem from="1682356083956" duration="1000" />
       <workItem from="1682410001757" duration="1194000" />
-      <workItem from="1682761486162" duration="2259000" />
+      <workItem from="1682761486162" duration="4761000" />
+      <workItem from="1683613678922" duration="266000" />
     </task>
     <servers />
   </component>
