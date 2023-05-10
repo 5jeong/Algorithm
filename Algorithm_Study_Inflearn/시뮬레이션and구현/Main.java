@@ -10,18 +10,14 @@ class Solution {
             answer[i] = (char)(i+65);
         }
 
-
-        for(int i=0;i<ladder.length;i++){
-            for(int j =0;j<ladder[i].length;j++){
-                if(ladder[i][j]==0){
-                    continue;
-                }
-                char temp = ' ';
-                temp = answer[ladder[i][j]];
-                answer[ladder[i][j]] = answer[ladder[i][j]-1];
-                answer[ladder[i][j]-1] = temp;
+        for(int[] line : ladder){
+            for(int x : line){
+                char temp = answer[x];
+                answer[x] = answer[x-1];
+                answer[x-1] = temp;
             }
         }
+
         return answer;
     }
     public static void main(String[] args){
