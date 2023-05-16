@@ -1,11 +1,7 @@
 package Algorithm_Study_Inflearn.시뮬레이션and구현;
 
-import java.awt.*;
-import java.util.Arrays;
-import java.util.Queue;
-
-class Solution {
-    public int solution(int[][] board){
+public class 잃어버린강아지 {
+    public static int solution(int[][] board){
         int[] dx = {-1,0,1,0};
         int[] dy = {0,1,0,-1};
         int hs_d =0,dog_d=0,hs_x=0,hs_y=0,dog_x=0,dog_y=0;
@@ -61,7 +57,6 @@ class Solution {
     }
 
     public static void main(String[] args){
-        Solution T = new Solution();
         int[][] arr1 = {{0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
                 {0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
                 {0, 0, 0, 1, 0, 0, 0, 1, 0, 0},
@@ -72,7 +67,7 @@ class Solution {
                 {0, 0, 0, 0, 0, 3, 0, 0, 0, 1},
                 {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
                 {0, 1, 0, 1, 0, 0, 0, 0, 0, 0}};
-        System.out.println(T.solution(arr1));
+        System.out.println(solution(arr1));
         int[][] arr2 = {{1, 0, 0, 0, 1, 0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
                 {0, 0, 1, 1, 0, 0, 0, 1, 0, 0},
@@ -83,6 +78,6 @@ class Solution {
                 {0, 0, 1, 0, 0, 0, 0, 0, 2, 1},
                 {0, 0, 0, 1, 0, 1, 0, 0, 0, 1},
                 {0, 1, 0, 1, 0, 0, 0, 0, 0, 3}};
-        System.out.println(T.solution(arr2));
+        System.out.println(solution(arr2));
     }
 }

@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/청소.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/사다리타기.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/사다리타기.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/잃어버린강아지.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/청소.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/청소.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +58,7 @@
       <command value="q" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.사다리타기">
+  <component name="RunManager" selected="Application.algorithmStudy.그리디알고리즘.Main">
     <configuration name="사다리타기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.시뮬레이션and구현.사다리타기" />
       <module name="baekjoon_JAVA" />
@@ -193,9 +191,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.algorithmStudy.그리디알고리즘.Main" />
         <item itemvalue="Application.사다리타기" />
         <item itemvalue="Application.Solution" />
-        <item itemvalue="Application.algorithmStudy.그리디알고리즘.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.피자배달거리_DFS" />
       </list>
@@ -349,7 +347,8 @@
       <workItem from="1682761486162" duration="4761000" />
       <workItem from="1683613678922" duration="1933000" />
       <workItem from="1683687737744" duration="5286000" />
-      <workItem from="1684166275368" duration="367000" />
+      <workItem from="1684166275368" duration="3130000" />
+      <workItem from="1684229335074" duration="1819000" />
     </task>
     <servers />
   </component>
