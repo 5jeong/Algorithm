@@ -1,88 +1,42 @@
 package Algorithm_Study_Inflearn.시뮬레이션and구현;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 import java.util.Queue;
 
 class Solution {
-    public int solution(int[][] board){
-        int[] dx = {-1,0,1,0};
-        int[] dy = {0,1,0,-1};
-        int hs_d =0,dog_d=0,hs_x=0,hs_y=0,dog_x=0,dog_y=0;
-        for(int i=0;i<10;i++){
-            for(int j=0;j<10;j++){
-                if(board[i][j] ==2 ){
-                    hs_x = i;
-                    hs_y = j;
-                }
-                else if(board[i][j]==3){
-                    dog_x = i;
-                    dog_y = j;
-                }
-            }
-        }
-        int time=0;
-        while(time <10000){
-            if(hs_x == dog_x && hs_y == dog_y){
-                break;
-            }
-            time++;
-            int hs_nx = hs_x + dx[hs_d];
-            int hs_ny = hs_y + dy[hs_d];
-            int dog_nx = dog_x + dx[dog_d];
-            int dog_ny = dog_y + dy[dog_d];
-            if(hs_nx < 0 || hs_ny<0 || hs_nx >=10 || hs_ny >=10 || board[hs_nx][hs_ny]==1){
-                hs_d = (hs_d+1)%4;
-            }
-            else{
-                hs_x=hs_nx;
-                hs_y=hs_ny;
-            }
-            if(dog_nx < 0 || dog_ny<0 || dog_nx >=10 || dog_ny >=10 || board[dog_nx][dog_ny]==1){
-                dog_d = (dog_d+1)%4;
-            }
-            else{
-                dog_x=dog_nx;
-                dog_y=dog_ny;
-            }
-
-//            System.out.println("현수 위치 : " + hs_x+ " " + hs_y);
-//        System.out.println("강아지 위치 : " +dog_x+" "+dog_y);
-//            System.out.println("----------------------");
-        }
+    public int solution(int[] nums){
         int answer = 0;
-        if(time==10000){
-            answer=0;
+        ArrayList<Integer> peak = new ArrayList<>();
+        for(int i=1;i<nums.length-1;i++){
+            if(nums[i-1] < nums[i] && nums[i] > nums[i+1]){
+                peak.add(i);
+            }
         }
-        else{
-            answer=time;
+        for(int x : peak){
+            int left = x;
+            int right = x;
+            int len=1;
+            while(left-1 >= 0 && nums[left] >nums[left-1] ){
+                left--;
+                len++;
+            }
+            while(right+1 <= nums.length-1 && nums[right] > nums[right+1]){
+                right++;
+                len++;
+            }
+            answer = Math.max(answer,len);
         }
+
         return answer;
     }
-
     public static void main(String[] args){
         Solution T = new Solution();
-        int[][] arr1 = {{0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-                {0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-                {0, 0, 0, 1, 0, 0, 0, 1, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 1, 0, 0, 0, 2, 0, 0},
-                {1, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-                {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 3, 0, 0, 0, 1},
-                {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
-                {0, 1, 0, 1, 0, 0, 0, 0, 0, 0}};
-        System.out.println(T.solution(arr1));
-        int[][] arr2 = {{1, 0, 0, 0, 1, 0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-                {0, 0, 1, 1, 0, 0, 0, 1, 0, 0},
-                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                {0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
-                {1, 0, 0, 0, 0, 0, 1, 0, 1, 0},
-                {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-                {0, 0, 1, 0, 0, 0, 0, 0, 2, 1},
-                {0, 0, 0, 1, 0, 1, 0, 0, 0, 1},
-                {0, 1, 0, 1, 0, 0, 0, 0, 0, 3}};
-        System.out.println(T.solution(arr2));
+        System.out.println(T.solution(new int[]{1, 3, 2, 5, 7, 4, 2, 5 ,1}));
+        System.out.println(T.solution(new int[]{1, 1, 2, 3, 5, 7, 4, 3, 1, 2}));
+        System.out.println(T.solution(new int[]{3, 2, 1, 3, 2, 4, 6, 7, 3, 1}));
+        System.out.println(T.solution(new int[]{1, 3, 1, 2, 1, 5, 3, 2, 1, 1}));
     }
 }
