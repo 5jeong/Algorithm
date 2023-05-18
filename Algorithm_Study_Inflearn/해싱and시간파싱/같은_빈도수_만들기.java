@@ -20,9 +20,6 @@ public class 같은_빈도수_만들기 {
         for(int i=0;i<hashMap.size();i++){
             answer[i] = max - hashMap.get((char)(i+97));
         }
-
-
-
         return answer;
     }
 
