@@ -1,13 +1,6 @@
 package Algorithm_Study_Inflearn.시뮬레이션and구현;
 
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Queue;
-
-class Solution {
-
+public class 과일가져가기 {
     public static int getMin(int[] fruit){
         int min=Integer.MAX_VALUE;
         for(int i=0;i<fruit.length;i++){

@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/잃어버린강아지.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/과일가져가기.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/최대길이바이토닉수열.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/청소.java" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/청소.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/Algorithm_Study_Inflearn/시뮬레이션and구현/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/Algorithm_Study_Inflearn/시뮬레이션and구현/Solution.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +60,7 @@
       <command value="q" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.algorithmStudy.그리디알고리즘.Main">
+  <component name="RunManager" selected="Application.Solution">
     <configuration name="사다리타기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.시뮬레이션and구현.사다리타기" />
       <module name="baekjoon_JAVA" />
@@ -98,12 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="피자배달거리_DFS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="algorithmStudy.DFS_BFS활용.피자배달거리_DFS" />
+    <configuration name="좌석번호" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.시뮬레이션and구현.좌석번호" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="algorithmStudy.DFS_BFS활용.*" />
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.시뮬레이션and구현.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -191,11 +193,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Solution" />
         <item itemvalue="Application.algorithmStudy.그리디알고리즘.Main" />
         <item itemvalue="Application.사다리타기" />
-        <item itemvalue="Application.Solution" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.피자배달거리_DFS" />
       </list>
     </recent_temporary>
   </component>
@@ -348,7 +349,9 @@
       <workItem from="1683613678922" duration="1933000" />
       <workItem from="1683687737744" duration="5286000" />
       <workItem from="1684166275368" duration="3130000" />
-      <workItem from="1684229335074" duration="1819000" />
+      <workItem from="1684229335074" duration="11661000" />
+      <workItem from="1684306331595" duration="4052000" />
+      <workItem from="1684375782834" duration="3785000" />
     </task>
     <servers />
   </component>
