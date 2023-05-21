@@ -15,7 +15,7 @@ public class 최대길이바이토닉수열 {
             int left = x;
             int right = x;
             int len=1;
-            while(left-1 >= 0 && nums[left] >nums[left-1] ){
+            while(left-1 >= 0 && nums[left] > nums[left-1] ){
                 left--;
                 len++;
             }
@@ -25,6 +25,7 @@ public class 최대길이바이토닉수열 {
             }
             answer = Math.max(answer,len);
         }
+        System.out.println();
 
         return answer;
     }
@@ -33,5 +34,6 @@ public class 최대길이바이토닉수열 {
         System.out.println(solution(new int[]{1, 1, 2, 3, 5, 7, 4, 3, 1, 2}));
         System.out.println(solution(new int[]{3, 2, 1, 3, 2, 4, 6, 7, 3, 1}));
         System.out.println(solution(new int[]{1, 3, 1, 2, 1, 5, 3, 2, 1, 1}));
+
     }
 }
