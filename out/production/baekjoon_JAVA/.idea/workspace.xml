@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/시뮬레이션and구현/회의실만남.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/자료구조활용/겹쳐진압축해제.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +56,13 @@
       <command value="q" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.회의실만남">
-    <configuration name="비밀번호" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.시뮬레이션and구현.비밀번호" />
+  <component name="RunManager" selected="Application.겹쳐진압축해제">
+    <configuration name="겹쳐진압축해제" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.자료구조활용.겹쳐진압축해제" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.시뮬레이션and구현.*" />
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.자료구조활용.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -70,21 +70,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="회의실만남" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.시뮬레이션and구현.회의실만남" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.시뮬레이션and구현.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Algorithm_Study_Inflearn.해싱and시간파싱.Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.Solution" />
+    <configuration name="서로다른빈도수만들기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.서로다른빈도수만들기" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
@@ -96,12 +83,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.시뮬레이션and구현.Solution" />
+    <configuration name="최대길이바이토닉수열" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.시뮬레이션and구현.최대길이바이토닉수열" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Algorithm_Study_Inflearn.시뮬레이션and구현.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="음수가있는부분수열" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.음수가있는부분수열" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.해싱and시간파싱.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,12 +122,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="같은_빈도수_만들기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.같은_빈도수_만들기" />
+    <configuration name="최대길이_연속수열" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.자료구조활용.최대길이_연속수열" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.해싱and시간파싱.*" />
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.자료구조활용.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -202,11 +202,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.회의실만남" />
-        <item itemvalue="Application.비밀번호" />
-        <item itemvalue="Application.같은_빈도수_만들기" />
-        <item itemvalue="Application.Algorithm_Study_Inflearn.해싱and시간파싱.Solution" />
-        <item itemvalue="Application.Solution" />
+        <item itemvalue="Application.겹쳐진압축해제" />
+        <item itemvalue="Application.최대길이_연속수열" />
       </list>
     </recent_temporary>
   </component>
@@ -364,7 +361,8 @@
       <workItem from="1684375782834" duration="7859000" />
       <workItem from="1684425351905" duration="4556000" />
       <workItem from="1684493130170" duration="146000" />
-      <workItem from="1684576032834" duration="3558000" />
+      <workItem from="1684576032834" duration="13416000" />
+      <workItem from="1684838249855" duration="1835000" />
     </task>
     <servers />
   </component>
