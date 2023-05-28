@@ -9,45 +9,45 @@ import java.util.Stack;
 public class 겹쳐진압축해제 {
     public static String solution(String s) {
         String answer = "";
-        Stack<Character> stack = new Stack<>();
+        Stack<String> stack = new Stack<>();
 
         for (char x : s.toCharArray()) {
             if (x == ')') {
-                if(stack.size()==s.length()){
-                    break;
-                }
-                String temp = "";
-                while (!stack.isEmpty() && !Character.isDigit(stack.peek())) {
-                    if (stack.peek() != '(') {
-                        temp += stack.peek();
+                String temp="";
+                while (!stack.isEmpty()) {
+                    String c = stack.pop();
+                    if(c.equals("(")) {
+                        String num = "";
+                        while (!stack.isEmpty() && Character.isDigit(stack.peek().charAt(0))) {
+                            num = stack.pop() + num;
+                        }
+                        String res ="";
+
+                        int cnt=0;
+                        if(num.equals("")){
+                            cnt=1;
+                        }
+                        else{
+                            cnt = Integer.parseInt(num);
+                        }
+                        for (int i = 0; i < cnt; i++) {
+                            res +=temp;
+                        }
+                        stack.push(res);
+                        break;
                     }
-
-                    stack.pop();
+                    temp = c + temp;
                 }
-                System.out.println("temp : " + temp);
-                StringBuffer sb = new StringBuffer(temp);
-                String reverse = sb.reverse().toString();
 
-
-                int a = Character.getNumericValue(stack.pop());
-                for (int i = 0; i < a; i++) {
-                    for (char b : reverse.toCharArray()) {
-                        stack.push(b);
-                    }
-                }
-            } else {
-                stack.push(x);
+            }
+            else {
+                stack.push(String.valueOf(x));
             }
 
-            System.out.print("스택상태 : ");
-            for (char ch : stack) {
-                System.out.print(ch);
-            }
-            System.out.println();
         }
 
 
-        for(char x : stack){
+        for(String x : stack){
             answer+= x;
         }
         return answer;
