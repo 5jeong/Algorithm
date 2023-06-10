@@ -12,7 +12,7 @@ public class 가장가까운큰수 {
     static int tanget,answer;
     static boolean flag;
     static void DFS(int L,int n){
-        if(flag ==true){
+        if(flag){
             return ;
         }
         if(L==arr.length){
