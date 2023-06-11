@@ -28,13 +28,7 @@ public class 회장선거 {
                 candidate.add(x);
             }
         }
-//        for(String x : candidate) {
-//            System.out.println("qwdwqdwqq------  "+x);
-//        }
-//        for(int i=0;i<n;i++) {
-//            System.out.println(arr1[i]+" "+arr2[i]);
-//        }
-//        System.out.println();
+
         for(int i=0;i<n;i++){
             for(String x : candidate){
                 if(arr2[i].equals(x)){
