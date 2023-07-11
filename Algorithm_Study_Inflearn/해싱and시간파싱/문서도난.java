@@ -1,10 +1,51 @@
 package Algorithm_Study_Inflearn.해싱and시간파싱;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class 문서도난 {
+    static class info implements Comparable<info>{
+
+        String name;
+        int time;
+        info(String name, int time){
+            this.name =name;
+            this.time = time;
+        }
+        @Override
+        public int compareTo(info o) {
+            return this.time - o.time;
+        }
+    }
+    static int getTimes(String time){
+        int H = Integer.parseInt(time.split(":")[0]) * 60;
+        int M = Integer.parseInt(time.split(":")[1]);
+        return H+M;
+    }
     public static String[] solution(String[] reports, String times){
-        String[] answer = {};
+        ArrayList<info> temp = new ArrayList<>();
+        for(String x : reports){
+            String a = x.split(" ")[0];
+            String b = x.split(" ")[1];
+            temp.add(new info(a,getTimes(b)));
+        }
+        Collections.sort(temp);
+        int s = getTimes(times.split(" ")[0]);
+        int e = getTimes(times.split(" ")[1]);
+        ArrayList<String> res = new ArrayList<>();
+        for(info x : temp){
+            if(s <= x.time && e >= x.time){
+                res.add(x.name);
+            }
+            if(e <= x.time){
+                break;
+            }
+        }
+        String[] answer = new String[res.size()];
+        for(int i=0;i<answer.length;i++){
+            answer[i] = res.get(i);
+        }
 
         return answer;
     }
