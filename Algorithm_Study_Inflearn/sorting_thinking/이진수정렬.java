@@ -12,7 +12,7 @@ public class 이진수정렬 {
         int[][] res = new int[n][2];
         for(int i=0;i<n;i++){
             int cnt=0;
-            String binary =Integer.toBinaryString(nums[i]);
+            String binary = Integer.toBinaryString(nums[i]);
             for(char x : binary.toCharArray()){
                 if(x=='1'){
                     cnt++;

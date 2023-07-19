@@ -8,36 +8,36 @@ public class 수열찾기 {
     public static int[] solution(int[] nums){
         int n = nums.length;
         int[] answer = new int[n / 2];
-//        HashMap<Integer,Integer> hashMap = new HashMap<>();
-//        Arrays.sort(nums);
-//        for(int x : nums){
-//            hashMap.put(x,hashMap.getOrDefault(x,0)+1);
-//        }
-//        int idx=0;
-//        for(int x :nums){
-//            if(hashMap.get(x)==0) continue;
-//            answer[idx] = x;
-//            idx++;
-//            hashMap.put(x,hashMap.get(x)-1);
-//            hashMap.put(x*2,hashMap.get(x*2)-1);
-//        }
+        HashMap<Integer,Integer> hashMap = new HashMap<>();
+        Arrays.sort(nums);
+        for(int x : nums){
+            hashMap.put(x,hashMap.getOrDefault(x,0)+1);
+        }
+        int idx=0;
+        for(int x :nums){
+            if(hashMap.get(x)==0) continue;
+            answer[idx] = x;
+            idx++;
+            hashMap.put(x,hashMap.get(x)-1);
+            hashMap.put(x*2,hashMap.get(x*2)-1);
+        }
 //        리스트 방식
-        ArrayList<Integer> ans = new ArrayList<>();
-        for(int x : nums){
-            ans.add(x);
-        }
-        Collections.sort(ans);
-        for(int x : nums){
-            for(int i=0;i<ans.size();i++){
-                if(x*2 == ans.get(i)){
-                    ans.remove(i);
-                    break;
-                }
-            }
-        }
-        for(int i=0;i<n/2;i++){
-            answer[i] = ans.get(i);
-        }
+//        ArrayList<Integer> ans = new ArrayList<>();
+//        for(int x : nums){
+//            ans.add(x);
+//        }
+//        Collections.sort(ans);
+//        for(int x : nums){
+//            for(int i=0;i<ans.size();i++){
+//                if(x*2 == ans.get(i)){
+//                    ans.remove(i);
+//                    break;
+//                }
+//            }
+//        }
+//        for(int i=0;i<n/2;i++){
+//            answer[i] = ans.get(i);
+//        }
         return answer;
     }
 
