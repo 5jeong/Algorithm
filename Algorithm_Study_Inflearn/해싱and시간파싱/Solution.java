@@ -4,18 +4,20 @@ import java.util.HashMap;
 
 public class Solution {
     public static int solution(String s){
-        int answer = 0;
-        int n = s.length();
-        HashMap<Character,Integer> hashMap = new HashMap<>();
-        for(char x : s.toCharArray()){
-            hashMap.put(x,hashMap.getOrDefault(x,0)+1);
-        }
-        for(int i=0;i<n;i++){
-            if(hashMap.get(s.charAt(i))==1){
-                answer=i+1;
-                return answer;
+
+        int[] index_list = {16,6,5,3,12,14,11,11,17,12,7};
+        String str = "cvsgiorszzzmrpaqpe";
+        String ans = " ";
+        for(int x : index_list){
+            for(char y : str.toCharArray()){
+                if(str.charAt(x)==y ){
+                    ans+=y;
+                    break;
+                }
             }
         }
+        System.out.println(ans);
+
         return -1;
     }
 
