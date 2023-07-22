@@ -55,12 +55,12 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Algorithm_Study_Inflearn.해싱and시간파싱.Solution">
-    <configuration name="경고메일" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.경고메일" />
+    <configuration name="심사위원" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.sorting_thinking.심사위원" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.해싱and시간파싱.*" />
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.sorting_thinking.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,6 +100,58 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Algorithm_Study_Inflearn.자료구조활용.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="카드가져가기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.sorting_thinking.카드가져가기" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.sorting_thinking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="문서도난" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.문서도난" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.해싱and시간파싱.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="회장선거" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.회장선거" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.해싱and시간파싱.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="줄다리기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.줄다리기" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -211,58 +263,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="카드가져가기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.sorting_thinking.카드가져가기" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.sorting_thinking.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="문서도난" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.문서도난" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.해싱and시간파싱.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="회장선거" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.회장선거" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.해싱and시간파싱.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="줄다리기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.줄다리기" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="가장많이사용된_회의실" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.자료구조활용.가장많이사용된_회의실" />
       <module name="baekjoon_JAVA" />
@@ -305,10 +305,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Algorithm_Study_Inflearn.해싱and시간파싱.Solution" />
+        <item itemvalue="Application.심사위원" />
         <item itemvalue="Application.가장많이사용된_회의실" />
         <item itemvalue="Application.CPU스케줄링" />
         <item itemvalue="Application.Solution" />
-        <item itemvalue="Application.경고메일" />
       </list>
     </recent_temporary>
   </component>
@@ -487,6 +487,7 @@
       <workItem from="1689487539403" duration="758000" />
       <workItem from="1689752999574" duration="11594000" />
       <workItem from="1689781103280" duration="1857000" />
+      <workItem from="1689842009102" duration="4541000" />
     </task>
     <servers />
   </component>
