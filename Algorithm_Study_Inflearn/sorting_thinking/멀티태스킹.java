@@ -26,8 +26,6 @@ public class 멀티태스킹 {
         }
         k = k % rest;
         int idx=0;
-//        System.out.println("k : "+ k+"   n : " + n);
-
         for(int i=0;i<tasks.length;i++){
             if(tasks[i] < n) continue;
             idx++;
@@ -36,10 +34,6 @@ public class 멀티태스킹 {
                 break;
             }
         }
-
-
-
-
         return answer;
     }
 
