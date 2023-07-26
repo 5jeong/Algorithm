@@ -7,23 +7,20 @@ import java.util.Collections;
 
 public class 침몰하는_타이타닉 {
     public static int solution(int[] nums, int m){
-        int answer = 0;
+        int answer=0;
         Arrays.sort(nums);
-        int lt=0;
-        int rt=nums.length-1;
+        int lt=0,rt = nums.length-1;
         while(lt <= rt){
-            if(nums[lt] + nums[rt] <=m){
+            if(nums[lt] + nums[rt] <= m){
                 answer++;
                 lt++;
                 rt--;
             }
-            else{
+            else{ //혼자타고감
                 answer++;
                 rt--;
             }
         }
-
-
 
         return answer;
     }

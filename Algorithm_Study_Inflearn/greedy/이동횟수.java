@@ -28,7 +28,6 @@ public class 이동횟수 {
 //               lt++;
 //               temp += nums[lt];
 //           }
-//
 //           rt--;
 //           answer++;
 //        }
