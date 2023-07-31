@@ -5,20 +5,20 @@ import Algorithm_Study_Inflearn.해싱and시간파싱.Solution;
 import java.util.Stack;
 
 public class 줄다리기 {
-    static int m,n,answer;
-    static int[] arr,ch;
+    static int answer,n;
     static int[][] relation;
-    static Stack<Integer> stack;
+    static Stack<Integer> stack ;
+    static int[] ch;
     static void DFS(int L){
-        if(L==7) {
+        if(L==n){
             answer++;
         }
         else{
-            for(int i=1;i<8;i++){
+            for(int i=1;i<=n;i++){
                 if(!stack.isEmpty() && relation[stack.peek()][i]==1){
                     continue;
                 }
-                if(ch[i] == 0){
+                if(ch[i]==0){
                     ch[i]=1;
                     stack.push(i);
                     DFS(L+1);
@@ -30,18 +30,14 @@ public class 줄다리기 {
 
     }
     public static int solution(int[][] fight){
-        answer = 0;
-        m = fight.length;
-        n = fight[0].length;
-        relation= new int[8][8];
-        arr=new int[8];
-        ch =new int[8];
+        answer=0;
+        ch = new int[8];
+        n=7;
         stack=new Stack<>();
-        for(int i = 0; i < m; i++) {
-            int a = fight[i][0];
-            int b = fight[i][1];
-            relation[a][b] = 1;
-            relation[b][a] = 1;
+        relation = new int[8][8];
+        for(int x[] : fight){
+            relation[x[0]][x[1]] = 1;
+            relation[x[1]][x[0]] = 1;
         }
         DFS(0);
         return answer;
