@@ -7,27 +7,30 @@ import java.util.Queue;
 
 public class 타일점프 {
     public static int solution(int[] nums){
-        int n = nums.length;
-        int[] ch = new int[n];
         Queue<Integer> queue = new LinkedList<>();
-        queue.add(0);
-        ch[0] =1;
+        int n = nums.length;
         int L=0;
+        int[] ch = new int[n];
+        queue.offer(0);
+        ch[0] = 1;
         while(!queue.isEmpty()){
             int len = queue.size();
             for(int i=0;i<len;i++){
                 int temp = queue.poll();
                 for(int j=1;j<=nums[temp];j++){
                     int nx = temp + j;
-                    if(nx == n-1 ) return L+1;
-                    if(nx < n && ch[nx] ==0 ){
-                        ch[nx]=1;
+                    if(nx == n-1){
+                        return L+1;
+                    }
+                    if(nx < n && ch[nx]==0){
+                        ch[nx] = 1;
                         queue.add(nx);
                     }
                 }
             }
             L++;
         }
+
         return -1;
     }
 
