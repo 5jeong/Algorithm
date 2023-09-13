@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/DP/수도배관공사.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Algorithm_Study_Inflearn/DP/등차수열.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +61,7 @@
       <command value="q" />
     </option>
   </component>
-  <component name="RunManager" selected="애플리케이션.수도배관공사">
+  <component name="RunManager" selected="애플리케이션.등차수열">
     <configuration name="송아지를잡자" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.BFS.송아지를잡자" />
       <module name="baekjoon_JAVA" />
@@ -75,90 +75,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="수도배관공사" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DP.수도배관공사" />
+    <configuration name="등차수열" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DP.등차수열" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Algorithm_Study_Inflearn.DP.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="서로다른빈도수만들기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.서로다른빈도수만들기" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.해싱and시간파싱.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="이동횟수" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.greedy.이동횟수" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.greedy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="타일점프" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.BFS.타일점프" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.BFS.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="팰린드롬의경우수" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.팰린드롬의경우수" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="교육과정" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.그래프.교육과정" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.그래프.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="스프링쿨러" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.greedy.스프링쿨러" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.greedy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -296,6 +218,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="수도배관공사" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DP.수도배관공사" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.DP.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="줄다리기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.줄다리기" />
       <module name="baekjoon_JAVA" />
@@ -419,6 +354,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="계단오르기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DP.계단오르기" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.DP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -556,6 +504,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="서로다른빈도수만들기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.서로다른빈도수만들기" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.해싱and시간파싱.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="타일점프" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.BFS.타일점프" />
       <module name="baekjoon_JAVA" />
@@ -582,6 +543,71 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="이동횟수" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.greedy.이동횟수" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.greedy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="타일점프" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.BFS.타일점프" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.BFS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="팰린드롬의경우수" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.팰린드롬의경우수" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="교육과정" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.그래프.교육과정" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.그래프.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="스프링쿨러" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.greedy.스프링쿨러" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.greedy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="집을짓자_강의풀이" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.BFS.집을짓자_강의풀이" />
       <module name="baekjoon_JAVA" />
@@ -597,7 +623,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.수도배관공사" />
+        <item itemvalue="애플리케이션.등차수열" />
         <item itemvalue="애플리케이션.집을짓자_강의풀이" />
         <item itemvalue="애플리케이션.송아지를잡자" />
       </list>
@@ -810,7 +836,8 @@
       <workItem from="1694062133009" duration="7193000" />
       <workItem from="1694071643297" duration="378000" />
       <workItem from="1694360924570" duration="1000" />
-      <workItem from="1694522106814" duration="2492000" />
+      <workItem from="1694522106814" duration="7358000" />
+      <workItem from="1694589410516" duration="3562000" />
     </task>
     <servers />
   </component>
