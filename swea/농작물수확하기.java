@@ -38,7 +38,6 @@ public class 농작물수확하기 {
                 }
             }
             System.out.println("#"+test_case + " "+ans);
-
         }
     }
 }
