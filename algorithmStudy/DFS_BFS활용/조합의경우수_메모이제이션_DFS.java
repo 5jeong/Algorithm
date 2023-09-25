@@ -6,27 +6,23 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class 조합의경우수_메모이제이션_DFS {
-    static int n,r;
-    static int[][] arr = new int[34][34];
-    static int DFS(int n,int r) {
-        if(arr[n][r] !=0){
-            return arr[n][r];
-        }
-        if(r==0 || n==r){
+    static int[][] map=new int[35][35];
+    static int dfs(int n,int r){
+        if(map[n][r] > 0) return map[n][r];
+        if(n==r || r==0){
             return 1;
         }
         else{
-            arr[n][r] = DFS(n-1,r-1)+DFS(n-1,r);
-            return arr[n][r];
+            return map[n][r] = dfs(n-1,r-1) + dfs(n-1,r);
         }
     }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
-        r = Integer.parseInt(st.nextToken());
-        int ans = DFS(n,r);
+        int n = Integer.parseInt(st.nextToken());
+        int r = Integer.parseInt(st.nextToken());
+        int ans = dfs(n,r);
         System.out.println(ans);
     }
 }

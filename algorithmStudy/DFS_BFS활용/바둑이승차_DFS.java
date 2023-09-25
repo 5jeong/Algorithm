@@ -10,13 +10,12 @@ public class 바둑이승차_DFS {
     static int ans = Integer.MIN_VALUE;
     static int[] arr;
     static void DFS(int L,int sum){
-        if(sum>c){
+
+        if(sum > c){
             return;
         }
         if(L==n){
-            if(ans < sum){
-                ans = sum;
-            }
+            ans =Math.max(ans,sum);
         }
         else{
             DFS(L+1,sum+arr[L]);
@@ -29,8 +28,8 @@ public class 바둑이승차_DFS {
         c = Integer.parseInt(st.nextToken());
         n = Integer.parseInt(st.nextToken());
         arr = new int[n];
-        for(int i=0;i<n;i++){
-            st = new StringTokenizer(br.readLine());
+        st = new StringTokenizer(br.readLine());
+        for(int i=0;i<n;i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
         DFS(0,0);
