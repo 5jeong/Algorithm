@@ -1,4 +1,4 @@
-package swea;
+package swea.d2;
 
 import java.util.Enumeration;
 import java.util.Scanner;

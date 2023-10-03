@@ -1,4 +1,4 @@
-package swea;
+package swea.d3;
 
 import java.util.Scanner;
 import java.io.FileInputStream;
