@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/swea/d3/재미있는오르셀게임.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/swea/d3/조합.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swea/d3/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swea/d3/input.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,13 +71,13 @@
       <command value="q" />
     </option>
   </component>
-  <component name="RunManager" selected="애플리케이션.재미있는오르셀게임">
+  <component name="RunManager" selected="애플리케이션.조합">
     <configuration name="암호생성기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="swea.d3.암호생성기" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="swea.d3.*" />
+          <option name="PATTERN" value="swea.d3.String" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,7 +90,7 @@
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="swea.d3.*" />
+          <option name="PATTERN" value="swea.d3.String" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,8 +111,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="재미있는오르셀게임" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.d3.재미있는오르셀게임" />
+    <configuration name="조합" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.조합" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
@@ -129,85 +129,7 @@
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="swea.d3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="알파코드" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.알파코드" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="문서도난" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.문서도난" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.해싱and시간파싱.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="최장경로" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.d3.최장경로" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="swea.d3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="최대상금" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.최대상금" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="swea.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="최소환승경로" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.그래프.최소환승경로" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.그래프.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="수도배관공사" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DP.수도배관공사" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.DP.*" />
+          <option name="PATTERN" value="swea.d3.String" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -345,6 +267,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="재미있는오르셀게임" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.재미있는오르셀게임" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.d3.String" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="등차수열" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DP.등차수열" />
       <module name="baekjoon_JAVA" />
@@ -475,6 +410,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="스트링" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.스트링" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.d3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="최빈수구하기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="swea.최빈수구하기" />
       <module name="baekjoon_JAVA" />
@@ -594,6 +542,19 @@
     </configuration>
     <configuration name="줄다리기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.줄다리기" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="알파코드" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.알파코드" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
@@ -735,6 +696,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="문서도난" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.해싱and시간파싱.문서도난" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.해싱and시간파싱.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="달팽이숫자" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="swea.달팽이숫자" />
       <module name="baekjoon_JAVA" />
@@ -865,6 +839,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="최장경로" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.최장경로" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.d3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="집을짓자" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.BFS.집을짓자" />
       <module name="baekjoon_JAVA" />
@@ -917,9 +904,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="최대상금" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.최대상금" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="최소환승경로" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.그래프.최소환승경로" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.그래프.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="수도배관공사" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DP.수도배관공사" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.DP.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.재미있는오르셀게임" />
+        <item itemvalue="애플리케이션.조합" />
         <item itemvalue="애플리케이션.회문2" />
         <item itemvalue="애플리케이션.암호생성기" />
         <item itemvalue="애플리케이션.Magenetic" />
@@ -1151,7 +1177,8 @@
       <workItem from="1696321417472" duration="14077000" />
       <workItem from="1696407730331" duration="10414000" />
       <workItem from="1696487034743" duration="8859000" />
-      <workItem from="1696510063938" duration="2363000" />
+      <workItem from="1696510063938" duration="11222000" />
+      <workItem from="1696577679538" duration="632000" />
     </task>
     <servers />
   </component>
