@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 public class 교환학생 {
     public static void main(String args[]) throws Exception {
-        System.setIn(new FileInputStream("C:\\Users\\82109\\Desktop\\정훈\\알고리즘 공부\\Algorithm_Java\\swea\\d3\\input.txt"));
+//        System.setIn(new FileInputStream("C:\\Users\\82109\\Desktop\\정훈\\알고리즘 공부\\Algorithm_Java\\swea\\d3\\input.txt"));
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();
         for (int test_case = 1; test_case <= T; test_case++) {
@@ -17,7 +17,7 @@ public class 교환학생 {
             for(int i=0;i<7;i++){
                 arr[i] = sc.nextInt();
             }
-            int ans=0;
+            int ans=Integer.MAX_VALUE;
             for(int i=0;i<7;i++){
                 if(arr[i]==0){
                     continue;
@@ -30,7 +30,7 @@ public class 교환학생 {
                     }
                     start++;
                     if(n==cnt){
-                        ans = start-i;
+                        ans = Math.min(ans,start-i);
                         break;
                     }
                 }
