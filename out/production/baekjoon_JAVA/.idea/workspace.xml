@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="study">
-      <change afterPath="$PROJECT_DIR$/swea/d3/상원이의연속합.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/swea/d3/GNS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/swea/d3/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/swea/d3/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/swea/d3/현주의상자바꾸기.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/swea/d3/현주의상자바꾸기.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swea/d3/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/swea/d3/input.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,9 +72,9 @@
       <command value="q" />
     </option>
   </component>
-  <component name="RunManager" selected="애플리케이션.상원이의연속합">
-    <configuration name="규영이와인영이의카드게임" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.d3.규영이와인영이의카드게임" />
+  <component name="RunManager" selected="애플리케이션.GNS">
+    <configuration name="GNS (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.GNS" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
@@ -88,8 +86,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="암호문1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.d3.암호문1" />
+    <configuration name="GNS (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.GNS" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
@@ -101,8 +99,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="상원이의연속합" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.d3.상원이의연속합" />
+    <configuration name="GNS (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.GNS" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.d3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GNS" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.GNS" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.d3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="한빈이의SpotMart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.한빈이의SpotMart" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
@@ -1117,9 +1141,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.상원이의연속합" />
-        <item itemvalue="애플리케이션.규영이와인영이의카드게임" />
-        <item itemvalue="애플리케이션.암호문1" />
+        <item itemvalue="애플리케이션.GNS" />
+        <item itemvalue="애플리케이션.GNS (3)" />
+        <item itemvalue="애플리케이션.GNS (2)" />
+        <item itemvalue="애플리케이션.GNS (1)" />
+        <item itemvalue="애플리케이션.한빈이의SpotMart" />
       </list>
     </recent_temporary>
   </component>
@@ -1360,7 +1386,7 @@
       <workItem from="1697296971930" duration="3000" />
       <workItem from="1697347864121" duration="1833000" />
       <workItem from="1697365918400" duration="2424000" />
-      <workItem from="1697437019585" duration="904000" />
+      <workItem from="1697437019585" duration="9539000" />
     </task>
     <servers />
   </component>
