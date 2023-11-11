@@ -32,7 +32,7 @@ public class Contact {
     }
 
     public static void main(String args[]) throws Exception {
-//        System.setIn(new FileInputStream("C:\\Users\\82109\\Desktop\\정훈\\알고리즘 공부\\Algorithm_Java\\swea\\d4\\input.txt"));
+        System.setIn(new FileInputStream("C:\\Users\\82109\\Desktop\\정훈\\알고리즘 공부\\Algorithm_Java\\swea\\d4\\input.txt"));
         Scanner sc = new Scanner(System.in);
         int T = 10;
 
