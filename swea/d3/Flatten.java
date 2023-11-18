@@ -6,38 +6,26 @@ import java.util.Scanner;
 
 class Flatten
 {
-    public static void main(String args[]) throws Exception
-    {
-
-        System.setIn(new FileInputStream("C:\\Users\\82109\\Desktop\\정훈\\알고리즘 공부\\Algorithm_Java\\swea\\input.txt"));
-
-
+    public static void main(String args[]) throws Exception {
+        System.setIn(new FileInputStream("C:\\Users\\82109\\Desktop\\정훈\\알고리즘 공부\\Algorithm_Java\\swea\\d3\\input.txt"));
         Scanner sc = new Scanner(System.in);
-        int T;
-        T=sc.nextInt();
-        for(int test_case = 1; test_case <= T; test_case++)
-        {
+//        int T = sc.nextInt();
+        int T = 10;
+        for (int test_case = 1; test_case <= T; test_case++) {
             int n = sc.nextInt();
-            Integer[] height = new Integer[100];
+            int[] arr=  new int[100];
             for(int i=0;i<100;i++){
-                height[i] = sc.nextInt();
+                arr[i] = sc.nextInt();
             }
-            int max_height=0,max_idx=0;
-            int min_height=Integer.MAX_VALUE,min_idx=0;
-            Arrays.sort(height, Collections.reverseOrder());
+            Arrays.sort(arr); // 오름차순 정렬, 가장 큰 높이 arr[99], 가장 작은 높이 arr[0];
             for(int i=0;i<n;i++){
-                int temp = height[0] - height[99];
-                if(temp <=1){
-                    break;
-                }
-                else{
-                    height[0]--;
-                    height[99]++;
-                    Arrays.sort(height, Collections.reverseOrder());
-                }
+                if(arr[0]==arr[99]) break;
+                arr[0]++;
+                arr[99]--;
+                Arrays.sort(arr);
             }
-            int ans = height[0] - height[99];
-            System.out.println("#"+test_case+" " +ans);
+            int ans = arr[99] - arr[0];
+            System.out.println("#"+test_case+" "+ ans);
         }
     }
 }
