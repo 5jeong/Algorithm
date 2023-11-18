@@ -37,46 +37,36 @@ import java.io.FileInputStream;
    사용하는 클래스명이 Solution 이어야 하므로, 가급적 Solution.java 를 사용할 것을 권장합니다.
    이러한 상황에서도 동일하게 java Solution 명령으로 프로그램을 수행해볼 수 있습니다.
  */
-class 달팽이숫자
-{
-    public static void main(String args[]) throws Exception
-    {
-		/*
-		   아래의 메소드 호출은 앞으로 표준 입력(키보드) 대신 input.txt 파일로부터 읽어오겠다는 의미의 코드입니다.
-		   여러분이 작성한 코드를 테스트 할 때, 편의를 위해서 input.txt에 입력을 저장한 후,
-		   이 코드를 프로그램의 처음 부분에 추가하면 이후 입력을 수행할 때 표준 입력 대신 파일로부터 입력을 받아올 수 있습니다.
-		   따라서 테스트를 수행할 때에는 아래 주석을 지우고 이 메소드를 사용하셔도 좋습니다.
-		   단, 채점을 위해 코드를 제출하실 때에는 반드시 이 메소드를 지우거나 주석 처리 하셔야 합니다.
-		 */
-        System.setIn(new FileInputStream("C:\\Users\\82109\\Desktop\\정훈\\알고리즘 공부\\Algorithm_Java\\swea\\input.txt"));
-
-		/*
-		   표준입력 System.in 으로부터 스캐너를 만들어 데이터를 읽어옵니다.
-		 */
+class 달팽이숫자 {
+    public static void main(String args[]) throws Exception {
+        System.setIn(new FileInputStream("C:\\Users\\82109\\Desktop\\정훈\\알고리즘 공부\\Algorithm_Java\\swea\\d2\\input.txt"));
         Scanner sc = new Scanner(System.in);
         int T;
-        T=sc.nextInt();
-        int[] dx = {0,1,0,-1};
-        int[] dy = {1,0,-1,0};
+        T = sc.nextInt();
 
-        for(int test_case = 1; test_case <= T; test_case++)
-        {
+        for (int test_case = 1; test_case <= T; test_case++) {
+            int[] dx = {0, 1, 0, -1};
+            int[] dy = {1, 0, -1, 0};
             int n = sc.nextInt();
             int[][] arr = new int[n][n];
-            int[][] ch = new int[n][n];
-            int x=0,y=0;
-            int dir=0;
-            for (int i = 1; i <= n*n; i++) {
-//                System.out.println("i : " + i+" --- " + "x : " + x +", y : "+ y);
-                arr[x][y]=i;
-                ch[x][y] =1;
-                if(x + dx[dir] >= n || y + dy[dir] >=n || x + dx[dir] <0 || y + dy[dir] < 0 || ch[x+dx[dir]][y+dy[dir]]==1){
-                    dir = (dir+1) %4;
+            int cnt = 1;
+            int x = 0, y = 0;
+            int dir = 0;
+            while (true) {
+                arr[x][y] = cnt;
+                if(cnt == n*n) {
+                    break;
                 }
-                x += dx[dir];
-                y += dy[dir];
+                int nx = x + dx[dir];
+                int ny = y + dy[dir];
+                if (nx < 0 || nx >= n || ny < 0 || ny >= n || arr[nx][ny] != 0) {
+                    dir = (dir + 1) % 4;
+                    continue;
+                }
+                cnt++;
+                x = nx;
+                y = ny;
             }
-
             System.out.println("#"+test_case);
             for(int[] a : arr){
                 for(int b : a){
