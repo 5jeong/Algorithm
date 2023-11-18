@@ -1,40 +1,32 @@
 package swea.d3;
 
-import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.*;
+import java.util.Scanner;
 
 public class Solution {
-    public static void main(String[] args) throws IOException {
-        System.setIn(new FileInputStream("C:\\Users\\82109\\Desktop\\정훈\\알고리즘 공부\\Algorithm_Java\\swea\\d3\\input.txt"));
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String args[]) throws Exception {
+//        System.setIn(new FileInputStream("C:\\Users\\82109\\Desktop\\정훈\\알고리즘 공부\\Algorithm_Java\\swea\\d3\\input.txt"));
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+//        int T=10;
 
-        int T = 10;
-        int count = 1;
-        while (count <= T) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            int N = Integer.parseInt(st.nextToken());
-            String str = st.nextToken();
-
-            int start = 0;
-            int end;
-            while (true) {
-                if (start == str.length() - 1) {
-                    break;
-                }
-                end = start + 1;
-                if (str.charAt(start) == str.charAt(end)) {
-                    str = str.substring(0, start) + str.substring(end + 1, str.length());
-                    start = 0;
-                    continue;
-                }
-                start++;
+        for (int test_case = 1; test_case <= T; test_case++) {
+            int n = sc.nextInt();
+            int l = sc.nextInt();
+            int[] score = new int[n];
+            int[] cal = new int[n];
+            for(int i=0;i<n;i++){
+                score[i]= sc.nextInt();
+                cal[i] = sc.nextInt();
             }
-
-            System.out.printf("#%d %s\n", count, str);
-            count++;
+            int[] dp = new int[l+1];
+            for(int i=0;i<n;i++){
+                for(int j=l;j>=cal[i];j--){
+                    dp[j] = Math.max(dp[j],dp[j-cal[i]] + score[i]);
+                }
+            }
+            System.out.println("#"+test_case+" "+dp[l]);
         }
     }
 }
+
