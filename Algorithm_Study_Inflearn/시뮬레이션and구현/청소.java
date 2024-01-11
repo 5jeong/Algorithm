@@ -3,21 +3,25 @@ package Algorithm_Study_Inflearn.시뮬레이션and구현;
 import java.util.Arrays;
 
 public class 청소 {
-    static int[] dx = {-1,0,1,0};
-    static int[] dy = {0,1,0,-1};
-    public static int[] solution(int[][] board, int k){
+    static int[] dx = {0, 1, 0, -1};
+    static int[] dy = {1, 0, -1, 0};
+
+    public static int[] solution(int[][] board, int k) {
         int[] answer = new int[2];
-        int x=0,y=0,d=1;
-        int l = board.length;;
-        int cnt=0;
-        while(cnt<k){
-            cnt++;
-            int nx = x + dx[d];
-            int ny = y + dy[d];
-            if(nx < 0 || ny < 0 || nx ==l || ny ==l || board[nx][ny] == 1){
-                d = (d + 1)%4;
+        int n = board.length;
+        int time = 0;
+        int x = 0;
+        int y = 0;
+        int dir = 0;
+        while (time < k) {
+            int nx = x + dx[dir];
+            int ny = y + dy[dir];
+            if (nx < 0 || nx >= n || ny < 0 || ny >= n || board[nx][ny] == 1) { // 회전
+                time++;
+                dir = (dir + 1) % 4;
                 continue;
             }
+            time++;
             x = nx;
             y = ny;
         }

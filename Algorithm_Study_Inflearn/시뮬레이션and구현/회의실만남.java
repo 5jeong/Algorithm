@@ -3,30 +3,29 @@ package Algorithm_Study_Inflearn.시뮬레이션and구현;
 import java.util.Arrays;
 
 public class 회의실만남 {
-    public static int[] solution(int[] enter, int[] exit){
-        int n =enter.length;
+    public static int[] solution(int[] enter, int[] exit) {
+        int n = enter.length;
         int[] answer = new int[n];
-        for(int i=0;i<n;i++){
+        for (int i = 0; i < n; i++) {
             enter[i]--;
             exit[i]--;
         }
         int[] enterIdx = new int[n];
-        int[] enterT = new int[n];
-        int[] exitT=new int[n];
-        for(int i=0;i<n;i++){
+        for (int i = 0; i < n; i++) {
             enterIdx[enter[i]] = i;
         }
-        int cnt=0;
-        for(int i=0,j=0;i<n;i++){
-            while(j<n && j <= enterIdx[exit[i]]){
-                enterT[enter[j]]=cnt++;
-                j++;
+        int[] enterT = new int[n];
+        int[] exitT = new int[n];
+        int time = 0;
+        for (int i = 0, j = 0; i < n; i++) {
+            for (; j <= enterIdx[exit[i]]; j++) {
+                enterT[enter[j]] = time++;
             }
-            exitT[exit[i]] = cnt++;
+            exitT[exit[i]] = time++;
         }
-        for(int i=0;i<n;i++){
-            for(int j=i+1;j<n;j++){
-                if(!(exitT[i] < enterT[j] || exitT[j] < enterT[i]) ){
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (!(exitT[i] < enterT[j] || exitT[j] < enterT[i])) {
                     answer[i]++;
                     answer[j]++;
                 }

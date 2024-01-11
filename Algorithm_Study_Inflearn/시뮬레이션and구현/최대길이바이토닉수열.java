@@ -5,28 +5,26 @@ import java.util.ArrayList;
 public class 최대길이바이토닉수열 {
     public static int solution(int[] nums){
         int answer = 0;
-        ArrayList<Integer> peak = new ArrayList<>();
-        for(int i=1;i<nums.length-1;i++){
-            if(nums[i-1] < nums[i] && nums[i] > nums[i+1]){
-                peak.add(i);
+        ArrayList<Integer> peaks = new ArrayList<>();
+        for (int i = 1; i < nums.length - 1; i++) {
+            if (nums[i] > nums[i - 1] && nums[i] > nums[i + 1]) {
+                peaks.add(i);
             }
         }
-        for(int x : peak){
-            int left = x;
-            int right = x;
-            int len=1;
-            while(left-1 >= 0 && nums[left] > nums[left-1] ){
-                left--;
-                len++;
+        for (int x : peaks) {
+            int lt = x - 1;
+            int rt = x + 1;
+            int cnt = 1;
+            while (lt >= 0 && nums[lt] < nums[lt + 1]) {
+                lt--;
+                cnt++;
             }
-            while(right+1 <= nums.length-1 && nums[right] > nums[right+1]){
-                right++;
-                len++;
+            while (rt < nums.length && nums[rt] < nums[rt - 1]) {
+                rt++;
+                cnt++;
             }
-            answer = Math.max(answer,len);
+            answer = Math.max(answer, cnt);
         }
-        System.out.println();
-
         return answer;
     }
     public static void main(String[] args){
