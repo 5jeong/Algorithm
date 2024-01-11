@@ -5,25 +5,25 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class 서로다른빈도수만들기 {
-    public static int solution(String s){
+    public static int solution(String s) {
         int answer = 0;
-        HashMap<Character,Integer> hashMap = new HashMap<>();
-        HashSet<Integer> cnt = new HashSet<>();
-        for(char x : s.toCharArray()){
-            hashMap.put(x,hashMap.getOrDefault(x,0)+1);
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+        for (char x : s.toCharArray()) {
+            hashMap.put(x, hashMap.getOrDefault(x, 0) + 1);
         }
-        for(char x : hashMap.keySet()){
-
-            while(cnt.contains(hashMap.get(x))){
+        HashSet<Integer> hashSet = new HashSet<>();
+        for (char x : hashMap.keySet()) {
+            int temp = hashMap.get(x);
+            while (hashSet.contains(temp) && temp > 0) {
+                temp--;
                 answer++;
-                hashMap.put(x,hashMap.get(x)-1);
             }
-            if(hashMap.get(x)==0){
+            if (temp == 0) {
                 continue;
             }
-            cnt.add(hashMap.get(x));
-
+            hashSet.add(temp);
         }
+
         return answer;
     }
 
