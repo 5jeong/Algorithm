@@ -5,38 +5,38 @@ import java.util.PriorityQueue;
 import java.util.TreeSet;
 
 public class 가장많이사용된_회의실 {
-    public static int solution(int n, int[][] meetings){
+    public static int solution(int n, int[][] meetings) {
         int answer = 0;
-        int l = meetings.length;
+        Arrays.sort(meetings, (a, b) -> a[0] - b[0]);
+        TreeSet<Integer> rooms = new TreeSet<>();
         int[] res = new int[n];
-        TreeSet<Integer> rooms = new TreeSet<>(); // TreeSet 자료구조는 자동으로 오름차순 정렬
-        for(int i=0;i<n;i++){
+        for (int i = 0; i < n; i++) {
             rooms.add(i);
         }
-        Arrays.sort(meetings,(a,b)-> a[0] - b[0]);  // 시간시작순서대로 정렬
-        PriorityQueue<int[]> pq = new PriorityQueue<>((a,b)-> a[0]==b[0] ? a[1] - b[1] : a[0] - b[0] );
-        for(int[] x  : meetings){
-            while(!pq.isEmpty() && pq.peek()[0] <= x[0]){
+        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[0] == b[0] ? a[1] - b[1] : a[0] - b[0]);
+        for (int[] x : meetings) {
+            int startTime = x[0];
+            while (!pq.isEmpty() && startTime >= pq.peek()[0]) {
                 rooms.add(pq.poll()[1]);
             }
-            if(!rooms.isEmpty()){
-                int room = rooms.pollFirst();
-                res[room]++;
-                pq.add(new int[]{x[1],room});
-            }
-            else{
+
+            if (!rooms.isEmpty()) {
+                int num = rooms.pollFirst();
+                pq.add(new int[]{x[1], num});
+                res[num]++;
+            } else {
                 int[] temp = pq.poll();
+                int a = temp[0] + (x[1] - x[0]);
+                pq.add(new int[]{a, temp[1]});
                 res[temp[1]]++;
-                pq.add(new int[]{temp[0]+(x[1]-x[0]),temp[1]});
             }
         }
-        int idx=0;
-        for(int i=0;i<n;i++){
-            if(res[i] > idx){
-                idx = res[i];
-                answer=i;
+        int max = 0;
+        for (int i = 0; i < n; i++) {
+            if (max < res[i]) {
+                max = res[i];
+                answer = i;
             }
-
         }
         return answer;
     }
