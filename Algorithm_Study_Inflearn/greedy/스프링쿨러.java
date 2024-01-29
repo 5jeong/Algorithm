@@ -1,49 +1,59 @@
 package Algorithm_Study_Inflearn.greedy;
 
-import Algorithm_Study_Inflearn.해싱and시간파싱.Solution;
-
 import java.util.ArrayList;
 
 public class 스프링쿨러 {
-    public static int solution(int n, int[] nums){
+    public static int solution(int n, int[] nums) {
         int answer = 0;
-        ArrayList<int[]> line = new ArrayList<>();
-        for(int i=0;i<=n;i++){
-            int a = i-nums[i];
-            int b = i+nums[i];
-            if(a<0) a=0;
-            if(b >=n) b=n;
-            if(nums[i]==0){
-                a=0;
-                b=0;
-            }
-            line.add(new int[]{a,b});
+        ArrayList<int[]> arrayList = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            int a = i - nums[i];
+            int b = i + nums[i];
+            arrayList.add(new int[]{Math.max(0, a), Math.min(n, b)});
         }
-        line.sort((a,b)-> a[0]!=b[0] ? a[0] - b[0] : a[1] -b[1]);
-        int l = line.size();
-        int s=0,e=0;
-        for(int i=0;i<l;i++){
-            if(s >= line.get(i)[0]){
-                e = line.get(i)[1];
+        arrayList.sort((a, b) -> a[0] - b[0]);
+        int s = 0, e = 0, i = 0;
+        while (i < arrayList.size()) {
+            while (arrayList.get(i)[0] <= s) {
+                e = Math.max(e, arrayList.get(i)[1]);
+                i++;
             }
-            else{
-                if( e < line.get(i)[0]){
-                    return -1;
-                }
-                answer++;
-                s = e;
-                e = line.get(i)[1];
+            answer++;
+            if (e == n) {
+                return answer;
             }
-            if(e == n){
-                answer++;
-                break;
+            if (s == e) {
+                return -1;
             }
-//            System.out.println("s : " +s + "     e : " + e);
+            s = e;
+
         }
+//        for (int[] x : arrayList) {
+//            if(e==n){
+//                answer++;
+//                return answer;
+//            }
+//            if (x[0] <= s) {
+//                if (x[1] > e) {
+//                    e = x[1];
+//                }
+//                if(s==e){
+//                    return -1;
+//                }
+//            }
+//            else{
+//                answer++;
+//                s=e;
+//                if (x[1] > e) {
+//                    e = x[1];
+//                }
+//            }
+//        }
         return answer;
     }
 
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         System.out.println(solution(8, new int[]{1, 1, 1, 2, 1, 1, 2, 1, 1}));
         System.out.println(solution(4, new int[]{1, 2, 2, 0, 0}));
         System.out.println(solution(5, new int[]{2, 0, 0, 0, 0, 2}));

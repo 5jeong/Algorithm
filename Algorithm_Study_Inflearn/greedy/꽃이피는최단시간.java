@@ -1,37 +1,23 @@
 package Algorithm_Study_Inflearn.greedy;
 
-import Algorithm_Study_Inflearn.해싱and시간파싱.Solution;
-
 import java.util.ArrayList;
 
 public class 꽃이피는최단시간 {
     public static int solution(int[] plantTime, int[] growTime) {
         int answer = 0;
         int n = plantTime.length;
-        ArrayList<int[]> time = new ArrayList<>();
-        for(int i=0;i<n;i++){
-            time.add(new int[]{plantTime[i],growTime[i]});
+        ArrayList<int[]> arrayList = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            arrayList.add(new int[]{plantTime[i], growTime[i]});
         }
-        time.sort((a,b)->b[1]-a[1]);
-
-        int s=0,e=0;
-        for(int[] x : time){
+        arrayList.sort((a, b) -> b[1] - a[1]);
+        int s = 0, e = 0;
+        for (int[] x : arrayList) {
             e = s + x[0] + x[1];
-            answer = Math.max(answer,e);
-            s +=x[0];
+            s += x[0];
+            answer = Math.max(answer, e);
         }
-//        for(int i=0;i<n;i++){
-//            s+=time.get(i)[0];
-//            int temp = s+ time.get(i)[1];
-//            if(e > temp){
-//                continue;
-//            }
-//            else{
-//                e = temp;
-//                answer = e;
-//            }
-//            System.out.println("s : " + s + "   e : " + e);
-//        }
+
         return answer;
     }
 
