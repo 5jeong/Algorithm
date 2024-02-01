@@ -1,50 +1,58 @@
 package Algorithm_Study_Inflearn.DFS;
 
-import Algorithm_Study_Inflearn.해싱and시간파싱.Solution;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
 
 public class IP주소 {
-    static int l;
+    static int n;
+    static Stack<Integer> stack;
     static ArrayList<String> res;
-    static Stack<String> stack;
-    static void DFS(int L,String s){
 
-        if(L==l && stack.size() == 4){
-            String str =" ";
-            for(String x : stack){
-                str+=x+".";
+    static void dfs(int s, String str) {
+        if (stack.size() == 4 && s == n) {
+            String a = "";
+            for (Integer x : stack) {
+                a += x + ".";
             }
-            str = str.substring(0,str.length()-1);
-            res.add(str);
-        }
-        else{
-            for(int i =L ; i<s.length();i++){
-                if(s.charAt(L) == '0' && i > L) return;
-                String temp =  s.substring(L,i+1);
-                if(Integer.parseInt(temp) > 255) return;
-                stack.push(temp);
-                DFS(i+1,s);
-                stack.pop();
+            res.add(a.substring(0, a.length() - 1));
+        } else {
+            for (int i = s; i < n; i++) {
+                String temp = str.substring(s, i + 1);
+                if (check(temp)) {
+                    stack.push(Integer.parseInt(temp));
+                    dfs(i + 1, str);
+                    stack.pop();
+                } else {
+                    break;
+                }
             }
+
         }
     }
-    public static String[] solution(String s){
-        String[] answer ;
-        l = s.length();
+
+    static boolean check(String str) {
+        if (str.charAt(0) == '0' && str.length() >= 2) {
+            return false;
+        }
+        int num = Integer.parseInt(str);
+        return num >= 0 && num <= 255;
+    }
+
+    public static String[] solution(String s) {
+        String[] answer = {};
+        n = s.length();
         res = new ArrayList<>();
         stack = new Stack<>();
-        DFS(0,s);
+        dfs(0, s);
         answer = new String[res.size()];
-        for(int i=0;i<res.size();i++){
+        for (int i = 0; i < res.size(); i++) {
             answer[i] = res.get(i);
         }
         return answer;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(solution("2025505")));
         System.out.println(Arrays.toString(solution("0000")));
         System.out.println(Arrays.toString(solution("255003")));

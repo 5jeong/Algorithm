@@ -1,34 +1,57 @@
 package Algorithm_Study_Inflearn.DFS;
 
-import Algorithm_Study_Inflearn.해싱and시간파싱.Solution;
-
-import javax.print.DocFlavor;
-import java.sql.ClientInfoStatus;
-import java.util.ArrayList;
-import java.util.LinkedList;
-
 public class 알파코드 {
+    static int n, answer;
     static int[] dy;
 
-    static int DFS(int L,String s){
-        if(dy[L] > 0) return dy[L];
-        if(L < s.length() && s.charAt(L)=='0') return 0;
-        if(L== s.length() || L == s.length()-1) return 1;
-
-        else{
-            int res = DFS(L+1,s);
-            System.out.println(res);
-            int temp = Integer.parseInt(s.substring(L,L+2));
-            if(temp <=26){
-                res += DFS(L+2,s);
+    static void dfs(int L, String s) {
+        if (L == n) {
+            answer++;
+        } else {
+            for (int i = L; i < n; i++) {
+                String temp = s.substring(L, i + 1);
+                if (check(temp)) {
+                    dfs(i + 1, s);
+                } else {
+                    break;
+                }
             }
-            return dy[L] = res;
         }
     }
 
-    public static int solution(String s){
-        dy = new int[s.length()+1];
-        int answer = DFS(0,s);
+    static int DFS(int L, String s) {
+        if (dy[L] > 0) {
+            return dy[L];
+        }
+        if (L < n && s.charAt(L) == '0') {
+            return 0;
+        }
+        if (L == n - 1 || L == n) {
+            return 1;
+        } else {
+            int a = DFS(L + 1, s);
+            int b = Integer.parseInt(s.substring(L, L + 2));
+            if (b <= 26) {
+                a += DFS(L + 2, s);
+            }
+            return dy[L] = a;
+        }
+    }
+
+    static boolean check(String str) {
+        if (str.charAt(0) == '0') {
+            return false;
+        }
+        int num = Integer.parseInt(str);
+        return num >= 1 && num <= 26;
+    }
+
+    public static int solution(String s) {
+        answer = 0;
+        dy = new int[101];
+        n = s.length();
+//        dfs(0, s);
+        answer = DFS(0, s);
         return answer;
     }
 

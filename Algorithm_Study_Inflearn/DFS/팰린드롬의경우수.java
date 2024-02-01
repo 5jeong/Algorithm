@@ -1,78 +1,77 @@
 package Algorithm_Study_Inflearn.DFS;
 
-import Algorithm_Study_Inflearn.해싱and시간파싱.Solution;
-
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.HashMap;
 
 //팰림드롬 = 앞으로 읽나 뒤로읽나 똑같은수
 public class 팰린드롬의경우수 {
-    static ArrayList<String> res;
+    static HashMap<Character, Integer> hashMap;
+    static Deque<Character> deque;
     static int n;
-    static Deque<Character> temp;
-    static HashMap<Character,Integer> hashMap;
+    static ArrayList<String> res;
 
-    static void DFS(){
-        if(temp.size() == n){
-            String str="";
-            for(char y : temp){
-                str+=y;
+    static void dfs() {
+        if (deque.size() == n) {
+            String temp = "";
+            for (char x : deque) {
+                temp += x;
             }
-            res.add(str);
-            return;
-        }
-        else{
+            res.add(temp);
+
+        } else {
             for (char x : hashMap.keySet()) {
                 if (hashMap.get(x) == 0) {
                     continue;
-                } else {
-                    temp.addFirst(x);
-                    temp.addLast(x);
-                    hashMap.put(x, hashMap.get(x)-2);
-                    DFS();
-                    hashMap.put(x, hashMap.get(x)+2);
-                    temp.pollFirst();
-                    temp.pollLast();
                 }
+                deque.addFirst(x);
+                deque.addLast(x);
+                hashMap.put(x, hashMap.get(x) - 2);
+                dfs();
+                deque.pollFirst();
+                deque.pollLast();
+                hashMap.put(x, hashMap.get(x) + 2);
+
             }
         }
-        return;
 
     }
-    public static String[] solution(String s){
+
+    public static String[] solution(String s) {
         String[] answer = {};
-        res = new ArrayList<>();
         n = s.length();
-        temp = new ArrayDeque<>();
+        res = new ArrayList<>();
         hashMap = new HashMap<>();
-        char c = ' ';
-        for(char x : s.toCharArray()){
-            hashMap.put(x,hashMap.getOrDefault(x,0)+1);
+        deque = new ArrayDeque<>();
+        for (char x : s.toCharArray()) {
+            hashMap.put(x, hashMap.getOrDefault(x, 0) + 1);
         }
-        int cnt=0;
-        for(char x : hashMap.keySet()){
-            if(hashMap.get(x) %2==1){
-                c = x;
+        int cnt = 0;
+        char center = ' ';
+        for (char x : hashMap.keySet()) {
+            if (hashMap.get(x) % 2 == 1) {
+                center = x;
                 cnt++;
             }
-            if(cnt==2){
-                return answer;
-            }
         }
-
-        if(c!=' '){
-            temp.add(c);
-            hashMap.put(c, hashMap.get(c)-1);
+        if (cnt > 1) {
+            return answer;
         }
-        DFS();
-
+        if (center != ' ') {
+            hashMap.put(center, hashMap.get(center) - 1);
+            deque.add(center);
+        }
+        dfs();
         answer = new String[res.size()];
-        for(int i=0;i<answer.length;i++){
+        for (int i = 0; i < res.size(); i++) {
             answer[i] = res.get(i);
         }
         return answer;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(solution("aaaabb")));
         System.out.println(Arrays.toString(solution("abbcc")));
         System.out.println(Arrays.toString(solution("abbccee")));
