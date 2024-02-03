@@ -1,40 +1,36 @@
 package Algorithm_Study_Inflearn.BFS;
 
-import Algorithm_Study_Inflearn.해싱and시간파싱.Solution;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class 타일점프 {
-    public static int solution(int[] nums){
+    public static int solution(int[] nums) {
+        int answer = 0;
         Queue<Integer> queue = new LinkedList<>();
-        int n = nums.length;
-        int L=0;
-        int[] ch = new int[n];
+        int[] ch = new int[nums.length];
         queue.offer(0);
         ch[0] = 1;
-        while(!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             int len = queue.size();
-            for(int i=0;i<len;i++){
+            for (int i = 0; i < len; i++) {
                 int temp = queue.poll();
-                for(int j=1;j<=nums[temp];j++){
+                for (int j = 1; j <= nums[temp]; j++) {
                     int nx = temp + j;
-                    if(nx == n-1){
-                        return L+1;
+                    if (nx == nums.length - 1) {
+                        return answer + 1;
                     }
-                    if(nx < n && ch[nx]==0){
+                    if (nx < nums.length && ch[nx] == 0) {
                         ch[nx] = 1;
-                        queue.add(nx);
+                        queue.offer(nx);
                     }
                 }
             }
-            L++;
+            answer++;
         }
-
         return -1;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println(solution(new int[]{2, 2, 1, 2, 1, 1}));
         System.out.println(solution(new int[]{1, 0, 1, 1, 3, 1, 2, 1}));
         System.out.println(solution(new int[]{2, 3, 1, 0, 1, 1, 2, 3, 1, 5, 1, 3, 1}));
