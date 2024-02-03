@@ -1,61 +1,52 @@
 package Algorithm_Study_Inflearn.BFS;
 
-import Algorithm_Study_Inflearn.해싱and시간파싱.Solution;
-
-import java.nio.channels.Pipe;
+import Algorithm_Study_Inflearn.BFS.Solution.Point;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class 미로의최단거리경로 {
-    static int[] dx = {1,0,-1,0};
-    static int[] dy = {0,1,0,-1};
-    static int[][] dis;
-    static int ans;
-    static Queue<Point> queue;
     static class Point {
         int x;
         int y;
-        Point(int x,int y){
-            this.x =x;
-            this.y= y;
+
+        Point(int x, int y) {
+            this.x = x;
+            this.y = y;
         }
     }
-    static void BFS(int[][] board){
-        int L=0;
-        while(!queue.isEmpty()){
-            L++;
+
+    public static int solution(int[][] board) {
+        int answer = 0;
+        int L = 0;
+        int[] dx = {1, 0, -1, 0};
+        int[] dy = {0, 1, 0, -1};
+        int[][] dist = new int[7][7];
+        Queue<Solution.Point> queue = new LinkedList<>();
+        queue.offer(new Solution.Point(0, 0));
+        while (!queue.isEmpty()) {
             int len = queue.size();
-            for(int i=0;i<len;i++){
-                Point temp = queue.poll();
-                for(int j=0;j<4;j++){
-                    int nx = temp.x+dx[j];
-                    int ny = temp.y+dy[j];
+            L++;
+            for (int i = 0; i < len; i++) {
+                Solution.Point temp = queue.poll();
+                for (int dir = 0; dir < 4; dir++) {
+                    int nx = temp.x + dx[dir];
+                    int ny = temp.y + dy[dir];
                     if (nx >= 0 && nx < 7 && ny >= 0 && ny < 7 && board[nx][ny] == 0) {
-                        queue.offer(new Point(nx, ny));
                         board[nx][ny] = 1;
-                        dis[nx][ny] = L;
+                        dist[nx][ny] = L;
+                        queue.offer(new Solution.Point(nx, ny));
                     }
                 }
             }
         }
-
-    }
-    public static int solution(int[][] board){
-        ans = 0;
-        dis= new int[7][7];
-        queue=new LinkedList<>();
-        queue.add(new Point(0,0));
-        board[0][0]=1;
-        BFS(board);
-        ans=dis[6][6];
-        if(ans==0){
-            return -1;
+        if (dist[6][6] != 0) {
+            return dist[6][6];
         }
-        return ans;
+        return -1;
     }
 
-    public static void main(String[] args){
-        int[][] arr={{0, 0, 0, 0, 0, 0, 0},
+    public static void main(String[] args) {
+        int[][] arr = {{0, 0, 0, 0, 0, 0, 0},
                 {0, 1, 1, 1, 1, 1, 0},
                 {0, 0, 0, 1, 0, 0, 0},
                 {1, 1, 0, 1, 0, 1, 1},
