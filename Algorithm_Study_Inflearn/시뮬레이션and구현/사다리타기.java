@@ -6,13 +6,13 @@ public class 사다리타기 {
     public static char[] solution(int n, int[][] ladder) {
         char[] answer = new char[n];
         for (int i = 0; i < n; i++) {
-            answer[i] = (char) (65 + i);
+            answer[i] = (char) (i + 65);
         }
         for (int[] x : ladder) {
             for (int idx : x) {
-                char temp = answer[idx];
-                answer[idx] = answer[idx - 1];
-                answer[idx - 1] = temp;
+                char temp = answer[idx - 1];
+                answer[idx - 1] = answer[idx];
+                answer[idx] = temp;
             }
         }
         return answer;
