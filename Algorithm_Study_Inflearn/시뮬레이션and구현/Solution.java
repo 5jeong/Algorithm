@@ -2,46 +2,57 @@ package Algorithm_Study_Inflearn.시뮬레이션and구현;
 
 import java.util.Arrays;
 
-class Solution {
-    public int[] solution(int[] enter, int[] exit) {
-        int n = enter.length;
-        int[] answer = new int[n];
-        for (int i = 0; i < n; i++) {
-            enter[i]--;
-            exit[i]--;
-        }
-        int[] enterIdx = new int[n];
-        for (int i = 0; i < n; i++) {
-            enterIdx[enter[i]] = i;
-        }
-        int[] enterT = new int[n];
-        int[] exitT = new int[n];
-        int time = 0;
-        for (int i = 0, j = 0; i < n; i++) {
-            for (; j <= enterIdx[exit[i]]; j++) {
-                enterT[enter[j]] = time++;
-            }
-            exitT[exit[i]] = time++;
-        }
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (!(exitT[i] < enterT[j] || exitT[j] < enterT[i])) {
-                    answer[i]++;
-                    answer[j]++;
-                }
-            }
-        }
+import java.util.*;
 
+import java.util.*;
+
+class Solution {
+    public int[] solution(int[][] board, int k) {
+        int[] answer = new int[2];
+        int[] dx = {0, 1, 0, -1};
+        int[] dy = {1, 0, -1, 0};
+        int n = board.length;
+        int time = 0;
+        int x = 0, y = 0;
+        int dir = 0;
+        while (time < k) {
+            int nx = x + dx[dir];
+            int ny = y + dy[dir];
+            if (nx < 0 || nx >= n || ny < 0 || ny >= n || board[nx][ny] == 1) {
+                dir = (dir + 1) % 4;
+                time++;
+                continue;
+            }
+            x = nx;
+            y = ny;
+            time++;
+        }
+        answer[0] = x;
+        answer[1] = y;
         return answer;
     }
 
     public static void main(String[] args) {
         Solution T = new Solution();
-        System.out.println(Arrays.toString(T.solution(new int[]{1, 2, 3, 4}, new int[]{2, 4, 1, 3})));
-        System.out.println(Arrays.toString(T.solution(new int[]{1, 2, 5, 3, 4}, new int[]{2, 3, 1, 4, 5})));
-        System.out.println(
-                Arrays.toString(T.solution(new int[]{1, 3, 2, 4, 5, 7, 6, 8}, new int[]{2, 3, 5, 6, 1, 4, 8, 7})));
-        System.out.println(Arrays.toString(T.solution(new int[]{1, 4, 7, 2, 3, 5, 6}, new int[]{5, 2, 6, 1, 7, 3, 4})));
-        System.out.println(Arrays.toString(T.solution(new int[]{1, 4, 2, 3}, new int[]{2, 1, 4, 3})));
+        int[][] arr1 = {{0, 0, 0, 0, 0},
+                {0, 1, 1, 0, 0},
+                {0, 0, 0, 0, 0},
+                {1, 0, 1, 0, 1},
+                {0, 0, 0, 0, 0}};
+        System.out.println(Arrays.toString(T.solution(arr1, 10)));
+        int[][] arr2 = {{0, 0, 0, 1, 0, 1},
+                {0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 1},
+                {1, 1, 0, 0, 1, 0},
+                {0, 0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0, 0}};
+        System.out.println(Arrays.toString(T.solution(arr2, 20)));
+        int[][] arr3 = {{0, 0, 1, 0, 0},
+                {0, 1, 0, 0, 0},
+                {0, 0, 0, 0, 0},
+                {1, 0, 0, 0, 1},
+                {0, 0, 0, 0, 0}};
+        System.out.println(Arrays.toString(T.solution(arr3, 25)));
+
     }
 }
