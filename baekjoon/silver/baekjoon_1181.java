@@ -1,9 +1,7 @@
-package baekjoon;
+package baekjoon.silver;
 
 import java.io.*;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class baekjoon_1181 {
