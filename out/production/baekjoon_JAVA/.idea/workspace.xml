@@ -5,41 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="520eca43-afcb-4957-9b94-e3e7e0a6d83f" name="Changes" comment="[refactor] 패키지 정리">
-      <change afterPath="$PROJECT_DIR$/baekjoon/silver/baekjoon_3273.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/baekjoon_JAVA/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_10808.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_1085.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_1157.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_1181$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_1181.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_1268.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_13223.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_1475.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_1543.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_1695.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_17609.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_1994.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2003.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2073.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2468$Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2468.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2506.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2577.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2583$Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2583.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2655$brick.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2655.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2667$Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2667.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2744.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2775.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_2869.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_4781.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_6064.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_6996.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/baekjoon_9093.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/bakejoon_2579.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/baekjoon_JAVA/baekjoon/beakjoon_1919.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/baekjoon/bronze/Baekjoon_2309.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,12 +38,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Baekjoon_2309.executor": "Run",
     "Application.SO.executor": "Run",
     "Application.baekjoon_13223.executor": "Run",
     "Application.baekjoon_1475.executor": "Debug",
     "Application.baekjoon_1543.executor": "Run",
     "Application.baekjoon_3273.executor": "Run",
     "Application.beakjoon_1919.executor": "Run",
+    "Application.두원사이의정수쌍.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -117,9 +85,22 @@
       <command value="q" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.baekjoon_3273">
-    <configuration name="SO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="baekjoon.bronze.SO" />
+  <component name="RunManager" selected="Application.Baekjoon_2309">
+    <configuration name="두원사이의정수쌍" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Promgrammers.level2.두원사이의정수쌍" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Promgrammers.level2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Baekjoon_2309" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="baekjoon.bronze.Baekjoon_2309" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
@@ -131,207 +112,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="계단오르기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DP.계단오르기" />
+    <configuration name="SO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="baekjoon.bronze.SO" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.DP.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="계단오르기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DP.계단오르기" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.DP.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="전투게임" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.greedy.전투게임" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.greedy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="줄다리기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.줄다리기" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="스프링쿨러" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.greedy.스프링쿨러" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.greedy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="가장가까운큰수" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.가장가까운큰수" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="준환이의운동관리" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.d3.준환이의운동관리" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="swea.d3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="알파벳공부" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.d3.알파벳공부" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="swea.d3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="조합" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.d3.조합" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="swea.d3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="거듭제곱" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.d3.거듭제곱" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="swea.d3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="진기의최고급붕어빵" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.d3.진기의최고급붕어빵" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="swea.d3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="격자판의숫자이어붙이기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.d4.격자판의숫자이어붙이기" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="swea.d4.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="좌석번호" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.시뮬레이션and구현.좌석번호" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.시뮬레이션and구현.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="부분수열의합" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="swea.d3.부분수열의합" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="swea.d3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="알파코드" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.알파코드" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="줄다리기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.줄다리기" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
+          <option name="PATTERN" value="baekjoon.bronze.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -358,6 +144,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Algorithm_Study_Inflearn.그래프.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="계단오르기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DP.계단오르기" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.DP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -456,6 +255,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="조합" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.조합" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.d3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="모임장소" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.sorting_thinking.모임장소" />
       <module name="baekjoon_JAVA" />
@@ -488,6 +300,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="swea.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="계단오르기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DP.계단오르기" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.DP.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -573,6 +398,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="거듭제곱" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.거듭제곱" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.d3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="방향바꾸기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.그래프.방향바꾸기" />
       <module name="baekjoon_JAVA" />
@@ -618,6 +456,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="swea.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="전투게임" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.greedy.전투게임" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.greedy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -690,6 +541,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="진기의최고급붕어빵" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.진기의최고급붕어빵" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.d3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="가능한시험점수" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="swea.d4.가능한시험점수" />
       <module name="baekjoon_JAVA" />
@@ -755,6 +619,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="줄다리기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.줄다리기" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="이동횟수" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.greedy.이동횟수" />
       <module name="baekjoon_JAVA" />
@@ -800,6 +677,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="swea.d3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="격자판의숫자이어붙이기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d4.격자판의숫자이어붙이기" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.d4.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -885,6 +775,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="스프링쿨러" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.greedy.스프링쿨러" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.greedy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="퍼펙트셔플" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="swea.d3.퍼펙트셔플" />
       <module name="baekjoon_JAVA" />
@@ -917,6 +820,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="swea.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="좌석번호" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.시뮬레이션and구현.좌석번호" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.시뮬레이션and구현.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1015,6 +931,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="가장가까운큰수" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.가장가까운큰수" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="수의새로운연산" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="swea.d3.수의새로운연산" />
       <module name="baekjoon_JAVA" />
@@ -1030,6 +959,19 @@
     </configuration>
     <configuration name="스트링" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="swea.d3.스트링" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.d3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="부분수열의합" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.부분수열의합" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
@@ -1145,12 +1087,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="준환이의운동관리" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.준환이의운동관리" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.d3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="최소회의실개수" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.sorting_thinking.최소회의실개수" />
       <module name="baekjoon_JAVA" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Algorithm_Study_Inflearn.sorting_thinking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="알파코드" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.알파코드" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1275,6 +1243,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="알파벳공부" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="swea.d3.알파벳공부" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="swea.d3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="줄다리기" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Algorithm_Study_Inflearn.DFS.줄다리기" />
+      <module name="baekjoon_JAVA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Algorithm_Study_Inflearn.DFS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="진용이네주차타워" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="swea.d3.진용이네주차타워" />
       <module name="baekjoon_JAVA" />
@@ -1366,19 +1360,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="baekjoon_1543" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="baekjoon.silver.baekjoon_1543" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="baekjoon.bronze.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="baekjoon_3273" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="baekjoon.silver.baekjoon_3273" />
       <module name="baekjoon_JAVA" />
@@ -1392,26 +1373,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="beakjoon_1919" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="baekjoon.bronze.beakjoon_1919" />
-      <module name="baekjoon_JAVA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="baekjoon.bronze.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Baekjoon_2309" />
+        <item itemvalue="Application.두원사이의정수쌍" />
         <item itemvalue="Application.baekjoon_3273" />
         <item itemvalue="Application.SO" />
         <item itemvalue="Application.baekjoon_13223" />
-        <item itemvalue="Application.baekjoon_1543" />
-        <item itemvalue="Application.beakjoon_1919" />
       </list>
     </recent_temporary>
   </component>
@@ -1704,7 +1672,9 @@
       <workItem from="1713693213378" duration="8145000" />
       <workItem from="1716026809766" duration="11357000" />
       <workItem from="1716198983871" duration="1069000" />
-      <workItem from="1716466016062" duration="784000" />
+      <workItem from="1716466016062" duration="7358000" />
+      <workItem from="1716725635418" duration="736000" />
+      <workItem from="1716730885351" duration="1196000" />
     </task>
     <task id="LOCAL-00001" summary="2023-11-17 study">
       <created>1700158307322</created>
