@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class 거리두기확인하기 {
     static int[] dx = {-1, 0, 0, 1};
     static int[] dy = {0, -1, 1, 0};
-
+    static int n = 5;
     public static void main(String[] args) {
         String[][] places = {{"POOOP", "OXXOX", "OPXPX", "OOXOX", "POXXP"}, {
         "POOPX", "OXPXP", "PXXXO", "OXXXO", "OOOPP"}, {"PXOPX", "OXOXP", "OXPOX", "OXXOP", "PXPOX"}, {
@@ -22,11 +22,11 @@ public class 거리두기확인하기 {
     }
 
     public static int[] solution(String[][] places) {
-        int[] answer = new int[5];
+        int[] answer = new int[n];
         int idx = 0;
         for (String[] place : places) {
-            char[][] room = new char[5][5];
-            for (int i = 0; i < 5; i++) {
+            char[][] room = new char[n][n];
+            for (int i = 0; i < n; i++) {
                 room[i] = place[i].toCharArray();
             }
             if (isDistanced(room)) {
@@ -40,8 +40,8 @@ public class 거리두기확인하기 {
     }
 
     private static boolean isDistanced(char[][] room) {
-        for (int x = 0; x < 5; x++) {
-            for (int y = 0; y < 5; y++) {
+        for (int x = 0; x < n; x++) {
+            for (int y = 0; y < n; y++) {
                 if (room[x][y] == 'P') {
                     if (!isDistanced(room, x, y)) {
                         return false;
@@ -56,12 +56,12 @@ public class 거리두기확인하기 {
         for (int dir = 0; dir < 4; dir++) {
             int nx = x + dx[dir];
             int ny = y + dy[dir];
-            if (nx >= 0 && nx < 5 && ny >= 0 && ny < 5) {
+            if (nx >= 0 && nx < n && ny >= 0 && ny < n) {
                 if (room[nx][ny] == 'P') {
                     return false;
                 }
                 if (room[nx][ny] == 'O') {
-                    if (!isNextDistanced(room, x, y, 3 - dir)) {
+                    if (!isNextDistanced(room, nx, ny, 3 - dir)) {
                         return false;
                     }
                 }
@@ -77,7 +77,7 @@ public class 거리두기확인하기 {
             }
             int nx = x + dx[dir];
             int ny = y + dy[dir];
-            if (nx >= 0 && nx < 5 && ny >= 0 && ny < 5 && room[nx][ny] == 'P') {
+            if (nx >= 0 && nx < n && ny >= 0 && ny < n && room[nx][ny] == 'P') {
                 return false;
             }
         }
