@@ -3,32 +3,32 @@ package algorithmStudy.DFS_BFS활용;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class 조합구하기 {
-    static int n,m;
     static int[] combi;
-    static void DFS(int L,int s) {
+    static int n,m;
+    static void dfs(int L,int s){
         if(L==m){
             for(int x : combi){
                 System.out.print(x+" ");
             }
             System.out.println();
-        }
-        else{
+        }else{
             for(int i=s;i<=n;i++){
                 combi[L] = i;
-                DFS(L+1,i+1);
+                dfs(L+1,i+1);
             }
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        n=sc.nextInt();
+        m=sc.nextInt();
         combi = new int[m];
-        DFS(0,1);
+        dfs(0,1);
+
     }
 }

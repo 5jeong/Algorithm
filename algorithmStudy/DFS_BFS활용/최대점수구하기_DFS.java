@@ -1,42 +1,38 @@
 package algorithmStudy.DFS_BFS활용;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class 최대점수구하기_DFS {
-    static int n,m,ans=Integer.MIN_VALUE;
+
+    static int n, m;
+    static int ans = Integer.MIN_VALUE;
     static int[] score;
     static int[] time;
 
-    static void DFS(int L,int score_sum,int time_sum){
-        if(time_sum > m){
+    private static void dfs(int L, int sum, int timeSum) {
+        if (timeSum > m) {
             return;
         }
-        if(L==n){
-            ans = Math.max(ans,score_sum);
-        }
-        else{
-            DFS(L+1,score_sum+score[L],time_sum+time[L]);
-            DFS(L+1,score_sum,time_sum);
-
+        if (L == n) {
+            ans = Math.max(ans, sum);
+        } else {
+            dfs(L + 1, sum + score[L], timeSum + time[L]);
+            dfs(L + 1, sum, timeSum);
         }
     }
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        n = sc.nextInt();
+        m = sc.nextInt();
         score = new int[n];
         time = new int[n];
-        for(int i=0;i<n;i++){
-            st = new StringTokenizer(br.readLine());
-            score[i] = Integer.parseInt(st.nextToken());
-            time[i] = Integer.parseInt(st.nextToken());
+        for (int i = 0; i < n; i++) {
+            score[i] = sc.nextInt();
+            time[i] = sc.nextInt();
         }
-        DFS(0,0,0);
+        dfs(0, 0, 0);
         System.out.println(ans);
-
     }
 }

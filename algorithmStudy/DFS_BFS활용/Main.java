@@ -3,62 +3,60 @@ package algorithmStudy.DFS_BFS활용;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
 
 public class Main {
-    static class Point{
-        int x,y;
-        Point(int x,int y){
-            this.x=x;
-            this.y=y;
+    static int[][] board;
+    static int[][] dis;
+
+    static int[] dx = {1, 0, -1, 0};
+    static int[] dy = {0, 1, 0, -1};
+    static int ans;
+    static Queue<Point> queue;
+
+    static class Point {
+        int x;
+        int y;
+
+        Point(int x, int y) {
+            this.x = x;
+            this.y = y;
         }
     }
-    static int n,m;
-    static ArrayList<Point> house = new ArrayList<>();
-    static ArrayList<Point> pizza = new ArrayList<>();
-    static int[][] city;
-    static int[] combi;
-    static int len,ans=Integer.MAX_VALUE;
-    static void DFS(int L,int s) {
-        if (L == m) {
-            int sum =0;
-            for (Point house : house) {
-                int dis = Integer.MAX_VALUE;
-                for (int x : combi) {
-                    dis = Math.min(dis, Math.abs(house.x - pizza.get(x).x) + Math.abs(house.y - pizza.get(x).y));
+
+    static void bfs() {
+        while (!queue.isEmpty()) {
+            Point temp = queue.poll();
+            for (int dir = 0; dir < 4; dir++) {
+                int nx = temp.x + dx[dir];
+                int ny = temp.y + dy[dir];
+                if (nx >= 0 && nx < 7 && ny >= 0 && ny < 7 && board[nx][ny] == 0) {
+                    board[nx][ny] = 1;
+                    dis[nx][ny] = dis[temp.x][temp.y] + 1;
+                    queue.add(new Point(nx, ny));
                 }
-                sum+=dis;
-            }
-            ans = Math.min(ans,sum);
-        }
-        else{
-            for(int i=s;i<len;i++){
-                combi[L] = i;
-                DFS(L+1,i+1);
             }
         }
+
     }
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        n = Integer.parseInt(st.nextToken());
-        m = Integer.parseInt(st.nextToken());
-        combi = new int[m];
-        city = new int[n][n];
-        for(int i=0;i<n;i++){
+        StringTokenizer st;
+        board = new int[7][7];
+        dis = new int[7][7];
+        for (int i = 0; i < 7; i++) {
             st = new StringTokenizer(br.readLine());
-            for(int j=0;j<n;j++){
-                city[i][j] = Integer.parseInt(st.nextToken());
-                if(city[i][j]==1){
-                    house.add(new Point(i+1,j+1));
-                }
-                else if (city[i][j]==2){
-                    len++;
-                    pizza.add(new Point(i+1,j+1));
-                }
+            for (int j = 0; j < 7; j++) {
+                board[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        DFS(0,0);
-        System.out.println(ans);
+        queue = new LinkedList<>();
+        board[0][0] =1;
+        queue.add(new Point(0, 0));
+        bfs();
+        System.out.println(dis[6][6] == 0 ? -1 : dis[6][6]);
     }
 }

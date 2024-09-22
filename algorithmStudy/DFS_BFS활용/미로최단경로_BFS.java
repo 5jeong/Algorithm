@@ -1,44 +1,64 @@
 package algorithmStudy.DFS_BFS활용;
 
+import algorithmStudy.DFS_BFS활용.Main.Point;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class 미로탐색_DFS {
+
+public class 미로최단경로_BFS {
     static int[][] board;
+    static int[][] dis;
+
     static int[] dx = {1, 0, -1, 0};
     static int[] dy = {0, 1, 0, -1};
     static int ans;
+    static Queue<Main.Point> queue;
 
-    static void dfs(int x, int y) {
-        if (x == 6 && y == 6) {
-            ans++;
-        } else {
+    static class Point {
+        int x;
+        int y;
+
+        Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+    static void bfs() {
+        while (!queue.isEmpty()) {
+            Main.Point temp = queue.poll();
             for (int dir = 0; dir < 4; dir++) {
-                int nx = x + dx[dir];
-                int ny = y + dy[dir];
+                int nx = temp.x + dx[dir];
+                int ny = temp.y + dy[dir];
                 if (nx >= 0 && nx < 7 && ny >= 0 && ny < 7 && board[nx][ny] == 0) {
                     board[nx][ny] = 1;
-                    dfs(nx, ny);
-                    board[nx][ny] = 0;
+                    dis[nx][ny] = dis[temp.x][temp.y] + 1;
+                    queue.add(new Main.Point(nx, ny));
                 }
             }
         }
+
     }
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
         board = new int[7][7];
+        dis = new int[7][7];
         for (int i = 0; i < 7; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < 7; j++) {
                 board[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        board[0][0] = 1;
-        dfs(0, 0);
-        System.out.println(ans);
+        queue = new LinkedList<>();
+        board[0][0] =1;
+        queue.add(new Main.Point(0, 0));
+        bfs();
+        System.out.println(dis[6][6] == 0 ? -1 : dis[6][6]);
     }
 }

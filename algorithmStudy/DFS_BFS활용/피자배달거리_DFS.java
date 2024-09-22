@@ -15,15 +15,15 @@ public class 피자배달거리_DFS {
         }
     }
     static int n,m;
-    static ArrayList<Main.Point> house = new ArrayList<>();
-    static ArrayList<Main.Point> pizza = new ArrayList<>();
+    static ArrayList<Point> house = new ArrayList<>();
+    static ArrayList<Point> pizza = new ArrayList<>();
     static int[][] city;
     static int[] combi;
     static int len,ans=Integer.MAX_VALUE;
     static void DFS(int L,int s) {
         if (L == m) {
             int sum =0;
-            for (Main.Point house : house) {
+            for (Point house : house) {
                 int dis = Integer.MAX_VALUE;
                 for (int x : combi) {
                     dis = Math.min(dis, Math.abs(house.x - pizza.get(x).x) + Math.abs(house.y - pizza.get(x).y));
@@ -51,11 +51,11 @@ public class 피자배달거리_DFS {
             for(int j=0;j<n;j++){
                 city[i][j] = Integer.parseInt(st.nextToken());
                 if(city[i][j]==1){
-                    house.add(new Main.Point(i+1,j+1));
+                    house.add(new Point(i+1,j+1));
                 }
                 else if (city[i][j]==2){
                     len++;
-                    pizza.add(new Main.Point(i+1,j+1));
+                    pizza.add(new Point(i+1,j+1));
                 }
             }
         }
