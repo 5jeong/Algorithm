@@ -1,6 +1,5 @@
 package algorithmStudy.DFS_BFS활용;
 
-import algorithmStudy.DFS_BFS활용.Main.Point;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,7 +15,7 @@ public class 미로최단경로_BFS {
     static int[] dx = {1, 0, -1, 0};
     static int[] dy = {0, 1, 0, -1};
     static int ans;
-    static Queue<Main.Point> queue;
+    static Queue<Point> queue;
 
     static class Point {
         int x;
@@ -30,14 +29,14 @@ public class 미로최단경로_BFS {
 
     static void bfs() {
         while (!queue.isEmpty()) {
-            Main.Point temp = queue.poll();
+            Point temp = queue.poll();
             for (int dir = 0; dir < 4; dir++) {
                 int nx = temp.x + dx[dir];
                 int ny = temp.y + dy[dir];
                 if (nx >= 0 && nx < 7 && ny >= 0 && ny < 7 && board[nx][ny] == 0) {
                     board[nx][ny] = 1;
                     dis[nx][ny] = dis[temp.x][temp.y] + 1;
-                    queue.add(new Main.Point(nx, ny));
+                    queue.add(new Point(nx, ny));
                 }
             }
         }
@@ -57,7 +56,7 @@ public class 미로최단경로_BFS {
         }
         queue = new LinkedList<>();
         board[0][0] =1;
-        queue.add(new Main.Point(0, 0));
+        queue.add(new Point(0, 0));
         bfs();
         System.out.println(dis[6][6] == 0 ? -1 : dis[6][6]);
     }
