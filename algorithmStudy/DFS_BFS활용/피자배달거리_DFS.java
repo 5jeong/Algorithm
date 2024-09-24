@@ -1,65 +1,74 @@
 package algorithmStudy.DFS_BFS활용;
 
+import algorithmStudy.DFS_BFS활용.Main.Point;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class 피자배달거리_DFS {
-    static class Point{
-        int x,y;
-        Point(int x,int y){
-            this.x=x;
-            this.y=y;
+    private static int n, m;
+    private static List<Main.Point> homes, pizzas;
+    private static int[] combi;
+    private static int ans = Integer.MAX_VALUE;
+
+    static class Point {
+        int x;
+        int y;
+
+        Point(int x, int y) {
+            this.x = x;
+            this.y = y;
         }
     }
-    static int n,m;
-    static ArrayList<Point> house = new ArrayList<>();
-    static ArrayList<Point> pizza = new ArrayList<>();
-    static int[][] city;
-    static int[] combi;
-    static int len,ans=Integer.MAX_VALUE;
-    static void DFS(int L,int s) {
+
+    private static void dfs(int L, int s) {
         if (L == m) {
-            int sum =0;
-            for (Point house : house) {
-                int dis = Integer.MAX_VALUE;
+            int city_dis = 0;
+
+            for (Main.Point home : homes) {
+                int home_dis = Integer.MAX_VALUE;
                 for (int x : combi) {
-                    dis = Math.min(dis, Math.abs(house.x - pizza.get(x).x) + Math.abs(house.y - pizza.get(x).y));
+                    home_dis = Math.min(home_dis,
+                            Math.abs(pizzas.get(x).x - home.x) + Math.abs(pizzas.get(x).y - home.y));
                 }
-                sum+=dis;
+                city_dis += home_dis;
             }
-            ans = Math.min(ans,sum);
-        }
-        else{
-            for(int i=s;i<len;i++){
+
+            ans = Math.min(ans, city_dis);
+        } else {
+            for (int i = s; i < pizzas.size(); i++) {
                 combi[L] = i;
-                DFS(L+1,i+1);
+                dfs(L + 1, i + 1);
             }
         }
     }
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
+
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
         combi = new int[m];
-        city = new int[n][n];
-        for(int i=0;i<n;i++){
+        homes = new ArrayList<>();
+        pizzas = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
-            for(int j=0;j<n;j++){
-                city[i][j] = Integer.parseInt(st.nextToken());
-                if(city[i][j]==1){
-                    house.add(new Point(i+1,j+1));
+            for (int j = 0; j < n; j++) {
+                int temp = Integer.parseInt(st.nextToken());
+                if (temp == 1) {
+                    homes.add(new Main.Point(i, j));
                 }
-                else if (city[i][j]==2){
-                    len++;
-                    pizza.add(new Point(i+1,j+1));
+                if (temp == 2) {
+                    pizzas.add(new Main.Point(i, j));
                 }
             }
         }
-        DFS(0,0);
+        dfs(0, 0);
         System.out.println(ans);
     }
 }
