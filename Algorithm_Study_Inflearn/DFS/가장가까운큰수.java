@@ -2,52 +2,51 @@ package Algorithm_Study_Inflearn.DFS;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class 가장가까운큰수 {
-    static ArrayList<Integer> nums;
+    static int len,ans;
+    static List<Integer> nums;
     static int[] ch;
-    static int answer, target;
     static boolean flag;
 
-    static void dfs(int L, int num) {
+    private static void dfs(int L, int num,int n) {
         if (flag) {
             return;
         }
-        if (L == nums.size()) {
-            if (num > target) {
-                answer = num;
-                flag = true;
+        if (L == len ) {
+            if(num > n){
+                ans = num;
+                flag=true;
             }
         } else {
-            for (int i = 0; i < nums.size(); i++) {
+            for (int i = 0; i < len; i++) {
                 if (ch[i] == 0) {
                     ch[i] = 1;
-                    dfs(L + 1, num * 10 + nums.get(i));
+                    dfs(L + 1, num * 10 + nums.get(i),n);
                     ch[i] = 0;
                 }
             }
         }
-
     }
 
     public static int solution(int n) {
-        target = n;
-        answer = 0;
+        String s = String.valueOf(n);
+        len = s.length();
+        ans = 0;
         nums = new ArrayList<>();
         flag = false;
-        while (n > 0) {
-            nums.add(n % 10);
-            n /= 10;
+        for (char x : s.toCharArray()) {
+            nums.add(Integer.parseInt(String.valueOf(x)));
         }
-        ch = new int[nums.size()];
         Collections.sort(nums);
-        dfs(0, 0);
-        if (!flag) {
-            answer = -1;
-        }
-        return answer;
+        ch = new int[len];
+        dfs(0, 0,n);
+        return flag ? ans : -1;
     }
-    public static void main(String[] args) {
+
+    public static void main(String[] args){
+        Solution T = new Solution();
         System.out.println(solution(123));
         System.out.println(solution(321));
         System.out.println(solution(20573));
