@@ -3,52 +3,67 @@ package Algorithm_Study_Inflearn.DFS;
 import java.util.*;
 
 class Solution {
-    static int ans, n;
-    static int[] ch;
-    static ArrayList<Integer> white, black;
+    static int n;
+    static List<String> res;
+    static HashMap<Character, Integer> hashMap;
+    static Deque<Character> deque;
 
-    private void dfs(int L, int s) {
-        if (L == n / 2) {
-            int whiteSum = 0;
-            int blackSum = 0;
-            for (int i = 0; i < n; i++) {
-                if (ch[i] == 1) {
-                    whiteSum += white.get(i);
-                } else {
-                    blackSum += black.get(i);
-                }
+    private static void dfs() {
+        if (deque.size() == n) {
+            String temp = "";
+            for (char x : deque) {
+                temp += x;
             }
-
-            ans = Math.min(ans, Math.abs(whiteSum - blackSum));
+            res.add(temp);
         } else {
-            for (int i = s; i < n; i++) {
-                ch[i] = 1;
-                dfs(L + 1, i + 1);
-                ch[i] = 0;
+            for (char x : hashMap.keySet()) {
+                if (hashMap.get(x) == 0) {
+                    continue;
+                }
+                deque.addFirst(x);
+                deque.addLast(x);
+                hashMap.put(x, hashMap.get(x) - 2);
+                dfs();
+                deque.pollFirst();
+                deque.pollLast();
+                hashMap.put(x, hashMap.get(x) + 2);
             }
+
         }
+
     }
 
-    public int solution(int[][] cans) {
-        int answer = 0;
-        n = cans.length;
-        white = new ArrayList<>();
-        black = new ArrayList<>();
-        ch = new int[n];
-        ans = Integer.MAX_VALUE;
-        for (int[] x : cans) {
-            white.add(x[0]);
-            black.add(x[1]);
+    public String[] solution(String s) {
+        String[] answer = {};
+        n = s.length();
+        hashMap = new HashMap<>();
+        deque = new ArrayDeque<>();
+        for (char x : s.toCharArray()) {
+            hashMap.put(x, hashMap.getOrDefault(x, 0) + 1);
         }
-        dfs(0, 0);
-        return ans;
+        int cnt = 0;
+        for (char x : hashMap.keySet()) {
+            if (cnt > 1) {
+                return new String[]{};
+            }
+            if (hashMap.get(x) % 2 == 1) {
+                cnt++;
+                deque.add(x);
+                hashMap.put(x, hashMap.get(x) - 1);
+            }
+        }
+        res = new ArrayList<>();
+        dfs();
+        answer = res.stream().toArray(String[]::new);
+        return answer;
     }
 
     public static void main(String[] args) {
         Solution T = new Solution();
-        System.out.println(T.solution(new int[][]{{87, 84}, {66, 78}, {94, 94}, {93, 87}, {72, 92}, {78, 63}}));
-        System.out.println(T.solution(new int[][]{{10, 20}, {15, 25}, {35, 23}, {55, 20}}));
-        System.out.println(T.solution(
-                new int[][]{{11, 27}, {16, 21}, {35, 21}, {52, 21}, {25, 33}, {25, 32}, {37, 59}, {33, 47}}));
+        System.out.println(Arrays.toString(T.solution("aaaabb")));
+        System.out.println(Arrays.toString(T.solution("abbcc")));
+        System.out.println(Arrays.toString(T.solution("abbccee")));
+        System.out.println(Arrays.toString(T.solution("abbcceee")));
+        System.out.println(Arrays.toString(T.solution("ffeffaae")));
     }
 }
