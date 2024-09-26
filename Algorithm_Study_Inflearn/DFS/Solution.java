@@ -3,67 +3,52 @@ package Algorithm_Study_Inflearn.DFS;
 import java.util.*;
 
 class Solution {
-    static int[][] relation;
+    static int ans, n;
     static int[] ch;
-    static int ans;
-    static Stack<Integer> stack;
+    static ArrayList<Integer> white, black;
 
-//    private static void dfs(int L) {
-//        if (L == 7) {
-//            ans++;
-//        } else {
-//            // 순열
-//            for (int i = 1; i <= 7; i++) {
-//                if (!stack.isEmpty() && relation[stack.peek()][i] == 1) {
-//                    continue;
-//                }
-//                if (ch[i] == 0) {
-//                    ch[i] = 1;
-//                    stack.push(i);
-//                    dfs(L + 1);
-//                    ch[i] = 0;
-//                    stack.pop();
-//                }
-//            }
-//        }
-//    }
-
-    private static void dfs(int L, int now, int pre) {
-        if (relation[now][pre] == 1) {
-            return;
-        }
-        if (L == 7) {
-            ans++;
-        } else {
-            for (int i = 1; i <= 7; i++) {
-                if (ch[i] == 0) {
-                    ch[i] = 1;
-                    dfs(L + 1, i, now);
-                    ch[i] = 0;
+    private void dfs(int L, int s) {
+        if (L == n / 2) {
+            int whiteSum = 0;
+            int blackSum = 0;
+            for (int i = 0; i < n; i++) {
+                if (ch[i] == 1) {
+                    whiteSum += white.get(i);
+                } else {
+                    blackSum += black.get(i);
                 }
+            }
+
+            ans = Math.min(ans, Math.abs(whiteSum - blackSum));
+        } else {
+            for (int i = s; i < n; i++) {
+                ch[i] = 1;
+                dfs(L + 1, i + 1);
+                ch[i] = 0;
             }
         }
     }
 
-    public int solution(int[][] fight) {
-        ans = 0;
-        relation = new int[8][8];
-        for (int[] x : fight) {
-            relation[x[0]][x[1]] = 1;
-            relation[x[1]][x[0]] = 1;
+    public int solution(int[][] cans) {
+        int answer = 0;
+        n = cans.length;
+        white = new ArrayList<>();
+        black = new ArrayList<>();
+        ch = new int[n];
+        ans = Integer.MAX_VALUE;
+        for (int[] x : cans) {
+            white.add(x[0]);
+            black.add(x[1]);
         }
-        ch = new int[8];
-//        stack = new Stack<>();
-        dfs(0, 0, 0);
+        dfs(0, 0);
         return ans;
     }
 
     public static void main(String[] args) {
         Solution T = new Solution();
-        System.out.println(T.solution(new int[][]{{1, 3}, {5, 7}, {4, 2}}));
-        System.out.println(T.solution(new int[][]{{3, 2}, {3, 5}, {5, 2}, {7, 3}}));
-        System.out.println(T.solution(new int[][]{{1, 2}, {1, 5}, {1, 7}, {1, 3}}));
-        System.out.println(T.solution(new int[][]{{1, 7}}));
-        System.out.println(T.solution(new int[][]{{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}}));
+        System.out.println(T.solution(new int[][]{{87, 84}, {66, 78}, {94, 94}, {93, 87}, {72, 92}, {78, 63}}));
+        System.out.println(T.solution(new int[][]{{10, 20}, {15, 25}, {35, 23}, {55, 20}}));
+        System.out.println(T.solution(
+                new int[][]{{11, 27}, {16, 21}, {35, 21}, {52, 21}, {25, 33}, {25, 32}, {37, 59}, {33, 47}}));
     }
 }

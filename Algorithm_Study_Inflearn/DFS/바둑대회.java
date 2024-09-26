@@ -3,42 +3,45 @@ package Algorithm_Study_Inflearn.DFS;
 import java.util.ArrayList;
 
 public class 바둑대회 {
-    static int answer, n;
+    static int ans, n;
     static int[] ch;
+    static ArrayList<Integer> white, black;
 
-    static void dfs(int L, int s, int[][] cans) {
+    private static void dfs(int L, int s) {
         if (L == n / 2) {
-            ArrayList<Integer> white = new ArrayList<>();
-            ArrayList<Integer> black = new ArrayList<>();
+            int whiteSum = 0;
+            int blackSum = 0;
             for (int i = 0; i < n; i++) {
                 if (ch[i] == 1) {
-                    white.add(i);
+                    whiteSum += white.get(i);
                 } else {
-                    black.add(i);
+                    blackSum += black.get(i);
                 }
             }
-            int white_sum = 0;
-            int black_sum = 0;
-            for (int i = 0; i < n / 2; i++) {
-                white_sum += cans[white.get(i)][0];
-                black_sum += cans[black.get(i)][1];
-            }
-            answer = Math.min(answer, Math.abs(white_sum - black_sum));
+
+            ans = Math.min(ans, Math.abs(whiteSum - blackSum));
         } else {
             for (int i = s; i < n; i++) {
                 ch[i] = 1;
-                dfs(L + 1, i + 1, cans);
+                dfs(L + 1, i + 1);
                 ch[i] = 0;
             }
         }
     }
 
     public static int solution(int[][] cans) {
-        answer = Integer.MAX_VALUE;
+        int answer = 0;
         n = cans.length;
+        white = new ArrayList<>();
+        black = new ArrayList<>();
         ch = new int[n];
-        dfs(0, 0, cans);
-        return answer;
+        ans = Integer.MAX_VALUE;
+        for (int[] x : cans) {
+            white.add(x[0]);
+            black.add(x[1]);
+        }
+        dfs(0, 0);
+        return ans;
     }
 
     public static void main(String[] args) {
