@@ -5,51 +5,49 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class IP주소 {
+    static Stack<String> stack;
     static int n;
-    static Stack<Integer> stack;
     static ArrayList<String> res;
 
-    static void dfs(int s, String str) {
+    private static void dfs(int s, String str) {
+
         if (stack.size() == 4 && s == n) {
-            String a = "";
-            for (Integer x : stack) {
-                a += x + ".";
+            String temp = "";
+            for (String x : stack) {
+                temp += x + ".";
             }
-            res.add(a.substring(0, a.length() - 1));
+            res.add(temp.substring(0, temp.length() - 1));
+
         } else {
             for (int i = s; i < n; i++) {
                 String temp = str.substring(s, i + 1);
+                // 유효한 숫자인지 체크
                 if (check(temp)) {
-                    stack.push(Integer.parseInt(temp));
+                    stack.add(temp);
                     dfs(i + 1, str);
                     stack.pop();
-                } else {
-                    break;
                 }
             }
-
         }
     }
 
-    static boolean check(String str) {
-        if (str.charAt(0) == '0' && str.length() >= 2) {
+    // 0~255 사이의 숫자
+    // 0으로 시작하는 2자리 이상 숫자 x
+    private static boolean check(String temp) {
+        if (temp.length() > 1 && temp.charAt(0) == '0') {
             return false;
         }
-        int num = Integer.parseInt(str);
+        int num = Integer.parseInt(temp);
         return num >= 0 && num <= 255;
     }
 
     public static String[] solution(String s) {
         String[] answer = {};
+        stack = new Stack<>();
         n = s.length();
         res = new ArrayList<>();
-        stack = new Stack<>();
         dfs(0, s);
-        answer = new String[res.size()];
-        for (int i = 0; i < res.size(); i++) {
-            answer[i] = res.get(i);
-        }
-        return answer;
+        return res.stream().toArray(String[]::new);
     }
 
     public static void main(String[] args) {

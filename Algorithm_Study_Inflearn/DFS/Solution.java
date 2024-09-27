@@ -3,67 +3,58 @@ package Algorithm_Study_Inflearn.DFS;
 import java.util.*;
 
 class Solution {
+    static Stack<String> stack;
     static int n;
-    static List<String> res;
-    static HashMap<Character, Integer> hashMap;
-    static Deque<Character> deque;
+    static ArrayList<String> res;
 
-    private static void dfs() {
-        if (deque.size() == n) {
+    private static void dfs(int s, String str) {
+
+        if (stack.size() == 4 && s == n) {
             String temp = "";
-            for (char x : deque) {
-                temp += x;
+            for (String x : stack) {
+                temp += x + ".";
             }
-            res.add(temp);
+            res.add(temp.substring(0, temp.length() - 1));
+
         } else {
-            for (char x : hashMap.keySet()) {
-                if (hashMap.get(x) == 0) {
-                    continue;
+            for (int i = s; i < n; i++) {
+                String temp = str.substring(s, i + 1);
+                // 유효한 숫자인지 체크
+                if (check(temp)) {
+                    stack.add(temp);
+                    dfs(i + 1, str);
+                    stack.pop();
                 }
-                deque.addFirst(x);
-                deque.addLast(x);
-                hashMap.put(x, hashMap.get(x) - 2);
-                dfs();
-                deque.pollFirst();
-                deque.pollLast();
-                hashMap.put(x, hashMap.get(x) + 2);
             }
-
         }
-
     }
 
-    public String[] solution(String s) {
+    // 0~255 사이의 숫자
+    // 0으로 시작하는 2자리 이상 숫자 x
+    private static boolean check(String temp) {
+        if (temp.length() > 1 && temp.charAt(0) == '0') {
+            return false;
+        }
+        int num = Integer.parseInt(temp);
+        return num >= 0 && num <= 255;
+    }
+
+    public static String[] solution(String s) {
         String[] answer = {};
+        stack = new Stack<>();
         n = s.length();
-        hashMap = new HashMap<>();
-        deque = new ArrayDeque<>();
-        for (char x : s.toCharArray()) {
-            hashMap.put(x, hashMap.getOrDefault(x, 0) + 1);
-        }
-        int cnt = 0;
-        for (char x : hashMap.keySet()) {
-            if (cnt > 1) {
-                return new String[]{};
-            }
-            if (hashMap.get(x) % 2 == 1) {
-                cnt++;
-                deque.add(x);
-                hashMap.put(x, hashMap.get(x) - 1);
-            }
-        }
         res = new ArrayList<>();
-        dfs();
-        answer = res.stream().toArray(String[]::new);
-        return answer;
+        dfs(0, s);
+        return res.stream().toArray(String[]::new);
     }
 
     public static void main(String[] args) {
         Solution T = new Solution();
-        System.out.println(Arrays.toString(T.solution("aaaabb")));
-        System.out.println(Arrays.toString(T.solution("abbcc")));
-        System.out.println(Arrays.toString(T.solution("abbccee")));
-        System.out.println(Arrays.toString(T.solution("abbcceee")));
-        System.out.println(Arrays.toString(T.solution("ffeffaae")));
+        System.out.println(Arrays.toString(T.solution("2025505")));
+        System.out.println(Arrays.toString(T.solution("0000")));
+        System.out.println(Arrays.toString(T.solution("255003")));
+        System.out.println(Arrays.toString(T.solution("155032012")));
+        System.out.println(Arrays.toString(T.solution("02325123")));
+        System.out.println(Arrays.toString(T.solution("121431211")));
     }
 }
