@@ -1,0 +1,7 @@
+str.toUpperCase() : 문자열 대문자로 변환
+Character.toUpperCase(c) : 문자 대문자로 변환
+str.charAt(i) : 문자열을 하나씩 문자로 보기(배열처럼)
+for(char x : str.toCharArray()) : 문자열을 하나의 문자로 배열처럼 사용
+String[] s = str.split(" ") : 문자열을 공백단위로 끊어서 배열에 저장 
+str.indexOf() : 문자열 위치 탐색
+Character.isAlphabetic('문자' ) : 문자를 알파벳인지 확인 
