@@ -6,33 +6,33 @@ import java.util.Queue;
 public class 송아지를잡자 {
 
     public static int solution(int s, int e) {
-        int answer = 0;
+        int L = 0;
         Queue<Integer> queue = new LinkedList<>();
         int[][] ch = new int[2][200001];
         queue.offer(s);
-        ch[0][s] = 1;
-        int cnt = 1;
         while (!queue.isEmpty()) {
             int len = queue.size();
-            e += cnt;
+            L++;
+            e += L;
             if (e > 200000) {
                 return -1;
             }
-            answer++;
-            int a = answer % 2;
             for (int i = 0; i < len; i++) {
                 int temp = queue.poll();
                 for (int nx : new int[]{temp + 1, temp - 1, temp * 2}) {
-                    if (nx == e) {
-                        return answer;
-                    }
-                    if (nx >= 0 && nx < 200000 && ch[a][nx] == 0) {
-                        ch[a][nx] = 1;
+                    // -1 , 1 특성상 짝수는 짝수로 이동할수 있고, 홀수는 홀수로 이동 가능
+                    if (nx >= 0 && nx < 200001 && ch[L % 2][nx] == 0) {
+                        ch[L % 2][nx] = 1;
                         queue.offer(nx);
                     }
                 }
             }
-            cnt++;
+
+            // 홀수레벨 ch[1][nx]은 현재 홀수레벨에서 모두 방문 가능 지점
+            // 짝수레벨 ch[0][nx]은 현재 짝수레벨에서 모두 방문 가능 지점
+            if (ch[L % 2][e] == 1) {
+                return L;
+            }
         }
         return -1;
     }
