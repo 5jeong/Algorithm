@@ -15,13 +15,13 @@ public class 미로의최단거리경로 {
     }
 
     public static int solution(int[][] board) {
-        int answer = 0;
         int L = 0;
+        Queue<Point> queue = new LinkedList<>();
+        int n = 7;
         int[] dx = {1, 0, -1, 0};
         int[] dy = {0, 1, 0, -1};
-        int[][] dist = new int[7][7];
-        Queue<Point> queue = new LinkedList<>();
         queue.offer(new Point(0, 0));
+
         while (!queue.isEmpty()) {
             int len = queue.size();
             L++;
@@ -30,17 +30,17 @@ public class 미로의최단거리경로 {
                 for (int dir = 0; dir < 4; dir++) {
                     int nx = temp.x + dx[dir];
                     int ny = temp.y + dy[dir];
-                    if (nx >= 0 && nx < 7 && ny >= 0 && ny < 7 && board[nx][ny] == 0) {
+                    if (nx == n - 1 && ny == n - 1) {
+                        return L;
+                    }
+                    if (nx >= 0 && nx < n && ny >= 0 && ny < n && board[nx][ny] == 0) {
                         board[nx][ny] = 1;
-                        dist[nx][ny] = L;
                         queue.offer(new Point(nx, ny));
                     }
                 }
             }
         }
-        if (dist[6][6] != 0) {
-            return dist[6][6];
-        }
+
         return -1;
     }
 
@@ -53,6 +53,11 @@ public class 미로의최단거리경로 {
                 {1, 0, 0, 0, 1, 0, 0},
                 {1, 0, 1, 0, 0, 0, 0}};
         System.out.println(solution(arr));
+        System.out.println(solution(new int[][]{
+                {0, 0, 0, 0, 0, 0, 0}, {0, 1, 1, 1, 1, 1, 0}, {0, 0, 0, 1, 0, 0, 0}, {1, 1, 0, 1, 1, 1, 1},
+                {1, 1, 0, 1, 0, 0, 0}, {1, 0, 0, 0, 1, 0, 0}, {1, 0, 1, 0, 1, 0, 0}}));
     }
+
+
 }
 

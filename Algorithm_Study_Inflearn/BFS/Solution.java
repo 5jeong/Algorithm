@@ -3,44 +3,81 @@ package Algorithm_Study_Inflearn.BFS;
 import java.util.*;
 
 class Solution {
-    public int solution(int s, int e) {
+    static int[][] dis;
+    static int[][] ch;
+    static int n, emptyLand;
+    static int[] dx = {1, 0, -1, 0};
+    static int[] dy = {0, 1, 0, -1};
+    static Queue<Point> queue;
+
+    static class Point {
+        int x;
+        int y;
+
+        Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
+
+    static void bfs(int[][] board) {
         int L = 0;
-        Queue<Integer> queue = new LinkedList<>();
-        int[][] ch = new int[2][200001];
-        queue.offer(s);
         while (!queue.isEmpty()) {
             int len = queue.size();
             L++;
-            e += L;
-            if (e > 200000) {
-                return -1;
-            }
             for (int i = 0; i < len; i++) {
-                int temp = queue.poll();
-                for (int nx : new int[]{temp + 1, temp - 1, temp * 2}) {
-                    // -1 , 1 특성상 짝수는 짝수로 이동할수 있고, 홀수는 홀수로 이동 가능
-                    if (nx >= 0 && nx < 200001 && ch[L % 2][nx] == 0) {
-                        ch[L % 2][nx] = 1;
-                        queue.offer(nx);
+                Point temp = queue.poll();
+                for (int dir = 0; dir < 4; dir++) {
+                    int nx = temp.x + dx[dir];
+                    int ny = temp.y + dy[dir];
+                    if (nx >= 0 && nx < n && ny >= 0 && ny < n && board[nx][ny] == emptyLand) {
+                        board[nx][ny]--;
+                        queue.offer(new Point(nx, ny));
+                        dis[nx][ny] += L;
                     }
                 }
             }
+        }
+        emptyLand--;
+    }
 
-            // 홀수레벨 ch[1][nx]은 현재 홀수레벨에서 모두 방문 가능 지점
-            // 짝수레벨 ch[0][nx]은 현재 짝수레벨에서 모두 방문 가능 지점
-            if (ch[L % 2][e] == 1) {
-                return L;
+    public int solution(int[][] board) {
+        int answer = Integer.MAX_VALUE;
+        n = board.length;
+        emptyLand = 0;
+        dis = new int[n][n];
+        queue = new LinkedList<>();
+        ch = new int[n][n];
+
+        // 빌딩(1) 지점에서 bfs , 거리누적하기
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == 1) {
+                    queue.offer(new Point(i, j));
+                    bfs(board);
+                }
             }
         }
-        return -1;
+
+        // 모두방문한곳에서 최소거리 구하기
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == emptyLand && dis[i][j] > 0) {
+                    answer = Math.min(answer, dis[i][j]);
+                }
+            }
+        }
+
+        return answer == Integer.MAX_VALUE ? -1 : answer;
     }
 
     public static void main(String[] args) {
         Solution T = new Solution();
-        System.out.println(T.solution(1, 11));
-        System.out.println(T.solution(10, 3));
-        System.out.println(T.solution(1, 34567));
-        System.out.println(T.solution(5, 6));
-        System.out.println(T.solution(2, 54321));
+        System.out.println(T.solution(
+                new int[][]{{1, 0, 2, 0, 1}, {0, 0, 0, 0, 0}, {0, 2, 1, 0, 0}, {2, 0, 0, 2, 2}, {0, 0, 0, 0, 0}}));
+        System.out.println(T.solution(new int[][]{{1, 0, 0, 1}, {0, 0, 2, 0}, {0, 0, 1, 0}, {2, 2, 0, 0}}));
+        System.out.println(T.solution(new int[][]{{1, 2, 0, 0}, {0, 0, 1, 2}, {0, 2, 0, 0}, {0, 2, 1, 0}}));
+        System.out.println(T.solution(new int[][]{{1, 0, 0, 1}, {0, 0, 2, 0}, {0, 0, 1, 0}, {2, 2, 0, 1}}));
     }
 }
