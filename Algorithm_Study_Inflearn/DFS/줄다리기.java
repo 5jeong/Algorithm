@@ -2,34 +2,19 @@ package Algorithm_Study_Inflearn.DFS;
 
 import java.util.Stack;
 
+// 순열
+// 메모이제이션
+
 public class 줄다리기 {
+
+    static int ans;
     static int[][] relation;
     static int[] ch;
-    static int ans;
-    static Stack<Integer> stack;
 
-//    private static void dfs(int L) {
-//        if (L == 7) {
-//            ans++;
-//        } else {
-//            // 순열
-//            for (int i = 1; i <= 7; i++) {
-//                if (!stack.isEmpty() && relation[stack.peek()][i] == 1) {
-//                    continue;
-//                }
-//                if (ch[i] == 0) {
-//                    ch[i] = 1;
-//                    stack.push(i);
-//                    dfs(L + 1);
-//                    ch[i] = 0;
-//                    stack.pop();
-//                }
-//            }
-//        }
-//    }
 
-    private static void dfs(int L, int now, int pre) {
-        if (relation[now][pre] == 1) {
+    static void dfs(int L, int pre, int now) {
+        // 이전과 현재의 상태를 비교해서 이웃한지 확인
+        if (relation[pre][now] == 1) {
             return;
         }
         if (L == 7) {
@@ -38,7 +23,7 @@ public class 줄다리기 {
             for (int i = 1; i <= 7; i++) {
                 if (ch[i] == 0) {
                     ch[i] = 1;
-                    dfs(L + 1, i, now);
+                    dfs(L+1,now,i);
                     ch[i] = 0;
                 }
             }
@@ -47,16 +32,20 @@ public class 줄다리기 {
 
     public static int solution(int[][] fight) {
         ans = 0;
-        relation = new int[8][8];
-        for (int[] x : fight) {
-            relation[x[0]][x[1]] = 1;
-            relation[x[1]][x[0]] = 1;
-        }
         ch = new int[8];
-//        stack = new Stack<>();
+        relation = new int[8][8];
+        // 메모이제이션 : 싫어하는 관계에 1저장
+        for (int[] x : fight) {
+            int a = x[0];
+            int b = x[1];
+            relation[a][b] = 1;
+            relation[b][a] = 1;
+        }
         dfs(0, 0, 0);
+
         return ans;
     }
+
     public static void main(String[] args) {
         System.out.println(solution(new int[][]{{1, 3}, {5, 7}, {4, 2}}));
         System.out.println(solution(new int[][]{{3, 2}, {3, 5}, {5, 2}, {7, 3}}));

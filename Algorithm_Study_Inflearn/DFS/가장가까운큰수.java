@@ -2,28 +2,25 @@ package Algorithm_Study_Inflearn.DFS;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class 가장가까운큰수 {
-    static int len,ans;
-    static List<Integer> nums;
-    static int[] ch;
-    static boolean flag;
 
-    private static void dfs(int L, int num,int n) {
-        if (flag) {
+    static int len, ans;
+    static int target;
+    static int[] ch;
+    static ArrayList<Integer> nums;
+
+    static void dfs(int L, int num) {
+        if(ans > target){
             return;
         }
-        if (L == len ) {
-            if(num > n){
-                ans = num;
-                flag=true;
-            }
+        if (L == len && num > target) {
+            ans = num;
         } else {
             for (int i = 0; i < len; i++) {
                 if (ch[i] == 0) {
                     ch[i] = 1;
-                    dfs(L + 1, num * 10 + nums.get(i),n);
+                    dfs(L + 1, (num * 10) + nums.get(i));
                     ch[i] = 0;
                 }
             }
@@ -31,21 +28,22 @@ public class 가장가까운큰수 {
     }
 
     public static int solution(int n) {
-        String s = String.valueOf(n);
-        len = s.length();
-        ans = 0;
         nums = new ArrayList<>();
-        flag = false;
-        for (char x : s.toCharArray()) {
+        target = n;
+        ans = 0;
+        String str = String.valueOf(n);
+        len = str.length();
+        ch = new int[n];
+        for (char x : str.toCharArray()) {
             nums.add(Integer.parseInt(String.valueOf(x)));
         }
         Collections.sort(nums);
-        ch = new int[len];
-        dfs(0, 0,n);
-        return flag ? ans : -1;
+        dfs(0, 0);
+        return ans == 0 ? -1 : ans;
+
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Solution T = new Solution();
         System.out.println(solution(123));
         System.out.println(solution(321));
