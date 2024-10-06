@@ -2,52 +2,52 @@ package Algorithm_Study_Inflearn.DFS;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Stack;
 
 public class IP주소 {
     static Stack<String> stack;
     static int n;
-    static ArrayList<String> res;
+    static List<String> res;
 
-    private static void dfs(int s, String str) {
-
-        if (stack.size() == 4 && s == n) {
-            String temp = "";
-            for (String x : stack) {
-                temp += x + ".";
-            }
-            res.add(temp.substring(0, temp.length() - 1));
-
-        } else {
-            for (int i = s; i < n; i++) {
-                String temp = str.substring(s, i + 1);
-                // 유효한 숫자인지 체크
-                if (check(temp)) {
-                    stack.add(temp);
-                    dfs(i + 1, str);
-                    stack.pop();
-                }
-            }
-        }
-    }
-
-    // 0~255 사이의 숫자
-    // 0으로 시작하는 2자리 이상 숫자 x
-    private static boolean check(String temp) {
-        if (temp.length() > 1 && temp.charAt(0) == '0') {
+    // 0으로 시작x, (01,012)
+    // 0~255 숫자
+    private static boolean check(String s) {
+        if (s.length() > 1 && s.charAt(0) == '0') {
             return false;
         }
-        int num = Integer.parseInt(temp);
+        int num = Integer.parseInt(s);
         return num >= 0 && num <= 255;
     }
 
+    // L 부터 s를 탐색하며 가능한 숫자 찾기
+    private static void dfs(int L, String s) {
+        if (L == n && stack.size() == 4) {
+            String ans = "";
+            for (String x : stack) {
+                ans += x + ".";
+            }
+            res.add(ans.substring(0, ans.length() - 1));
+        } else {
+            String temp = "";
+            for (int i = L; i < n; i++) {
+                temp = s.substring(L, i + 1);
+                if (!check(temp)) {
+                    break;
+                }
+                stack.push(temp);
+                dfs(i + 1, s);
+                stack.pop();
+            }
+        }
+    }
+
     public static String[] solution(String s) {
-        String[] answer = {};
-        stack = new Stack<>();
         n = s.length();
+        stack = new Stack<>();
         res = new ArrayList<>();
         dfs(0, s);
-        return res.stream().toArray(String[]::new);
+        return res.toArray(String[]::new);
     }
 
     public static void main(String[] args) {

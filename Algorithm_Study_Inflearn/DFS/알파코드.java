@@ -1,41 +1,44 @@
 package Algorithm_Study_Inflearn.DFS;
 
 public class 알파코드 {
-    static int n, answer;
-    static int[] dy;
+    static int n, ans;
+    static int[] memo;
 
-    static int dfs(int L, String s) {
-        if (dy[L] > 0) {
-            return dy[L];
-        }
-        if (L == n) {
-            return 1;
-        }
-        for (int i = L; i < n; i++) {
-            String temp = s.substring(L, i + 1);
-            if (check(temp)) {
-                dy[L] += dfs(i + 1, s);
-            } else {
-                break;
-            }
-        }
-        return dy[L];
-    }
-
-    static boolean check(String str) {
-        if (str.charAt(0) == '0') {
+    static boolean check(String s) {
+        if (s.charAt(0) == '0') {
             return false;
         }
-        int num = Integer.parseInt(str);
-        return num >= 1 && num <= 26;
+        return Integer.parseInt(s) <= 26;
     }
 
     public static int solution(String s) {
-        answer = 0;
-        dy = new int[101];
         n = s.length();
-        return dfs(0, s);
+        memo = new int[n + 1];
+        ans = dfs(0, s);
+
+        return ans;
     }
+
+    private static int dfs(int L, String s) {
+
+        // 값이 있으면 그 값 반환 (메모이제이션)
+        if (memo[L] > 0) {
+            return memo[L];
+        }
+        if (L == n) {
+            return 1;
+        } else {
+            for (int i = L; i < n; i++) {
+                String temp = s.substring(L, i + 1);
+                if (!check(temp)) {
+                    break;
+                }
+                memo[L] += dfs(i + 1, s);
+            }
+        }
+        return memo[L];
+    }
+
 
     public static void main(String[] args) {
         System.out.println(solution("25114"));
