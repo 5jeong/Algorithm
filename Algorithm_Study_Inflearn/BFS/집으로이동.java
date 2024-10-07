@@ -4,16 +4,22 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class 집으로이동 {
+    // 연속 뒤로 점프X
+    // pool 지점 못감
+    // a만큼 앞으로 b만큼 뒤로
+    // 최소 점프 횟수
     public static int solution(int[] pool, int a, int b, int home) {
-        int L = 0;
         Queue<int[]> queue = new LinkedList<>();
-        // 0 : 뒤로 점프, 1: 앞으로 점프
-        int[][] ch = new int[2][10001];
-        queue.offer(new int[]{0, 1});
+        int L = 0;
+        // 앞 : [][1], 뒤 : [][0]
+        int[][] ch = new int[10001][2];
+        int[] dx = {a, -b};
+        // 못가는곳 체크
         for (int x : pool) {
-            ch[0][x] = 1;
-            ch[1][x] = 1;
+            ch[x][0] = 1;
+            ch[x][1] = 1;
         }
+        queue.offer(new int[]{0, 1});
         while (!queue.isEmpty()) {
             int len = queue.size();
             for (int i = 0; i < len; i++) {
@@ -21,22 +27,21 @@ public class 집으로이동 {
                 if (temp[0] == home) {
                     return L;
                 }
-                // 뒤로 점프 -> 연속해서 뒤로점프 x
-                int nx = temp[0] - b;
-                if (temp[1] == 1 && nx > 0 && ch[0][nx] == 0) {
-                    ch[0][nx] = 1;
-                    queue.offer(new int[]{nx, 0});
-                }
                 // 앞으로 점프
-                nx = temp[0] + a;
-                if (nx < 10001 && ch[1][nx] == 0) {
-                    ch[1][nx] = 1;
+                int nx = temp[0] + a;
+                if (nx < 10001 && ch[nx][1] == 0) {
+                    ch[nx][1] = 1;
                     queue.offer(new int[]{nx, 1});
+                }
+                // 뒤로 점프(이전 점프가 뒤면 못감)
+                nx = temp[0] - b;
+                if (nx >= 0 && temp[1] != 0 && ch[nx][0] == 0) {
+                    ch[nx][0] = 1;
+                    queue.offer(new int[]{nx, 0});
                 }
             }
             L++;
         }
-
         return -1;
     }
 

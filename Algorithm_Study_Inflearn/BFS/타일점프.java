@@ -5,23 +5,21 @@ import java.util.Queue;
 
 public class 타일점프 {
     public static int solution(int[] nums) {
-        int n = nums.length;
         Queue<Integer> queue = new LinkedList<>();
-        // 방문 여부
-        int[] ch = new int[n];
+        int n = nums.length;
         int L = 0;
-        queue.add(0); // 집에서 시작
+        int[] ch = new int[101];
+        queue.offer(0);
         while (!queue.isEmpty()) {
             int len = queue.size();
             for (int i = 0; i < len; i++) {
                 int temp = queue.poll();
+                if (temp == n - 1) {
+                    return L;
+                }
                 for (int j = 1; j <= nums[temp]; j++) {
                     int nx = temp + j;
-                    if (nx == n - 1) {
-                        return L + 1;
-                    }
-                    // 방문 안했을때만 queue 넣기
-                    if(nx < n && ch[nx]==0){
+                    if (ch[nx] == 0) {
                         ch[nx] = 1;
                         queue.offer(nx);
                     }
@@ -30,6 +28,8 @@ public class 타일점프 {
             L++;
         }
         return -1;
+
+
     }
 
     public static void main(String[] args) {
