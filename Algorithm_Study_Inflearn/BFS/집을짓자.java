@@ -1,16 +1,16 @@
 package Algorithm_Study_Inflearn.BFS;
 
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class 집을짓자 {
-    static int[][] dis;
-    static int[][] ch;
-    static int n, emptyLand;
+
     static int[] dx = {1, 0, -1, 0};
     static int[] dy = {0, 1, 0, -1};
+    static int ans;
+    static int n, ch;
+    static int[][] dis;
     static Queue<Point> queue;
 
     static class Point {
@@ -23,7 +23,6 @@ public class 집을짓자 {
         }
     }
 
-
     static void bfs(int[][] board) {
         int L = 0;
         while (!queue.isEmpty()) {
@@ -34,26 +33,23 @@ public class 집을짓자 {
                 for (int dir = 0; dir < 4; dir++) {
                     int nx = temp.x + dx[dir];
                     int ny = temp.y + dy[dir];
-                    if (nx >= 0 && nx < n && ny >= 0 && ny < n && board[nx][ny] == emptyLand) {
-                        board[nx][ny]--;
+                    if (nx >= 0 && nx < n && ny >= 0 && ny < n && board[nx][ny] == ch) {
                         queue.offer(new Point(nx, ny));
+                        board[nx][ny] -= 1;
                         dis[nx][ny] += L;
                     }
                 }
             }
         }
-        emptyLand--;
+        ch--;
     }
 
     public static int solution(int[][] board) {
-        int answer = Integer.MAX_VALUE;
         n = board.length;
-        emptyLand = 0;
         dis = new int[n][n];
+        ans = Integer.MAX_VALUE;
+        ch = 0;
         queue = new LinkedList<>();
-        ch = new int[n][n];
-
-        // 빌딩(1) 지점에서 bfs , 거리누적하기
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (board[i][j] == 1) {
@@ -62,21 +58,20 @@ public class 집을짓자 {
                 }
             }
         }
-
-        // 모두방문한곳에서 최소거리 구하기
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (board[i][j] == emptyLand && dis[i][j] > 0) {
-                    answer = Math.min(answer, dis[i][j]);
+                if (board[i][j] == ch && dis[i][j] > 0) {
+                    ans = Math.min(ans, dis[i][j]);
                 }
             }
         }
+        return ans == Integer.MAX_VALUE ? -1 : ans;
 
-        return answer == Integer.MAX_VALUE ? -1 : answer;
     }
 
-    public static void main(String[] args){
-        System.out.println(solution(new int[][]{{1, 0, 2, 0, 1}, {0, 0, 0, 0, 0}, {0, 2, 1, 0, 0}, {2, 0, 0, 2, 2}, {0, 0, 0, 0, 0}}));
+    public static void main(String[] args) {
+        System.out.println(solution(
+                new int[][]{{1, 0, 2, 0, 1}, {0, 0, 0, 0, 0}, {0, 2, 1, 0, 0}, {2, 0, 0, 2, 2}, {0, 0, 0, 0, 0}}));
         System.out.println(solution(new int[][]{{1, 0, 0, 1}, {0, 0, 2, 0}, {0, 0, 1, 0}, {2, 2, 0, 0}}));
         System.out.println(solution(new int[][]{{1, 2, 0, 0}, {0, 0, 1, 2}, {0, 2, 0, 0}, {0, 2, 1, 0}}));
         System.out.println(solution(new int[][]{{1, 0, 0, 1}, {0, 0, 2, 0}, {0, 0, 1, 0}, {2, 2, 0, 1}}));
