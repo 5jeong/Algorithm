@@ -28,11 +28,11 @@ public class Baekjoon_11005 {
 
     }
 
-    private static String convert(int res) {
-        if (res > 9) {
-            char c = (char) (res + 55);
+    private static String convert(int temp) {
+        if (temp > 9) {
+            char c = (char) (temp + 55);
             return String.valueOf(c);
         }
-        return String.valueOf(res);
+        return String.valueOf(temp);
     }
 }
