@@ -30,10 +30,6 @@ public class Baekjoon_11068 {
         System.out.println(0);
     }
 
-    private static void Solution(){
-
-    }
-
     private static String convert(int num, int b) {
         String res = "";
         while (num > 0) {
