@@ -4,8 +4,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /***
- * 그리디알고리즘
- * 돈이 가장 많은 동아리방이 돈이
+ * 이분탐색 + 그리디알고리즘
+ * 보수가능한 방을 이분탐색
+ * 보수가능한 방이 n개 일때, 돈이 가장 많은 동아리방이 n번째 방을 보수해야함
  *
  */
 public class Baekjoon_15317 {
