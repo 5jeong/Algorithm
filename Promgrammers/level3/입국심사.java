@@ -5,26 +5,29 @@ import java.util.Arrays;
 public class 입국심사 {
     public long solution(int n, int[] times) {
         Arrays.sort(times);
-        long start = 0L;
-        long end = times[times.length - 1] * (long) n;
+        long lt = 0;
+        long rt = (long) times[times.length - 1] * n;
+        long ans = rt;
 
-        //정답 검사, 범위좁히기
-        while (end > start) {
-            long t = (start + end) / 2;
-            if (isValid(t, n, times)) {
-                end = t;
+        while (lt <= rt) {
+            long mid = (lt + rt) / 2;
+
+            if (isPossible(mid,times,n)) {
+                rt = mid - 1;
+                ans = Math.min(ans,mid);
             } else {
-                start = t + 1;
+                lt = mid + 1;
             }
         }
-        return start;
+        return ans;
     }
 
-    private boolean isValid(long t, int n, int[] times) {
-        long c = 0;
-        for (int time : times) {
-            c += t / time;
+    private boolean isPossible(long mid, int[] times,int n) {
+        long cnt = 0;
+        for(int time : times){
+            cnt += mid / time;
         }
-        return c >= n;
+        return cnt >= n;
+
     }
 }
