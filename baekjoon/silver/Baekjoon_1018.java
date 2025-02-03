@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class Baekjoon_1018 {
     static int n, m;
     static boolean[][] board;
-    static int[] count;
     static int ans;
 
     public static void main(String[] args) {
@@ -29,7 +28,6 @@ public class Baekjoon_1018 {
                 }
             }
         }
-        count = new int[2]; // 0번째는 B, 1번째는 W
         ans = Integer.MAX_VALUE;
         // 완전 탐색
         for (int i = 0; i <= n - 8; i++) {
