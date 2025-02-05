@@ -1,5 +1,6 @@
 package baekjoon.silver;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /***
@@ -14,7 +15,7 @@ public class Baekjoon_2529 {
     static int[] visited;
     static char[] sign;
     static long min, max;
-
+    static ArrayList<String> ans;
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         k = sc.nextInt();
@@ -23,61 +24,44 @@ public class Baekjoon_2529 {
         sign = new char[k]; // 부등호
         min = Long.MAX_VALUE;
         max = Long.MIN_VALUE;
+        ans = new ArrayList<>();
         for (int i = 0; i < k; i++) {
             sign[i] = sc.next().charAt(0);
         }
-
-        dfs(0);
-
-        StringBuilder sb = new StringBuilder();
-        String ans1 = String.valueOf(max);
-        if (ans1.length() != k + 1) {
-            sb.append(0).append(max).append("\n");
-        } else {
-            sb.append(max).append("\n");
+        for (int i = 0; i < 10; i++) {
+            visited = new int[10];
+            visited[i] = 1;
+            dfs(1, "" + i);
         }
-        String ans2 = String.valueOf(min);
-        if (ans2.length() != k + 1) {
-            sb.append(0).append(min);
-        } else {
-            sb.append(min);
-        }
-        System.out.print(sb);
+
+        System.out.println(ans.get(ans.size()-1));
+        System.out.println(ans.get(0));
 
     }
 
-    static void dfs(int L) {
+    static void dfs(int L, String num) {
         if (L == k + 1) {
-            if (isPossible(num)) {
-                String temp = "";
-                for (int x : num) {
-                    temp += x;
-                }
-                // 첫자리가 0이면
-                long res = Long.parseLong(temp);
-                max = Math.max(max, res);
-                min = Math.min(min, res);
-            }
+            ans.add(num);
         } else {
             for (int i = 0; i < 10; i++) {
                 if (visited[i] == 0) {
-                    visited[i] = 1;
-                    num[L] = i;
-                    dfs(L + 1);
-                    visited[i] = 0;
+                    if (isPossible(num.charAt(num.length() - 1)-'0', i, sign[L - 1])) {
+                        visited[i] = 1;
+                        dfs(L + 1, num + i);
+                        visited[i] = 0;
+                    }
                 }
             }
         }
+
     }
 
     // 부등호를 만족하는지 확인
-    static boolean isPossible(int[] num) {
-        for (int i = 0; i < k; i++) {
-            if (sign[i] == '<' && num[i] > num[i + 1]) {
-                return false;
-            } else if (sign[i] == '>' && num[i] < num[i + 1]) {
-                return false;
-            }
+    static boolean isPossible(int pre, int now, char sign) {
+        if(sign == '<' && pre > now){
+            return false;
+        }else if ( sign == '>' && pre < now){
+            return false;
         }
         return true;
     }
