@@ -58,11 +58,6 @@ public class Baekjoon_2529 {
 
     // 부등호를 만족하는지 확인
     static boolean isPossible(int pre, int now, char sign) {
-        if(sign == '<' && pre > now){
-            return false;
-        }else if ( sign == '>' && pre < now){
-            return false;
-        }
-        return true;
+        return (sign == '<') ? pre < now : pre > now;
     }
 }
