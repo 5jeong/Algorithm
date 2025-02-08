@@ -26,49 +26,29 @@ public class Baekjoon_1992 {
             System.out.println(board[0][0]);
             return;
         }
-        sb.append("(");
-        dfs(n, 0, 0);
-        sb.append(")");
+        compress(n, 0, 0);
         System.out.println(sb);
     }
 
-    static void dfs(int n, int x, int y) {
+    static void compress(int n, int x, int y) {
 
-
-        int mid = n / 2;
-        // 왼쪽 위
-        if (!isPossible(mid, x, y)) {
-            sb.append("(");
-            dfs(mid, x, y);
-            sb.append(")");
-        } else {
+        if (isPossible(n, x, y)) {
             sb.append(board[x][y]);
+            return;
         }
+        int mid = n / 2;
+        sb.append("(");
+        // 왼쪽 위
+        compress(mid, x, y);
         // 오른쪽 위
-        if (!isPossible(mid, x, y + mid)) {
-            sb.append("(");
-            dfs(mid, x, y + mid);
-            sb.append(")");
-        } else {
-            sb.append(board[x][y + mid]);
-        }
+        compress(mid, x, y + mid);
         // 왼쪽 아래
-        if (!isPossible(mid, x + mid, y)) {
-            sb.append("(");
-            dfs(mid, x + mid, y);
-            sb.append(")");
-        } else {
-            sb.append(board[x + mid][y]);
-        }
+        compress(mid, x + mid, y);
         // 오른쪽 아래
-        if (!isPossible(mid, x + mid, y + mid)) {
-            sb.append("(");
-            dfs(mid, x + mid, y + mid);
-            sb.append(")");
-        } else {
-            sb.append(board[x + mid][y + mid]);
-        }
+        compress(mid, x + mid, y + mid);
+        sb.append(")");
     }
+
 
     // 분할 하는지 확인
     static boolean isPossible(int n, int x, int y) {
@@ -83,4 +63,5 @@ public class Baekjoon_1992 {
         }
         return true;
     }
+
 }
