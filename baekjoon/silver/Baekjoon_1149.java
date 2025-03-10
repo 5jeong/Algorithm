@@ -14,27 +14,19 @@ public class Baekjoon_1149 {
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int n = Integer.parseInt(st.nextToken());
-        int[][] house = new int[n][3];
         int[][] dp = new int[n][3];
 
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
-            int red = Integer.parseInt(st.nextToken());
-            int green = Integer.parseInt(st.nextToken());
-            int blue = Integer.parseInt(st.nextToken());
-
-            house[i][0] = red;
-            house[i][1] = green;
-            house[i][2] = blue;
+            dp[i][0] = Integer.parseInt(st.nextToken()); // 빨강
+            dp[i][1] = Integer.parseInt(st.nextToken()); // 초록
+            dp[i][2] = Integer.parseInt(st.nextToken()); // 파랑
         }
 
-        dp[0][0] = house[0][0];
-        dp[0][1] = house[0][1];
-        dp[0][2] = house[0][2];
         for (int i = 1; i < n; i++) {
-            dp[i][0] = house[i][0] + Math.min(dp[i - 1][1], dp[i - 1][2]);
-            dp[i][1] = house[i][1] + Math.min(dp[i - 1][0], dp[i - 1][2]);
-            dp[i][2] = house[i][2] + Math.min(dp[i - 1][0], dp[i - 1][1]);
+            dp[i][0] += Math.min(dp[i - 1][1], dp[i - 1][2]); // 이전 집 초록 or 파랑 선택
+            dp[i][1] += Math.min(dp[i - 1][0], dp[i - 1][2]); // 이전 집 빨강 or 파랑 선택
+            dp[i][2] += Math.min(dp[i - 1][0], dp[i - 1][1]); // 이전 집 빨강 or 초록 선택
         }
         int ans = Math.min(dp[n - 1][0], Math.min(dp[n - 1][1], dp[n - 1][2]));
         System.out.println(ans);
