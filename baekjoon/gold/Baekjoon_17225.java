@@ -9,11 +9,13 @@ import java.util.StringTokenizer;
 
 // 세훈이의 선물가게
 public class Baekjoon_17225 {
-    static int a,b,n;
+
+    static int a, b, n;
     static int redStartTime = 0;
     static int blueStartTime = 0;
     static int redEndTime = 0;
     static int blueEndTime = 0;
+
     static class Gift {
         int startTime;
         int endTime;
@@ -44,8 +46,6 @@ public class Baekjoon_17225 {
         int blueCnt = 0;
         int redCnt = 0;
         List<Gift> gifts = new ArrayList<>();
-        List<Gift> redGifts = new ArrayList<>();
-        List<Gift> blueGifts = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
@@ -55,56 +55,52 @@ public class Baekjoon_17225 {
             totalCnt += giftCnt;
             if (color.equals("B")) {
                 blueCnt += giftCnt;
-                getRedTime(giftCnt, orderTime, gifts, color);
+                for (int j = 0; j < giftCnt; j++) {
+                    redStartTime = Math.max(orderTime, redEndTime);
+                    redEndTime = redStartTime + a;
+                    gifts.add(new Gift(redStartTime, redEndTime, color));
+                }
             } else {
                 redCnt += giftCnt;
-                getBlueTime(giftCnt, orderTime, gifts, color);
+                for (int j = 0; j < giftCnt; j++) {
+                    blueStartTime = Math.max(orderTime, blueEndTime);
+                    blueEndTime = blueStartTime + b;
+                    gifts.add(new Gift(blueStartTime, blueEndTime, color));
+                }
             }
         }
 
-        // 정렬 ( startTime이 같으면, B가 먼저 오게끔 정렬)
+        // 정렬: 시작 시간이 빠른 순, 같다면 BLUE 우선
         gifts.sort((o1, o2) -> o1.startTime != o2.startTime ? o1.startTime - o2.startTime
                 : o1.color.charAt(0) - o2.color.charAt(0));
 
+        // 번호 부여
         for (int i = 1; i <= totalCnt; i++) {
             gifts.get(i - 1).addNumber(i);
         }
 
+        // 결과 분리
+        List<Integer> redGifts = new ArrayList<>();
+        List<Integer> blueGifts = new ArrayList<>();
         for (Gift gift : gifts) {
             if (gift.color.equals("B")) {
-                blueGifts.add(gift);
+                blueGifts.add(gift.number);
             } else {
-                redGifts.add(gift);
+                redGifts.add(gift.number);
             }
         }
 
         // 정답 출력
         System.out.println(blueCnt);
-        for (Gift blueGift : blueGifts) {
-            System.out.print(blueGift.number+ " ");
+        for (int num : blueGifts) {
+            System.out.print(num + " ");
         }
         System.out.println();
         System.out.println(redCnt);
-        for (Gift redGift : redGifts) {
-            System.out.print(redGift.number+" ");
+        for (int num : redGifts) {
+            System.out.print(num + " ");
         }
 
-    }
-
-    private static void getBlueTime(int giftCnt, int orderTime, List<Gift> gifts, String color) {
-        for (int j = 0; j < giftCnt; j++) {
-            blueStartTime = Math.max(orderTime, blueEndTime);
-            blueEndTime = blueStartTime + b;
-            gifts.add(new Gift(blueStartTime, blueEndTime, color));
-        }
-    }
-
-    private static void getRedTime(int giftCnt, int orderTime, List<Gift> gifts, String color) {
-        for (int j = 0; j < giftCnt; j++) {
-            redStartTime = Math.max(orderTime, redEndTime);
-            redEndTime = redStartTime + a;
-            gifts.add(new Gift(redStartTime, redEndTime, color));
-        }
     }
 
 }
