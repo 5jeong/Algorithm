@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
+// 문제집
 public class Baekjoon_1766 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
