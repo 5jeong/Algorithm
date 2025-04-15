@@ -7,18 +7,17 @@ import java.util.StringTokenizer;
 
 public class 친구인가 {
     static int[] unf;
-    static int Find(int v){
-        if(unf[v]==v){
+    static int find(int v){
+        if(v==unf[v]){
             return v;
-        }
-        else{
-            return unf[v] = Find(unf[v]);
+        }else{
+            return unf[v] = find(unf[v]);
         }
     }
-    static void Union(int a,int b){
-        int fa = Find(a);
-        int fb = Find(b);
-        if(fa!=fb){
+    static void union(int a, int b){
+        int fa = find(a);
+        int fb = find(b);
+        if(fa != fb){
             unf[fa] = fb;
         }
     }
@@ -36,13 +35,13 @@ public class 친구인가 {
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
-            Union(a,b);
+            union(a,b);
         }
         st = new StringTokenizer(br.readLine());
         int a = Integer.parseInt(st.nextToken());
         int b = Integer.parseInt(st.nextToken());
-        int fa = Find(a);
-        int fb = Find(b);
+        int fa = find(a);
+        int fb = find(b);
         if(fa==fb){
             System.out.println("YES");
         }
