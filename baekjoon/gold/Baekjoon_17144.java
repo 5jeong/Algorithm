@@ -32,15 +32,8 @@ public class Baekjoon_17144 {
             this.x = x;
             this.y = y;
         }
-
     }
 
-    /***
-     * 3 3 1
-     * 0 30 7
-     * -1 10 0
-     * -1 0 20
-     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -63,13 +56,13 @@ public class Baekjoon_17144 {
         downAir = airPoint.get(1);
 
         // t시간만큼 반복
-        for (int i = 1; i <= t; i++) {
+        while(t-- > 0){
             // 미세먼지 확산
             diffusion();
             // 공기청정기 가동
-            air(i);
+            air();
         }
-        // t지난후 board에서 미세먼지 총 양구 하기
+        // t지난후 board에서 미세먼지 총 양 구 하기
         int ans = 0;
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
@@ -81,8 +74,7 @@ public class Baekjoon_17144 {
         System.out.println(ans);
     }
 
-    private static void air(int t) {
-        // 한칸식 민다.
+    private static void air() {
         int[][] copy = new int[r][c];
 
         for (int i = 0; i < r; i++) {
@@ -90,16 +82,43 @@ public class Baekjoon_17144 {
         }
 
         // 윗공기 밀기
-        board[0][0] =
-        for(int i=1;i<c;i++){
-            board[upAir.x][i] = board[upAir.x][i];
-            board[0][i] = board[0][i+1];
+        for (int i = 0; i < c - 1; i++) {
+            board[upAir.x][i + 1] = copy[upAir.x][i];
         }
 
+        for (int i = upAir.x; i > 0; i--) {
+            board[i - 1][c - 1] = copy[i][c - 1];
+        }
 
+        for (int i = c - 1; i > 0; i--) {
+            board[0][i - 1] = copy[0][i];
+        }
 
+        for (int i = 0; i < upAir.x; i++) {
+            board[i + 1][0] = copy[i][0];
+        }
+
+        board[upAir.x][upAir.y] = -1;
+        board[upAir.x][upAir.y + 1] = 0;
 
         // 아랫공기 밀기
+        for (int i = 0; i < c - 1; i++) {
+            board[downAir.x][i + 1] = copy[downAir.x][i];
+        }
+
+        for (int i = downAir.x; i < r - 1; i++) {
+            board[i + 1][c - 1] = copy[i][c - 1];
+        }
+
+        for (int i = c - 1; i > 0; i--) {
+            board[r - 1][i - 1] = copy[r - 1][i];
+        }
+
+        for (int i = r - 1; i > downAir.x; i--) {
+            board[i - 1][0] = copy[i][0];
+        }
+        board[downAir.x][downAir.y] = -1;
+        board[downAir.x][downAir.y + 1] = 0;
     }
 
     // 미세먼지 찾기
@@ -117,54 +136,34 @@ public class Baekjoon_17144 {
     }
 
     private static void diffusion() {
-        int[][] copy = new int[r][c];
-
-        for (int i = 0; i < r; i++) {
-            copy[i] = board[i].clone();
-        }
-
-        int[][] visited = new int[r][c];
+        int[][] temp = new int[r][c]; // 퍼진 먼지를 임시로 저장할 배열
 
         Queue<Point> queue = new LinkedList<>(findDust());
         while (!queue.isEmpty()) {
             Point now = queue.poll();
-            visited[now.x][now.y] = 1;
-            int diffusionCnt = 0;
-            List<Point> temp = new ArrayList<>(); // 주변 확산되는 위치
+            int amount = board[now.x][now.y] / 5;
             for (int dir = 0; dir < 4; dir++) {
                 int nx = now.x + dx[dir];
                 int ny = now.y + dy[dir];
-
-                // 칸이없거나 공기청정기 위치일때,,
                 if (isNotDiffusion(nx, ny)) {
                     continue;
                 }
-                diffusionCnt++;
-                temp.add(new Point(nx, ny));
-            }
-
-            // 확산되는양
-            int diffusionAmount = copy[now.x][now.y] / 5; // 확산되는양
-            int nowDust = copy[now.x][now.y] - (diffusionAmount * diffusionCnt); // 현재 위치의 미세먼지 양
-
-            board[now.x][now.y] = nowDust;
-            for (Point p : temp) {
-                board[now.x][now.y] += copy[p.x][p.y] / 5;
-                if (visited[p.x][p.y] == 0) {
-                    board[p.x][p.y] += diffusionAmount;
-                }
+                temp[nx][ny] += amount;
+                board[nx][ny] -= amount;
             }
         }
+
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                board[i][j] += temp[i][j];
+            }
+        }
+
     }
 
     private static boolean isNotDiffusion(int nx, int ny) {
-        if (nx < 0 || nx >= r || ny < 0 || ny >= c) {
+        if (nx < 0 || nx >= r || ny < 0 || ny >= c || board[nx][ny] == -1) {
             return true;
-        }
-        for (Point p : airPoint) {
-            if (p.x == nx && p.y == ny) {
-                return true;
-            }
         }
         return false;
     }
