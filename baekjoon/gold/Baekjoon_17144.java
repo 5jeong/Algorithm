@@ -8,12 +8,6 @@ import java.util.Queue;
 import java.util.Scanner;
 
 // 미세먼지 안녕
-
-// 0. time만큰 반복
-//     1. 미세먼지 동시에 확산한 board구하기(bfs)+ visited
-//     2. 공기청정기 실행 board 정리,
-// 3. time일때 양수값 리턴
-
 public class Baekjoon_17144 {
     static int[] dx = {0, -1, 0, 1};
     static int[] dy = {1, 0, -1, 0};
@@ -56,11 +50,11 @@ public class Baekjoon_17144 {
         downAir = airPoint.get(1);
 
         // t시간만큼 반복
-        while(t-- > 0){
+        for (int i = 1; i <= t; i++) {
             // 미세먼지 확산
             diffusion();
             // 공기청정기 가동
-            air();
+            air(i);
         }
         // t지난후 board에서 미세먼지 총 양 구 하기
         int ans = 0;
@@ -74,7 +68,7 @@ public class Baekjoon_17144 {
         System.out.println(ans);
     }
 
-    private static void air() {
+    private static void air(int t) {
         int[][] copy = new int[r][c];
 
         for (int i = 0; i < r; i++) {
@@ -149,7 +143,7 @@ public class Baekjoon_17144 {
                     continue;
                 }
                 temp[nx][ny] += amount;
-                board[nx][ny] -= amount;
+                board[now.x][now.y] -= amount;
             }
         }
 
