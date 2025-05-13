@@ -25,9 +25,6 @@ public class 연탄의크기 {
             ans = Math.max(ans,cnt);
             temp++;
         }
-
-        String s="123";
-        s.charAt()
         System.out.println(ans);
     }
 }
